@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+    </head>
+    <body style="background-image: url(back.jpg);">
+        <form>
+            <div style=" width: 900px; height: 790px; background: rgb(231, 143, 80); color: #fff;   
+                        margin-top: 10px; padding-bottom: 10px; transform: translate(25%,10%); ">
+
+                <h1 style="font-weight: bold; font-family: cursive; text-align: center;
+                color: rgb(26, 5, 102);">REGISTRATION FORM</h1>
+
+            <label for="fname" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+            font-family: cursive;">First Name<span style="color: red;">*</span></label>
+
+            <input type="text" name="fname" id="fname" required style="width: 50%; padding: 5px;
+            border: 1px solid #ccc; border-radius: 4px; resize: vertical;float: right;"><br>
+
+            <label for="lname" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300; 
+            font-family: cursive;">Last Name<span style="color: red;">*</span></label>
+
+            <input type="text" name="lname" id="lname" required style="width: 50%; padding: 5px;
+             border: 1px solid #ccc; border-radius: 4px; resize: vertical;float: right;"><br>
+       
+            <label for="email" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+            font-family: cursive;">Email<span style="color: red;">*</span></label>
+
+            <input type="email" name="email" id="email" required style="width: 50%; padding: 5px;
+            border: 1px solid #ccc; border-radius: 4px; resize: vertical; float: right;"><br>
+
+            <label for="pwd" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+            font-family: cursive;">Password<span style="color: red;">*</span></label>
+
+            <input type="password" name="pwd" id="pwd" required style="width: 50%; padding: 5px;
+             border: 1px solid #ccc; border-radius: 4px; resize: vertical; float: right;"><br>
+            
+            <label for="conpwd" style=" padding: 12px 12px 12px 0; display: inline-block;
+            font-weight: 300; font-family: cursive;">Confirm Password<span style="color: red;">*</span></label>
+            
+            <input type="password" name="pwd" id="conpwd" required style="width: 50%; padding: 5px; border: 1px solid #ccc;
+             border-radius: 4px; resize: vertical; float: right;"><br>
+
+            <label for="gender" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+                 font-family: cursive;">Gender<span style="color: red;">*</span></label><br>
+           
+           <input type="radio" name="gender" id="gender" value="male" required style="  width: 20px;
+            height: 20px;">
+            
+            <label style=" padding: 12px 12px 12px 0;  display: inline-block; font-weight: 300;
+            font-family: cursive;">Male</label>
+            <input type="radio" name="gender" id="gender" value="female" required style="  width: 20px;
+            height: 20px;"><label style=" padding: 12px 12px 12px 0; display: inline-block;
+            font-weight: 300; font-family: cursive;">Female</label>
+            <input type="radio" name="gender" id="gender" value="others" required style="  width: 20px;
+            height: 20px;"><label style=" padding: 12px 12px 12px 0;  display: inline-block;
+            font-weight: 300;  font-family: cursive;">Other</label><br>
+
+            <label for="phn1" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+            font-family: cursive;">Phone number<span style="color: red;">*</span></label>
+            
+            <input type="text" name="phno" id="phn1" required style="width: 50%; padding: 5px;
+            border: 1px solid #ccc; border-radius: 4px; resize: vertical; float: right;"><br>
+            
+            <label for="phn2" style=" padding: 12px 12px 12px 0; display: inline-block;
+            font-weight: 300; font-family: cursive;"> Alternate Phone number</label>
+           
+           <input type="text" name="phno1" id="phn2" style="width: 50%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;
+            resize: vertical;  float: right;"><br>
+
+            <label for="add1" style=" padding: 12px 12px 12px 0;  display: inline-block; font-weight: 300;
+            font-family: cursive;">Address<span style="color: red;">*</span></label>
+           
+           <textarea id="add1" required placeholder="Address here..." type="text" style="width: 450px;
+            float: right; border: 1px solid #ccc; border-radius: 4px;"></textarea><br>
+           
+           <label for="add2" style=" padding: 12px 12px 12px 0; display: inline-block;
+            font-weight: 300; font-family: cursive;">Alternate Address</label>
+           
+           <textarea id="add2" placeholder="Address here..." type="text" style="width: 450px;
+            float: right;  border: 1px solid #ccc;  border-radius: 4px;"></textarea><br>
+
+            <label for="city" style=" padding: 12px 12px 12px 0; display: inline-block;
+            font-weight: 300; font-family: cursive;">City<span style="color: red;">*</span></label>
+           
+           <input type="text" name="fname" id="city" required style="width: 50%;  padding: 5px;
+            border: 1px solid #ccc; border-radius: 4px;
+            resize: vertical;float: right;"><br>
+            
+            <label for="slist" style=" padding: 12px 12px 12px 0;
+            display: inline-block; font-weight: 300; font-family: cursive;">Select State<span style="color: red;">*</span></label>   
+           
+           <select name="slist" id="slist" required style="width: 50%;  padding: 5px;
+            border: 1px solid #ccc; border-radius: 4px; resize: vertical; float: right;">
+                <option value="">------------Select State------------</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Orissa">Orissa</option>
+                <option value="Pondicherry">Pondicherry</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttaranchal">Uttaranchal</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Other">Other(Outside India)l</option>
+                </select><br>
+                
+            <label for="clist" style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300;
+                font-family: cursive;">Select Country<span style="color: red;">*</span></label>
+           
+           <select name="clist" id="clist" required style="width: 50%; padding: 5px; border: 1px solid #ccc;
+            border-radius: 4px; resize: vertical; float: right;">
+                <option value="India">India</option>
+                <option value="Other">Other(Outside India)l</option>
+                </select><br>
+
+                <div>
+                <input type="checkbox"  style="height: 15px;  width: 15px;">
+                <label style=" padding: 12px 12px 12px 0; display: inline-block; font-weight: 300; font-family: cursive;">Subscribe Newsletter</label> 
+                <br>
+
+                <button style=" background-color: olive; color: white; padding: 18px 30px;
+                width: 100%;  border: none; border-radius: 4px; cursor: pointer; float: right;
+                font-weight: 400; font-family: cursive;">Submit</button>
+            </div>
+            </div>
+            
+        </form>
+    </body>
+</html>

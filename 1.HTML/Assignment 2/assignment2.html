@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration page</title>
+        <style>
+
+            h1{
+                color: maroon;
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                font-weight: 500;
+                font-family: sans-serif;
+            }
+            .button1 {
+                background-color: rgb(58, 204, 209); 
+                border: none;
+                color: midnightblue;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                left: 50%;
+            }
+
+            .button1 {width: 250px;}
+
+            .column{
+                column-count: 2;
+                column-width: auto;
+            }
+        </style>
+    </head>
+    <body style="background-color: lemonchiffon;">
+        <img src="banner.jpg" width="100%" height="170px"> 
+
+        <div>
+            <h1>REGISTER HERE FOR FREE!!</h1>
+        </div>
+        
+        <form>
+            <div class="column">
+            <div style="background-color: sandybrown; color: darkslateblue;">
+            <fieldset>
+                <legend><h2 style="color: blue; font-weight: 300; font-size: 20px; text-align: center;">Personal Details</h2></legend>
+            <p>First Name:</p><input type="text" name="fname" required>
+            <p>Middle Name:</p><input type="text" name="mname">
+            <p>Last Name:</p><input type="text" name="lname" required>
+            <p>Gender:</p>
+            <input type="radio" value="male" name="gender">Male
+            <input type="radio" value="female" name="gender">Female
+            <input type="radio" value="other" name="gender">Other
+            <p>Date Of Birth: </p><input type="date" name="dob" required><br>
+            <p>Email:</p><input type="email" name="email" required>
+            <p>Phone Number: </p><input type="text" name="phno" required>
+        </fieldset>
+    </div>
+    </div>
+    <br>
+
+    <div style="background-color: salmon; color: darkslateblue;">
+        <fieldset>
+            <legend><h2 style="color: blue; font-weight: 300; font-size: 20px; text-align: center;">Create Password </h2></legend>
+            <p>Password: </p><input type="password" name="pwd" required><br>
+            <p>Re-Type Password: </p><input type="password" name="pwd" required><br>
+        </fieldset>   
+    </div> 
+    <br>
+
+    <div class="column">
+        <div style="background-color: sandybrown; color: darkslateblue;">
+        <fieldset>
+            <legend><h2 style="color: blue; font-weight: 300; font-size: 18px; text-align: center;"> Current Address:</h2></legend>
+       
+            <p>City:</p><input type="text" name="city">
+            <p>State:</p><input type="text" name="state">
+            <p>Country:</p><input type="text" name="country"><br>
+            <p>Pin Code:</p><input type="text" name="pin">
+            
+        </fieldset>
+            <fieldset>
+            <legend><h2 style="color: blue; font-weight: 300; font-size: 18px; text-align: center;"> Permanent Address:</h2></legend>
+            <p>City:</p><input type="text" name="city">
+            <p>State:</p><input type="text" name="state">
+            <p>Country:</p><input type="text" name="country">
+            <p>Pin Code:</p><input type="text" name="pin"><br>
+        </fieldset>
+    </div>
+</div>
+<br>
+
+<div style="background-color: salmon; color: darkslateblue;">
+        <fieldset>
+            <legend><h2 style="color: blue; font-weight: 300; font-size: 20px; text-align: center;">Other Information</h2></legend>
+        <p> Personal Interests:</p>
+             <input type="checkbox" name="interest1" value="sports"> Sports<br>
+             <input type="checkbox" name="interest2" value="books"> Books<br>
+             <input type="checkbox" name="interest3" value="Comp and soft" > Computer and Software<br>
+             <input type="checkbox" name="interest4" value="fashion"> Fashion<br>
+             <input type="checkbox" name="interest5" value="photo" > Photography<br>
+             <input type="checkbox" name="interest5" value="others" > Others<br>
+             <br>
+            </fieldset>
+        </div>
+        <br>
+        <button class="button button1">REGISTER</button><br>
+         </form>
+        
+    </body>
+</html>
