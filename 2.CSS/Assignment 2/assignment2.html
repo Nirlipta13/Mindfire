@@ -5,9 +5,11 @@
         <link rel="stylesheet" type="text/css" href="assignment2.css">
     </head>
     <body>
+        <h1>CREATE AN ACCOUNT FOR FREE</h1>
         <form>
             <div class="reg">
-                <h1>REGISTRATION FORM</h1>
+            <fieldset class="fs">
+                <legend><h3>Personal Details</h3></legend>
             <label for="fname">First Name<span style="color: red;">*</span></label>
             <input type="text" name="fname" id="fname" required><br>
             <label for="lname">Last Name<span style="color: red;">*</span></label>
@@ -21,27 +23,33 @@
             <label for="conpwd">Confirm Password<span style="color: red;">*</span></label>
             <input type="password" name="pwd" id="conpwd" required><br>
 
-            <label for="gender">Gender<span style="color: red;">*</span></label><br>
-            <input type="radio" name="gender" id="gender" value="male" required><label>Male</label>
-            <input type="radio" name="gender" id="gender" value="female" required><label>Female</label>
-            <input type="radio" name="gender" id="gender" value="others" required><label>Other</label><br>
+            <label for="gender">Gender<span style="color: red;">*</span></label>
+            <div class="gen">
+                <input type="radio" name="gender" id="gender" value="male" required><label >Male</label><br>
+                    <input type="radio" name="gender" id="gender" value="female" required><label>Female</label><br>
+                    <input type="radio" name="gender" id="gender" value="others" required><label>Other</label><br><br>
+                </div>
+                </fieldset>
+          
 
+            <fieldset class="fs">
+                <legend><h3>Contact Details</h3></legend>
             <label for="phn1">Phone number<span style="color: red;">*</span></label>
             <input type="text" name="phno" id="phn1" required><br>
             <label for="phn2"> Alternate Phone number</label>
             <input type="text" name="phno1" id="phn2" ><br>
 
             <label for="add1">Address<span style="color: red;">*</span></label>
-            <textarea id="add1" required placeholder="Address here..." type="text"></textarea><br>
+            <textarea id="add1" required placeholder="Address here..." type="text"></textarea><br><br>
             <label for="add2">Alternate Address</label>
-            <textarea id="add2" placeholder="Address here..." type="text"></textarea><br>
+            <textarea id="add2" placeholder="Address here..." type="text"></textarea><br><br>
 
             <label for="city">City<span style="color: red;">*</span></label>
             <input type="text" name="fname" id="city" required><br>
             
             <label for="slist">Select State<span style="color: red;">*</span></label>   
             <select name="slist" id="slist" required>
-                <option value="">------------Select State------------</option>
+                <option value="">---------Select State--------</option>
                 <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
                 <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -81,16 +89,15 @@
                 </select><br>
                 <label for="clist">Select Country<span style="color: red;">*</span></label>
             <select name="clist" id="clist" required>
+                <option value="">--------Select Country---------</option>
                 <option value="India">India</option>
                 <option value="Other">Other(Outside India)l</option>
                 </select><br>
-
-                <div>
-                <input type="checkbox" class="chk"><label>Subscribe Newsletter</label> 
-                <br>
-
-                <button class="btn">Submit</button>
+                
             </div>
+        </fieldset>
+            <div>
+                <button class="btn">Submit</button>
             </div>
             
         </form>
