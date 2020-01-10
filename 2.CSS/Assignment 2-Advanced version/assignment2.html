@@ -5,6 +5,10 @@
         <link rel="stylesheet" type="text/css" href="assignment2.css">
     </head>
     <body>
+        <ul>
+            <li class="active"><a href="#">MINDFIRE SOLUTIONS</a></li>
+            <li style="float: right;"><a  href="#">Register</a></li>
+        </ul>
         <h1>CREATE AN ACCOUNT FOR FREE</h1>
         <form>
             <div class="reg">
@@ -30,6 +34,7 @@
                     <input type="radio" name="gender" id="gender" value="others" required><label>Other</label><br><br>
                 </div>
                 </fieldset>
+                <p><span style="color:red;">*</span>Indicates Required</p>
           
 
             <fieldset class="fs">
@@ -93,9 +98,12 @@
                 <option value="India">India</option>
                 <option value="Other">Other(Outside India)l</option>
                 </select><br>
-                
+            </fieldset>
+            
+            <input type="checkbox"><label>Subscribe Newsletter</label>
             </div>
-        </fieldset>
+       
+       
             <div>
                 <button class="btn">Submit</button>
             </div>
