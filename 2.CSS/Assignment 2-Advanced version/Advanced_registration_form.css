@@ -14,9 +14,15 @@ ul{
   height: 50px;
 }
 
+
+.navbar_li{
+  float: right;
+}
+
 li{
   float: left;
 }
+
 
 li a{
   color: cornsilk;
@@ -55,6 +61,10 @@ padding-top: 22px;
 padding-right: 24px;
 padding-left: 24px;
 transform: translate(25%,10%);
+}
+
+.astreik_mark{
+  color: red;            
 }
 
 input[type=text], input[type=password], input[type=email], select{
