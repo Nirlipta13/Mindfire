@@ -81,7 +81,7 @@ input[type=checkbox]{
   width: 18px;
 }
 
-.gender_style{
+.gender_selects{
   float: right;
   margin: -4%;
 }
