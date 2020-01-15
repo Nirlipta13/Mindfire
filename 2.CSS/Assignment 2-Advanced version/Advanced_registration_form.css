@@ -28,7 +28,7 @@ li a{
   color: cornsilk;
   text-align: center;
   display: block;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   margin-left: 20px;
   margin-right: 20px;
   text-decoration: none;
@@ -47,7 +47,7 @@ body{
   background-image: url(back.jpg);
 }
 
-.reg{
+.register_box{
 width: 900px;
 height: auto;
 background: rgb(12, 3, 0);
@@ -81,7 +81,7 @@ input[type=checkbox]{
   width: 18px;
 }
 
-.gen{
+.gender_style{
   float: right;
   margin: -4%;
 }
@@ -105,7 +105,7 @@ label {
   
 }
 
-.fs{
+.fieldset_style{
   border: none;
 }
 

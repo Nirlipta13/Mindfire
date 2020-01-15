@@ -2,53 +2,59 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Register</title>
-        <meta charset="UTF-8">
-        <meta name="author" content="John Doe">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="Advanced_registration_form.css"> 
-    </head>
-    <body>
-        <ul>
-            <li class="active"><a href="#">MINDFIRE SOLUTIONS</a></li>
-            <li class="navbar_li"><a  href="#">Register</a></li>
-        </ul>
-        <h1>CREATE AN ACCOUNT FOR FREE</h1>
-        <form>
-            <div class="reg">
-                <fieldset class="fs">
-                    <legend><h3>Personal Details</h3></legend>
-                    <label for="fname">First Name<span class="astreik_mark">*</span></label>
-                    <input type="text" name="fname" id="fname" required/><br/>
-                    <label for="lname">Last Name<span class="astreik_mark">*</span></label>
-                    <input type="text" name="lname" id="lname" required/><br/>
 
-                    <label for="email">Email<span class="astreik_mark">*</span></label>
-                    <input type="email" name="email" id="email" required/><br/>
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Advanced_registration_form.css">
+</head>
 
-                    <label for="pwd">Password<span class="astreik_mark">*</span></label>
-                    <input type="password" name="pwd" id="pwd" required/><br/>
-                    <label for="conpwd">Confirm Password<span class="astreik_mark">*</span></label>
-                    <input type="password" name="pwd" id="conpwd" required/><br/>
+<body>
+    <ul>
+        <li class="active"><a href="#">MINDFIRE SOLUTIONS</a></li>
+        <li class="navbar_li"><a href="#">Register</a></li>
+    </ul>
+    <h1>CREATE AN ACCOUNT FOR FREE</h1>
+    <form>
+        <div class="register_box">
+            <fieldset class="fieldset_style">
+                <legend>
+                    <h3>Personal Details</h3>
+                </legend>
+                <label for="fname">First Name<span class="astreik_mark">*</span></label>
+                <input type="text" name="fname" id="fname" required /><br />
+                <label for="lname">Last Name<span class="astreik_mark">*</span></label>
+                <input type="text" name="lname" id="lname" required /><br />
 
-                    <label for="gender">Gender<span class="astreik_mark">*</span></label>
-                    <div class="gen">
-                        <input type="radio" name="gender" id="gender" value="male" required/><label >Male</label><br/>
-                            <input type="radio" name="gender" id="gender" value="female" required/><label>Female</label><br/>
-                            <input type="radio" name="gender" id="gender" value="others" required/><label>Other</label><br/><br/>
-                    </div>
-                </fieldset>
-                
-                <p><span class="astreik_mark">*</span>Indicates Required</p>
-          
+                <label for="email">Email<span class="astreik_mark">*</span></label>
+                <input type="email" name="email" id="email" required /><br />
 
-            <fieldset class="fs">
-                <legend><h3>Contact Details</h3></legend>
+                <label for="pwd">Password<span class="astreik_mark">*</span></label>
+                <input type="password" name="pwd" id="pwd" required /><br />
+                <label for="conpwd">Confirm Password<span class="astreik_mark">*</span></label>
+                <input type="password" name="pwd" id="conpwd" required /><br />
+
+                <label for="gender">Gender<span class="astreik_mark">*</span></label>
+                <div class="gender_select">
+                    <input type="radio" name="gender" id="gender_male" value="male" required /><label for="gender_male">Male</label><br />
+                    <input type="radio" name="gender" id="gender_female" value="female" required /><label for="gender_female">Female</label fo="gender_female"><br />
+                    <input type="radio" name="gender" id="gender_other" value="others"
+                        required /><label for="gender_other">Other</label><br /><br />
+                </div>
+            </fieldset>
+
+            <p><span class="astreik_mark">*</span>Indicates Required</p>
+
+
+            <fieldset class="fieldset_style">
+                <legend>
+                    <h3>Contact Details</h3>
+                </legend>
                 <label for="phn1">Phone number<span class="astreik_mark">*</span></label>
-                <input type="text" name="phno" id="phn1" required/><br/>
+                <input type="text" name="phno" id="phn1" required /><br />
                 <label for="phn2"> Alternate Phone number</label>
-                <input type="text" name="phno1" id="phn2" /><br/>
+                <input type="text" name="phno1" id="phn2" /><br />
 
                 <label for="add1">Address<span class="astreik_mark">*</span></label>
                 <textarea id="add1" required placeholder="Address here..." type="text"></textarea><br><br>
@@ -56,63 +62,64 @@
                 <textarea id="add2" placeholder="Address here..." type="text"></textarea><br><br>
 
                 <label for="city">City<span class="astreik_mark">*</span></label>
-                <input type="text" name="fname" id="city" required/><br/>
-            
-            <label for="slist">Select State<span class="astreik_mark">*</span></label>   
-            <select name="slist" id="slist" required>
-                <option value="">---------Select State--------</option>
-                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-                <option value="Andhra Pradesh">Andhra Pradesh</option>
-                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                <option value="Assam">Assam</option>
-                <option value="Bihar">Bihar</option>
-                <option value="Chandigarh">Chandigarh</option>
-                <option value="Chhattisgarh">Chhattisgarh</option>
-                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                <option value="Daman and Diu">Daman and Diu</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Goa">Goa</option>
-                <option value="Gujarat">Gujarat</option>
-                <option value="Haryana">Haryana</option>
-                <option value="Himachal Pradesh">Himachal Pradesh</option>
-                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                <option value="Jharkhand">Jharkhand</option>
-                <option value="Karnataka">Karnataka</option>
-                <option value="Kerala">Kerala</option>
-                <option value="Lakshadweep">Lakshadweep</option>
-                <option value="Madhya Pradesh">Madhya Pradesh</option>
-                <option value="Maharashtra">Maharashtra</option>
-                <option value="Manipur">Manipur</option>
-                <option value="Meghalaya">Meghalaya</option>
-                <option value="Mizoram">Mizoram</option>
-                <option value="Nagaland">Nagaland</option>
-                <option value="Orissa">Orissa</option>
-                <option value="Pondicherry">Pondicherry</option>
-                <option value="Punjab">Punjab</option>
-                <option value="Rajasthan">Rajasthan</option>
-                <option value="Sikkim">Sikkim</option>
-                <option value="Tamil Nadu">Tamil Nadu</option>
-                <option value="Tripura">Tripura</option>
-                <option value="Uttaranchal">Uttaranchal</option>
-                <option value="Uttar Pradesh">Uttar Pradesh</option>
-                <option value="West Bengal">West Bengal</option>
-                <option value="Other">Other(Outside India)l</option>
+                <input type="text" name="city" id="city" required /><br />
+
+                <label for="slist">Select State<span class="astreik_mark">*</span></label>
+                <select name="slist" id="slist" required>
+                    <option value="">---------Select State--------</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Orissa">Orissa</option>
+                    <option value="Pondicherry">Pondicherry</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttaranchal">Uttaranchal</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                    <option value="Other">Other(Outside India)l</option>
                 </select><br>
-            <label for="clist">Select Country<span class="astreik_mark">*</span></label>
-            <select name="clist" id="clist" required>
-                <option value="">--------Select Country---------</option>
-                <option value="India">India</option>
-                <option value="Other">Other(Outside India)l</option>
+                <label for="clist">Select Country<span class="astreik_mark">*</span></label>
+                <select name="clist" id="clist" required>
+                    <option value="">--------Select Country---------</option>
+                    <option value="India">India</option>
+                    <option value="Other">Other(Outside India)l</option>
                 </select><br>
             </fieldset>
-            
-            <input type="checkbox"/><label>Subscribe Newsletter</label>
-            </div>
-       
-            <div>
-                <button class="btn">Submit</button>
-            </div>
-            
-        </form>
-    </body>
+
+            <input type="checkbox" /><label>Subscribe Newsletter</label>
+        </div>
+
+        <div>
+            <button class="btn">Submit</button>
+        </div>
+
+    </form>
+</body>
+
 </html>
