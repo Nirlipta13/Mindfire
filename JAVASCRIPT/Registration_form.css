@@ -40,7 +40,7 @@ body {
     background-image: url(back.jpg);
 }
 
-.register_box {
+.registrationBox {
     width: 900px;
     height: auto;
     background: rgb(12, 3, 0);
@@ -103,7 +103,7 @@ label {
     font-family: cursive;
 }
 
-.fieldset_style {
+.fieldset-style {
     border: none;
 }
 
@@ -131,16 +131,16 @@ h1 {
     margin-top: 53px;
 }
 
-.chk {
+.checkboxstyle {
     height: 15px;
     width: 15px;
 }
 
-.captcha_btn {
+.button-for-captcha {
     text-align: center;
 }
 
-.verify_btn {
+.verify-button {
     background-color: blanchedalmond;
     color: black;
     margin-left: 25px;
@@ -152,14 +152,14 @@ h1 {
     display: inline-table;
 }
 
-.captcha_p {
+.para-for-captcha {
     color: white;
     margin-left: 360px;
     font-family: cursive;
     font-weight: 300;
 }
 
-#submit_btn button {
+#submitButton button {
     background-color: olive;
     color: white;
     padding: 18px 30px;
@@ -175,11 +175,11 @@ h1 {
     opacity: 0.7;
 }
 
-#submit_btn button:hover {
+#submitButton button:hover {
     background-color: #45a049;
 }
 
-#user_result {
+#userResult {
     padding: 5px;
     margin-right: 360px;
     width: 20%;

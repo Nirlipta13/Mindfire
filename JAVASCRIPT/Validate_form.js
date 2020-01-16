@@ -1,14 +1,14 @@
-function submit_btn() {
-    var fname = document.forms["registration_form"]["fname"].value;
-    var lname = document.forms["registration_form"]["lname"].value;
-    var email = document.forms["registration_form"]["email"].value;
-    var pwd = document.forms["registration_form"]["pwd"].value;
-    var confirm_pwd = document.forms["registration_form"]["confirm_pwd"].value;
-    var phno = document.forms["registration_form"]["phno"].value;
-    var address = document.forms["registration_form"]["address"].value;
-    var city = document.forms["registration_form"]["city"].value;
-    var state = document.getElementById("slist").value;
-    var country = document.getElementById("clist").value;
+function submitValidate() {
+    var fname = document.forms["registrationForm"]["fname"].value;
+    var lname = document.forms["registrationForm"]["lname"].value;
+    var email = document.forms["registrationForm"]["email"].value;
+    var password = document.forms["registrationForm"]["password"].value;
+    var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+    var phoneNumber = document.forms["registrationForm"]["phoneNumber"].value;
+    var address = document.forms["registrationForm"]["address"].value;
+    var city = document.forms["registrationForm"]["city"].value;
+    var state = document.getElementById("stateList").value;
+    var country = document.getElementById("countryList").value;
     var select = document.getElementsByName("gender");
     var gender;
     for (var i = 0; i < select.length; i++) {
@@ -18,45 +18,45 @@ function submit_btn() {
 
     }
     //Checking for empty input
-    if (fname === "" || lname === "" || email === "" || pwd === "" || confirm_pwd === "" || gender === "" || phno === "" || address === "" || city === "" || state === "" || country === "") {
+    if (fname === "" || lname === "" || email === "" || password === "" || confirmPassword === "" || gender === "" || phoneNumber === "" || address === "" || city === "" || state === "" || country === "") {
         alert("Fill the fields indicated with star mark");
-        document.getElementById("submit_btn").innerHTML = "";
+        document.getElementById("submitButton").innerHTML = "";
     }
 
 
     //Email Validation
     var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-    if (!pattern.test(email) && email.length !== "") {
+    if (!pattern.test(email) && email.length > 0) {
         alert("please provide a valid email");
 
     }
 
     //Phone number validation
-    if (phno.length !== 10 && phno !== "") {
+    if (phoneNumber.length !== 10 && phoneNumber !== "") {
         alert("Enter valid 10-digit phone number");
-        document.getElementById("submit_btn").innerHTML = "";
+        document.getElementById("submitButton").innerHTML = "";
     }
 
     //Password length Validation
-    if (pwd.length != 6 && pwd !== "") {
+    if (password.length != 6 && password !== "") {
         alert("Password must be atleast 6 characters");
-        document.getElementById("submit_btn").innerHTML = "";
+        document.getElementById("submitButton").innerHTML = "";
     }
 
     //Password Match
-    if (pwd !== confirm_pwd) {
+    if (password !== confirmPassword) {
         alert("Password doesn't match. Re-type password correctly");
-        document.getElementById("submit_btn").innerHTML = "";
+        document.getElementById("submitButton").innerHTML = "";
     }
 
 }
 
-function captcha_generation() {
-    var op_arr = ["+", "-", "*", "/"];
-    var num1 = document.getElementById("num1");
-    var num2 = document.getElementById("num2");
-    var op = document.getElementById("op");
+function captchaGeneration() {
+    var operatorArray = ["+", "-", "*", "/"];
+    var num1 = document.getElementById("firstOperand");
+    var num2 = document.getElementById("secondOperand");
+    var operator = document.getElementById("operator");
     var no1 = Math.floor((Math.random() * 100) + 1);
     var no2 = Math.floor((Math.random() * 100) + 1);
     if (no1 > no2) {
@@ -68,44 +68,46 @@ function captcha_generation() {
         no1 = no2;
         no2 = no1;
     }
-    var opr = op_arr[Math.floor(Math.random() * 4)];
-    op.innerHTML = opr;
-    document.getElementById("user_result").value = "";
+    var opr = operatorArray[Math.floor(Math.random() * 4)];
+    operator.innerHTML = opr;
+    document.getElementById("userResult").value = "";
     document.getElementById("result").innerHTML = "";
-    document.getElementById("submit_btn").innerHTML = "";
+    document.getElementById("submitButton").innerHTML = "";
 }
 
-function captcha_verification() {
-    var no1 = Number(document.getElementById("num1").textContent);
-    var no2 = Number(document.getElementById("num2").textContent);
-    var opr = document.getElementById("op").textContent;
-    var expected_result;
+function captchaVerification() {
+    var no1 = Number(document.getElementById("firstOperand").textContent);
+    var no2 = Number(document.getElementById("secondOperand").textContent);
+    var opr = document.getElementById("operator").textContent;
+    var expectedResult;
     switch (opr) {
         case '+':
-            expected_result = no1 + no2;
+            expectedResult = no1 + no2;
             break;
         case '-':
-            expected_result = no1 - no2;
+            expectedResult = no1 - no2;
             break;
         case '*':
-            expected_result = no1 * no2;
+            expectedResult = no1 * no2;
             break;
         case '/':
-            expected_result = Math.round(no1 / no2);
+            expectedResult = Math.round(no1 / no2);
             break;
+        default:
+            alert("true");
     }
-    var user_result = Number(document.getElementById("user_result").value);
-    if (user_result === "") {
+    var userResult = Number(document.getElementById("userResult").value);
+    if (userResult === "") {
         alert("Fill the result");
     }
-    if (user_result !== "" && expected_result === user_result) {
+    if (userResult !== "" && expectedResult === userResult) {
         document.getElementById("result").innerHTML = "Hooray!! Its correct";
         var btn = document.createElement("button");
         btn.innerHTML = "SUBMIT";
-        document.getElementById("submit_btn").appendChild(btn);
-        btn.addEventListener('click', submit_btn);
+        document.getElementById("submitButton").appendChild(btn);
+        btn.addEventListener('click', submitButton);
     }
-    if (user_result !== "" && expected_result !== user_result) {
+    if (userResult !== "" && expectedResult !== userResult) {
         document.getElementById("result").innerHTML = "Oops!! Try again";
     }
 }
