@@ -119,8 +119,8 @@
             <p class="captcha_p"><span id="num1"></span><span id="op"></span><span id="num2"></span>=
                 <input type="text" id="user_result" placeholder="Enter Result" /></p>
             <div class="captcha_btn">
-                <button class="verify_btn" onclick="captcha_generation(); return false;">REFRESH</button>
-                <button class="verify_btn" onclick="captcha_verification(); submit_btn();return false;">VERIFY</button>
+                <button class="verify_btn" id="refresh_btn" onclick="captcha_generation(); return false;">REFRESH</button>
+                <button class="verify_btn" id="verify_btn" onclick="captcha_verification(); submit_btn();return false;">VERIFY</button>
             </div>
 
             <p class="captcha_p" id="result"></p>

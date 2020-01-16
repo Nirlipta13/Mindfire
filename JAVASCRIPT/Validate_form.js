@@ -27,7 +27,7 @@ function submit_btn() {
     //Email Validation
     var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
-    if (!pattern.test(email)) {
+    if (!pattern.test(email) && email.length !== "") {
         alert("please provide a valid email");
 
     }
