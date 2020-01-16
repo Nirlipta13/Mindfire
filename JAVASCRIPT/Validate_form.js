@@ -39,7 +39,7 @@ function submitValidate() {
     }
 
     //Password length Validation
-    if (password.length != 6 && password !== "") {
+    if (password.length < 6 && password !== "") {
         alert("Password must be atleast 6 characters");
         document.getElementById("submitButton").innerHTML = "";
     }

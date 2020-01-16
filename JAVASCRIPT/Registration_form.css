@@ -37,13 +37,13 @@ li a {
 
 body {
     margin: 0;
-    background-image: url(back.jpg);
+    background-image: url(background.jpg);
 }
 
 .registrationBox {
     width: 900px;
     height: auto;
-    background: rgb(12, 3, 0);
+    background: rgb(101, 51, 36);
     opacity: 0.7;
     column-count: 2;
     column-gap: 28px;
@@ -116,13 +116,13 @@ h1 {
     font-weight: bold;
     font-family: cursive;
     text-align: center;
-    color: #fff;
-    margin-top: 10px;
+    color: rgb(119, 48, 26);
+    margin-top: 21px;
     margin-bottom: -27px;
 }
 
 .captcha {
-    background-color: black;
+    background-color: rgb(101, 51, 36);
     opacity: 0.7;
     width: 900px;
     padding: 5px;
@@ -160,7 +160,7 @@ h1 {
 }
 
 #submitButton button {
-    background-color: olive;
+    background-color: #138e19;
     color: white;
     padding: 18px 30px;
     width: 50%;

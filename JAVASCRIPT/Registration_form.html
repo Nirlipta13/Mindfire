@@ -22,23 +22,23 @@
                     <h3>Personal Details</h3>
                 </legend>
                 <label for="fname">First Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="fname" id="fname" required placeholder="e.g, Nirlipta" /><br />
+                <input type="text" name="fname" id="fname" placeholder="First Name" /><br />
                 <label for="lname">Last Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="lname" id="lname" required placeholder="e.g, Das" /><br />
+                <input type="text" name="lname" id="lname" placeholder="Last Name" /><br />
 
                 <label for="email">Email<span class="astreik_mark">*</span></label>
-                <input type="text" name="email" id="email" required placeholder="e.g, xyz@org.com" /><br />
+                <input type="text" name="email" id="email" placeholder="Valid Email-Id" /><br />
 
                 <label for="password">Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="password" id="password" required placeholder="Atleast 6 characters" /><br />
+                <input type="password" name="password" id="password" placeholder="Atleast 6 characters" /><br />
                 <label for="confirmPassword">Confirm Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="Confirm" /><br />
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-type Password" /><br />
 
                 <label for="gender">Gender<span class="astreik_mark">*</span></label>
                 <div class="gender_select">
-                    <input type="radio" name="gender" id="gender_male" value="male" required/><label for="gender_male">Male</label><br />
-                    <input type="radio" name="gender" id="gender_female" value="female" required/><label for="gender_female">Female</label><br />
-                    <input type="radio" name="gender" id="gender_other" value="others" required/><label for="gender_other">Other</label><br /><br />
+                    <input type="radio" name="gender" id="gender_male" value="male" /><label for="gender_male">Male</label><br />
+                    <input type="radio" name="gender" id="gender_female" value="female" /><label for="gender_female">Female</label><br />
+                    <input type="radio" name="gender" id="gender_other" value="others" /><label for="gender_other">Other</label><br /><br />
                 </div>
             </fieldset>
 
@@ -50,20 +50,20 @@
                     <h3>Contact Details</h3>
                 </legend>
                 <label for="phoneNumber">Phone number<span class="astreik_mark">*</span></label>
-                <input type="text" name="phoneNumber" id="phoneNumber" required placeholder="xxxxxx987" /><br />
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxx987" /><br />
                 <label for="alternatePhoneNumber"> Alternate Phone number</label>
                 <input type="text" name="alternatePhoneNumber" id="alternatePhoneNumber" placeholder="xxxxxxx897" /><br />
 
                 <label for="address">Address<span class="astreik_mark">*</span></label>
-                <textarea name="address" id="address" required placeholder="Address here..." type="text"></textarea><br><br>
+                <textarea name="address" id="address" placeholder="Address here..." type="text"></textarea><br><br>
                 <label for="alternateAddress">Alternate Address</label>
                 <textarea name="alternateAddress" id="alternateAddress" placeholder="Address here..." type="text"></textarea><br><br>
 
                 <label for="city">City<span class="astreik_mark">*</span></label>
-                <input type="text" name="city" id="city" required placeholder="e.g, BBSR" /><br />
+                <input type="text" name="city" id="city" placeholder="City" /><br />
 
                 <label for="stateList">Select State<span class="astreik_mark">*</span></label>
-                <select name="stateList" id="stateList" required>
+                <select name="stateList" id="stateList">
                     <option value="">-----Select State-----</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -103,14 +103,14 @@
                     <option value="Other">Other(Outside India)l</option>
                 </select><br>
                 <label for="countryList">Select Country<span class="astreik_mark">*</span></label>
-                <select name="countryList" id="countryList" required>
+                <select name="countryList" id="countryList">
                     <option value="">-----Select Country-----</option>
                     <option value="India">India</option>
                     <option value="Other">Other(Outside India)l</option>
                 </select><br>
             </fieldset>
 
-            <input type="checkbox" class="checkboxstyle" /><label>Subscribe Newsletter</label>
+            <input type="checkbox" class="checkboxstyle" id="check" /><label for="check">Subscribe Newsletter</label>
         </div>
 
         <div class="captcha">
