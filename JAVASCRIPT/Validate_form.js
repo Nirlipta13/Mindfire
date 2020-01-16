@@ -11,28 +11,49 @@ function submit_btn() {
     var country = document.getElementById("clist").value;
     var select = document.getElementsByName("gender");
     var gender;
-    for (i = 0; i < select.length; i++) {
+    for (var i = 0; i < select.length; i++) {
         if (select[i].checked) {
             gender = select[i].value;
         }
 
     }
-
+    //Checking for empty input
     if (fname === "" || lname === "" || email === "" || pwd === "" || confirm_pwd === "" || gender === "" || phno === "" || address === "" || city === "" || state === "" || country === "") {
         alert("Fill the fields indicated with star mark");
+        document.getElementById("submit_btn").innerHTML = "";
     }
 
+
+    //Email Validation
+    var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+    if (!pattern.test(email)) {
+        alert("please provide a valid email");
+
+    }
+
+    //Phone number validation
+    if (phno.length !== 10 && phno !== "") {
+        alert("Enter valid 10-digit phone number");
+        document.getElementById("submit_btn").innerHTML = "";
+    }
+
+    //Password length Validation
+    if (pwd.length != 6 && pwd !== "") {
+        alert("Password must be atleast 6 characters");
+        document.getElementById("submit_btn").innerHTML = "";
+    }
+
+    //Password Match
     if (pwd !== confirm_pwd) {
         alert("Password doesn't match. Re-type password correctly");
+        document.getElementById("submit_btn").innerHTML = "";
     }
-
-    console.log(gender);
-
 
 }
 
 function captcha_generation() {
-    var op_arr = ['+', '-', '*', '/'];
+    var op_arr = ["+", "-", "*", "/"];
     var num1 = document.getElementById("num1");
     var num2 = document.getElementById("num2");
     var op = document.getElementById("op");
@@ -51,6 +72,7 @@ function captcha_generation() {
     op.innerHTML = opr;
     document.getElementById("user_result").value = "";
     document.getElementById("result").innerHTML = "";
+    document.getElementById("submit_btn").innerHTML = "";
 }
 
 function captcha_verification() {
@@ -73,20 +95,17 @@ function captcha_verification() {
             break;
     }
     var user_result = Number(document.getElementById("user_result").value);
-    if (expected_result === user_result) {
+    if (user_result === "") {
+        alert("Fill the result");
+    }
+    if (user_result !== "" && expected_result === user_result) {
         document.getElementById("result").innerHTML = "Hooray!! Its correct";
-        /* var btn = document.createElement("BUTTON");
-         btn.innerHTML = "SUBMIT";
-         //btn.className = Verify_refresh;
-         document.getElementById("result").appendChild(btn);
-         /*btn.onclick = "captcha_generation(); return false;"*/
-
-    } else {
+        var btn = document.createElement("button");
+        btn.innerHTML = "SUBMIT";
+        document.getElementById("submit_btn").appendChild(btn);
+        btn.addEventListener('click', submit_btn);
+    }
+    if (user_result !== "" && expected_result !== user_result) {
         document.getElementById("result").innerHTML = "Oops!! Try again";
-        /* var btn = document.createElement("button");
-         btn.innerHTML = "REFRESH";
-         btn.className = Verify_refresh;
-         document.getElementById("result").appendChild(btn);
-         btn.onclick = "captcha_generation(); return false;";*/
     }
 }

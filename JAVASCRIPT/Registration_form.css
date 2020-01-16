@@ -35,10 +35,6 @@ li a {
     font-weight: 300;
 }
 
-li a:hover:not(.active) {
-    background-color: darkgray;
-}
-
 body {
     margin: 0;
     background-image: url(back.jpg);
@@ -135,27 +131,6 @@ h1 {
     margin-top: 53px;
 }
 
-.btn {
-    background-color: olive;
-    color: white;
-    padding: 18px 30px;
-    width: 30%;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 33%;
-    margin-right: 22%;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 400;
-    font-family: cursive;
-    opacity: 0.7;
-}
-
-.btn:hover {
-    background-color: #45a049;
-}
-
 .chk {
     height: 15px;
     width: 15px;
@@ -182,6 +157,26 @@ h1 {
     margin-left: 360px;
     font-family: cursive;
     font-weight: 300;
+}
+
+#submit_btn button {
+    background-color: olive;
+    color: white;
+    padding: 18px 30px;
+    width: 50%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 27%;
+    margin-right: 22%;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-family: cursive;
+    opacity: 0.7;
+}
+
+#submit_btn button:hover {
+    background-color: #45a049;
 }
 
 #user_result {

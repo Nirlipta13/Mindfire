@@ -22,19 +22,19 @@
                     <h3>Personal Details</h3>
                 </legend>
                 <label for="fname">First Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="fname" id="fname" required /><br />
+                <input type="text" name="fname" id="fname" required placeholder="e.g, Nirlipta" /><br />
                 <label for="lname">Last Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="lname" id="lname" required /><br />
+                <input type="text" name="lname" id="lname" required placeholder="e.g, Das" /><br />
 
                 <label for="email">Email<span class="astreik_mark">*</span></label>
-                <input type="email" name="email" id="email" required /><br />
+                <input type="email" name="email" id="email" required placeholder="e.g, xyz@org.com" /><br />
 
                 <label for="pwd">Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="pwd" id="pwd" required /><br />
+                <input type="password" name="pwd" id="pwd" required placeholder="Atleast 6 characters" /><br />
                 <label for="conpwd">Confirm Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="confirm_pwd" id="conpwd" required /><br />
+                <input type="password" name="confirm_pwd" id="conpwd" required placeholder="Confirm" /><br />
 
-                <label for="gender">Gender<span class="astriek_mark">*</span></label>
+                <label for="gender">Gender<span class="astreik_mark">*</span></label>
                 <div class="gender_select">
                     <input type="radio" name="gender" id="gender_male" value="male" required/><label for="gender_male">Male</label><br />
                     <input type="radio" name="gender" id="gender_female" value="female" required/><label for="gender_female">Female</label fo="gender_female"><br />
@@ -51,9 +51,9 @@
                     <h3>Contact Details</h3>
                 </legend>
                 <label for="phn1">Phone number<span class="astreik_mark">*</span></label>
-                <input type="text" name="phno" id="phn1" required /><br />
+                <input type="text" name="phno" id="phn1" required placeholder="xxxxxx987" /><br />
                 <label for="phn2"> Alternate Phone number</label>
-                <input type="text" name="phno1" id="phn2" /><br />
+                <input type="text" name="phno1" id="phn2" placeholder="xxxxxxx897" /><br />
 
                 <label for="add1">Address<span class="astreik_mark">*</span></label>
                 <textarea name="address" id="add1" required placeholder="Address here..." type="text"></textarea><br><br>
@@ -61,7 +61,7 @@
                 <textarea name="alt_address" id="add2" placeholder="Address here..." type="text"></textarea><br><br>
 
                 <label for="city">City<span class="astreik_mark">*</span></label>
-                <input type="text" name="city" id="city" required /><br />
+                <input type="text" name="city" id="city" required placeholder="e.g, BBSR" /><br />
 
                 <label for="slist">Select State<span class="astreik_mark">*</span></label>
                 <select name="slist" id="slist" required>
@@ -116,22 +116,17 @@
 
         <div class="captcha">
             <h3>Verify the captcha below to proceed</h3>
-            <!-- <button class="captcha_btn" onclick="captcha_generation()">Generate Captcha</button> -->
             <p class="captcha_p"><span id="num1"></span><span id="op"></span><span id="num2"></span>=
-                <input type="text" id="user_result" /></p>
+                <input type="text" id="user_result" placeholder="Enter Result" /></p>
             <div class="captcha_btn">
                 <button class="verify_btn" onclick="captcha_generation(); return false;">REFRESH</button>
-                <button class="verify_btn" onclick="captcha_verification(); return false;">VERIFY</button>
+                <button class="verify_btn" onclick="captcha_verification(); submit_btn();return false;">VERIFY</button>
             </div>
 
             <p class="captcha_p" id="result"></p>
+            <div id="submit_btn"></div>
         </div>
 
-        <!--
-        <div>
-            <button class="btn" onclick="submit_btn()">Submit</button>
-        </div>
-        -->
     </form>
 
     <script src="Validate_form.js"></script>
