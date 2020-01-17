@@ -5,7 +5,7 @@
     <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="registration_form.css">
+    <link rel="stylesheet" type="text/css" href="Registration_form.css">
 
 </head>
 
@@ -17,52 +17,66 @@
     <h1>CREATE AN ACCOUNT FOR FREE</h1>
     <form name="registrationForm">
         <div class="registrationBox">
+
             <fieldset class="fieldset-style">
                 <legend>
                     <h3>Personal Details</h3>
                 </legend>
-                <label for="fname">First Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="fname" id="fname" placeholder="First Name" /><br />
-                <label for="lname">Last Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="lname" id="lname" placeholder="Last Name" /><br />
+                <label for="fname">First Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="fname" id="fname" placeholder="First Name" />
+                <p id="errorFname" class="error-inline"></p>
 
-                <label for="email">Email<span class="astreik_mark">*</span></label>
-                <input type="text" name="email" id="email" placeholder="Valid Email-Id" /><br />
+                <label for="lname">Last Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="lname" id="lname" placeholder="Last Name" />
+                <p id="errorLname" class="error-inline"></p>
 
-                <label for="password">Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="password" id="password" placeholder="Atleast 6 characters" /><br />
-                <label for="confirmPassword">Confirm Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-type Password" /><br />
+                <label for="email">Email<span class="astreik-mark">*</span></label>
+                <input type="text" name="email" id="email" placeholder="Valid Email-Id" />
+                <p id="errorEmail" class="error-inline"></p>
 
-                <label for="gender">Gender<span class="astreik_mark">*</span></label>
+                <label for="password">Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="password" id="password" placeholder="Atleast 6 characters" />
+                <p id="errorPassword" class="error-inline"></p>
+
+                <label for="confirmPassword">Confirm Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-type Password" />
+                <p id="errorConfirmPassword" class="error-inline"></p>
+
+                <label for="gender">Gender<span class="astreik-mark">*</span></label>
                 <div class="gender_select">
-                    <input type="radio" name="gender" id="gender_male" value="male" /><label for="gender_male">Male</label><br />
-                    <input type="radio" name="gender" id="gender_female" value="female" /><label for="gender_female">Female</label><br />
-                    <input type="radio" name="gender" id="gender_other" value="others" /><label for="gender_other">Other</label><br /><br />
+                    <input type="radio" name="gender" id="gender_male" value="male" /><label for="gender_male">Male</label>
+                    <input type="radio" name="gender" id="gender_female" value="female" /><label for="gender_female">Female</label>
+                    <input type="radio" name="gender" id="gender_other" value="other" /><label for="gender_female">Other</label>
                 </div>
+
             </fieldset>
 
-            <p><span class="astreik_mark">*</span>Indicates Required</p>
+            <p><span class="astreik-mark">*</span>Indicates Required</p>
 
 
             <fieldset class="fieldset-style">
                 <legend>
                     <h3>Contact Details</h3>
                 </legend>
-                <label for="phoneNumber">Phone number<span class="astreik_mark">*</span></label>
-                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxx987" /><br />
-                <label for="alternatePhoneNumber"> Alternate Phone number</label>
-                <input type="text" name="alternatePhoneNumber" id="alternatePhoneNumber" placeholder="xxxxxxx897" /><br />
+                <label for="phoneNumber">Phone number1<span class="astreik-mark">*</span></label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxx987" />
+                <p id="errorPhoneNumber" class="error-inline"></p>
 
-                <label for="address">Address<span class="astreik_mark">*</span></label>
-                <textarea name="address" id="address" placeholder="Address here..." type="text"></textarea><br><br>
-                <label for="alternateAddress">Alternate Address</label>
-                <textarea name="alternateAddress" id="alternateAddress" placeholder="Address here..." type="text"></textarea><br><br>
+                <label for="alternatePhoneNumber"> Phone number2</label>
+                <input type="text" name="alternatePhoneNumber" id="alternatePhoneNumber" placeholder="xxxxxxx897" />
 
-                <label for="city">City<span class="astreik_mark">*</span></label>
-                <input type="text" name="city" id="city" placeholder="City" /><br />
+                <label for="address">Address<span class="astreik-mark">*</span></label>
+                <textarea name="address" id="address" placeholder="Address here..." type="text"></textarea>
+                <p id="errorAddress" class="error-inline"></p>
 
-                <label for="stateList">Select State<span class="astreik_mark">*</span></label>
+                <label for="alternateAddress">Alt Address</label>
+                <textarea name="alternateAddress" id="alternateAddress" placeholder="Address here..." type="text"></textarea>
+
+                <label for="city">City<span class="astreik-mark">*</span></label>
+                <input type="text" name="city" id="city" placeholder="City" />
+                <p id="errorCity" class="error-inline"></p>
+
+                <label for="stateList">Select State<span class="astreik-mark">*</span></label>
                 <select name="stateList" id="stateList">
                     <option value="">-----Select State-----</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -101,25 +115,27 @@
                     <option value="Uttar Pradesh">Uttar Pradesh</option>
                     <option value="West Bengal">West Bengal</option>
                     <option value="Other">Other(Outside India)l</option>
-                </select><br>
-                <label for="countryList">Select Country<span class="astreik_mark">*</span></label>
+                </select>
+                <label for="countryList">Select Country<span class="astreik-mark">*</span></label>
                 <select name="countryList" id="countryList">
                     <option value="">-----Select Country-----</option>
                     <option value="India">India</option>
                     <option value="Other">Other(Outside India)l</option>
-                </select><br>
+                </select>
             </fieldset>
 
-            <input type="checkbox" class="checkboxstyle" id="check" /><label for="check">Subscribe Newsletter</label>
+            <input type="checkbox" class="checkbox-style" id="check" /><label for="check">Subscribe Newsletter</label>
         </div>
+
 
         <div class="captcha">
             <h3>Verify the captcha below to proceed</h3>
             <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
                 <input type="text" id="userResult" placeholder="Enter Result" /></p>
+            <p class="captcha-error" id="errorCaptcha"></p>
             <div class="button-for-captcha">
                 <button class="verify-button" id="refreshButton" onclick="captchaGeneration(); return false;">REFRESH</button>
-                <button class="verify-button" id="verifyButton" onclick="captchaVerification(); submitValidate();return false;">VERIFY</button>
+                <button class="verify-button" id="verifyButton" onclick="captchaVerification(); submitValidate(); return false; ">VERIFY</button>
             </div>
 
             <p class="para-for-captcha" id="result"></p>

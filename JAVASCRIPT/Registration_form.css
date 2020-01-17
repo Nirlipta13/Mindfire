@@ -43,8 +43,8 @@ body {
 .registrationBox {
     width: 900px;
     height: auto;
-    background: rgb(101, 51, 36);
-    opacity: 0.7;
+    background: rgb(70, 59, 56);
+    opacity: 0.95;
     column-count: 2;
     column-gap: 28px;
     color: #fff;
@@ -54,10 +54,9 @@ body {
     padding-right: 24px;
     padding-left: 24px;
     transform: translate(25%, 10%);
-    position: relative;
 }
 
-.astreik_mark {
+.astreik-mark {
     color: red;
 }
 
@@ -80,6 +79,7 @@ input[type=checkbox] {
 
 .gender_select {
     float: right;
+    margin-left: -2px;
 }
 
 h3 {
@@ -94,6 +94,7 @@ textarea {
     float: right;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-left: 40px;
 }
 
 label {
@@ -101,6 +102,7 @@ label {
     display: inline-block;
     font-weight: 300;
     font-family: cursive;
+    margin-left: 39px;
 }
 
 .fieldset-style {
@@ -110,6 +112,7 @@ label {
 input[type=radio] {
     width: 20px;
     height: 20px;
+    margin-right: -30px;
 }
 
 h1 {
@@ -122,18 +125,20 @@ h1 {
 }
 
 .captcha {
-    background-color: rgb(101, 51, 36);
-    opacity: 0.7;
+    background-color: rgb(70, 59, 56);
+    opacity: 0.95;
     width: 900px;
+    height: auto;
     padding: 5px;
     margin: 54px;
     margin-left: 225px;
-    margin-top: 53px;
+    margin-top: 65px;
 }
 
-.checkboxstyle {
+.checkbox-style {
     height: 15px;
     width: 15px;
+    margin-right: -20px;
 }
 
 .button-for-captcha {
@@ -187,4 +192,13 @@ h1 {
 
 p #result {
     margin-left: 382px;
+}
+
+.error-inline {
+    margin-left: 210px;
+    margin-top: -18px;
+    font-size: 15px;
+    color: #ce0808;
+    font-family: cursive;
+    font-weight: 900;
 }

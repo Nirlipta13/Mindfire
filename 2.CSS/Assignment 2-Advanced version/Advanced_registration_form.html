@@ -1,5 +1,3 @@
-<!-- Using the previous registration page code, enhance it by creating extenal css file -->
-
 <!DOCTYPE html>
 <html>
 
@@ -8,65 +6,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Advanced_registration_form.css">
+
 </head>
 
 <body>
     <ul>
-        <li class="active"><a href="#">MINDFIRE SOLUTIONS</a></li>
-        <li class="navbar_li"><a href="#">Register</a></li>
+        <li><a href="#">MINDFIRE SOLUTIONS</a></li>
+        <li class="navbar_li"><a href="#">REGISTER</a></li>
     </ul>
     <h1>CREATE AN ACCOUNT FOR FREE</h1>
-    <form>
-        <div class="register_box">
-            <fieldset class="fieldset_style">
+    <form name="registrationForm">
+        <div class="registrationBox">
+
+            <fieldset class="fieldset-style">
                 <legend>
                     <h3>Personal Details</h3>
                 </legend>
-                <label for="fname">First Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="fname" id="fname" required /><br />
-                <label for="lname">Last Name<span class="astreik_mark">*</span></label>
-                <input type="text" name="lname" id="lname" required /><br />
+                <label for="fname">First Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="fname" id="fname" placeholder="First Name" required/>
+                <p id="errorFname" class="error-inline"></p>
+                <label for="lname">Last Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="lname" id="lname" placeholder="Last Name" required/>
 
-                <label for="email">Email<span class="astreik_mark">*</span></label>
-                <input type="email" name="email" id="email" required /><br />
+                <label for="email">Email<span class="astreik-mark">*</span></label>
+                <input type="text" name="email" id="email" placeholder="Valid Email-Id" required/>
+                <label for="password">Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="password" id="password" placeholder="Atleast 6 characters" required/>
+                <label for="confirmPassword">Confirm Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-type Password" required/>
 
-                <label for="pwd">Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="pwd" id="pwd" required /><br />
-                <label for="conpwd">Confirm Password<span class="astreik_mark">*</span></label>
-                <input type="password" name="pwd" id="conpwd" required /><br />
-
-                <label for="gender">Gender<span class="astreik_mark">*</span></label>
+                <label for="gender">Gender<span class="astreik-mark">*</span></label>
                 <div class="gender_select">
-                    <input type="radio" name="gender" id="gender_male" value="male" required /><label for="gender_male">Male</label><br />
-                    <input type="radio" name="gender" id="gender_female" value="female" required /><label for="gender_female">Female</label fo="gender_female"><br />
-                    <input type="radio" name="gender" id="gender_other" value="others"
-                        required /><label for="gender_other">Other</label><br /><br />
+                    <input type="radio" name="gender" id="gender_male" value="male" required/><label for="gender_male">Male</label>
+                    <input type="radio" name="gender" id="gender_female" value="female" required/><label for="gender_female">Female</label>
+                    <input type="radio" name="gender" id="gender_other" value="other" /><label for="gender_female">Other</label>
                 </div>
             </fieldset>
 
-            <p><span class="astreik_mark">*</span>Indicates Required</p>
+            <p><span class="astreik-mark">*</span>Indicates Required</p>
 
 
-            <fieldset class="fieldset_style">
+            <fieldset class="fieldset-style">
                 <legend>
                     <h3>Contact Details</h3>
                 </legend>
-                <label for="phn1">Phone number<span class="astreik_mark">*</span></label>
-                <input type="text" name="phno" id="phn1" required /><br />
-                <label for="phn2"> Alternate Phone number</label>
-                <input type="text" name="phno1" id="phn2" /><br />
+                <label for="phoneNumber">Phone number1<span class="astreik-mark">*</span></label>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxx987" required/>
+                <label for="alternatePhoneNumber"> Phone number2</label>
+                <input type="text" name="alternatePhoneNumber" id="alternatePhoneNumber" placeholder="xxxxxxx897" />
 
-                <label for="add1">Address<span class="astreik_mark">*</span></label>
-                <textarea id="add1" required placeholder="Address here..." type="text"></textarea><br><br>
-                <label for="add2">Alternate Address</label>
-                <textarea id="add2" placeholder="Address here..." type="text"></textarea><br><br>
+                <label for="address">Address<span class="astreik-mark">*</span></label>
+                <textarea name="address" id="address" placeholder="Address here..." type="text" required></textarea>
+                <label for="alternateAddress">Alt Address</label>
+                <textarea name="alternateAddress" id="alternateAddress" placeholder="Address here..." type="text"></textarea>
 
-                <label for="city">City<span class="astreik_mark">*</span></label>
-                <input type="text" name="city" id="city" required /><br />
+                <label for="city">City<span class="astreik-mark">*</span></label>
+                <input type="text" name="city" id="city" placeholder="City" required/>
 
-                <label for="slist">Select State<span class="astreik_mark">*</span></label>
-                <select name="slist" id="slist" required>
-                    <option value="">---------Select State--------</option>
+                <label for="stateList">Select State<span class="astreik-mark">*</span></label>
+                <select name="stateList" id="stateList" required>
+                    <option value="">-----Select State-----</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -103,23 +102,28 @@
                     <option value="Uttar Pradesh">Uttar Pradesh</option>
                     <option value="West Bengal">West Bengal</option>
                     <option value="Other">Other(Outside India)l</option>
-                </select><br>
-                <label for="clist">Select Country<span class="astreik_mark">*</span></label>
-                <select name="clist" id="clist" required>
-                    <option value="">--------Select Country---------</option>
+                </select>
+                <label for="countryList">Select Country<span class="astreik-mark">*</span></label>
+                <select name="countryList" id="countryList" required>
+                    <option value="">-----Select Country-----</option>
                     <option value="India">India</option>
                     <option value="Other">Other(Outside India)l</option>
-                </select><br>
+                </select>
             </fieldset>
 
-            <input type="checkbox" /><label>Subscribe Newsletter</label>
+            <input type="checkbox" class="checkbox-style" id="check" /><label for="check">Subscribe Newsletter</label>
+        </div>
+        <div>
+            <button class="submit-button">Submit</button>
+
         </div>
 
-        <div>
-            <button class="btn">Submit</button>
-        </div>
+
 
     </form>
+
+
+
 </body>
 
 </html>
