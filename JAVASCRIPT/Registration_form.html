@@ -5,78 +5,80 @@
     <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Registration_form.css">
 
 </head>
 
 <body onload="captchaGeneration()">
-    <ul>
-        <li><a href="#">MINDFIRE SOLUTIONS</a></li>
-        <li class="navbar_li"><a href="#">REGISTER</a></li>
+    <ul class="navbar-ul">
+        <li class="navbar-li"><a href="#">MINDFIRE SOLUTIONS</a></li>
+        <li class="navbar-li-right"><a href="#">REGISTER</a></li>
     </ul>
-    <h1>CREATE AN ACCOUNT FOR FREE</h1>
+    <h1 class="heading-h1">CREATE AN ACCOUNT FOR FREE</h1>
     <form name="registrationForm">
         <div class="registrationBox">
 
             <fieldset class="fieldset-style">
                 <legend>
-                    <h3>Personal Details</h3>
+                    <h3 class="heading-h3">Personal Details</h3>
                 </legend>
-                <label for="fname">First Name<span class="astreik-mark">*</span></label>
-                <input type="text" name="fname" id="fname" placeholder="First Name" />
+                <label class="label-for-field" for="txtFname">First Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="txtFname" id="txtFname" placeholder="First Name" />
                 <p id="errorFname" class="error-inline"></p>
 
-                <label for="lname">Last Name<span class="astreik-mark">*</span></label>
-                <input type="text" name="lname" id="lname" placeholder="Last Name" />
+                <label class="label-for-field" for="txtLname">Last Name<span class="astreik-mark">*</span></label>
+                <input type="text" name="txtLname" id="txtLname" placeholder="Last Name" />
                 <p id="errorLname" class="error-inline"></p>
 
-                <label for="email">Email<span class="astreik-mark">*</span></label>
-                <input type="text" name="email" id="email" placeholder="Valid Email-Id" />
+                <label class="label-for-field" for="txtEmail">Email<span class="astreik-mark">*</span></label>
+                <input type="text" name="txtEmail" id="txtEmail" placeholder="Valid Email-Id" />
                 <p id="errorEmail" class="error-inline"></p>
 
-                <label for="password">Password<span class="astreik-mark">*</span></label>
-                <input type="password" name="password" id="password" placeholder="Atleast 6 characters" />
+                <label class="label-for-field" for="txtPassword">Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="txtPassword" id="txtPassword" placeholder="Atleast 6 characters" />
                 <p id="errorPassword" class="error-inline"></p>
 
-                <label for="confirmPassword">Confirm Password<span class="astreik-mark">*</span></label>
-                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-type Password" />
+                <label class="label-for-field" for="txtConfirmPassword">Confirm Password<span class="astreik-mark">*</span></label>
+                <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Re-type Password" />
                 <p id="errorConfirmPassword" class="error-inline"></p>
 
-                <label for="gender">Gender<span class="astreik-mark">*</span></label>
-                <div class="gender_select">
-                    <input type="radio" name="gender" id="gender_male" value="male" /><label for="gender_male">Male</label>
-                    <input type="radio" name="gender" id="gender_female" value="female" /><label for="gender_female">Female</label>
-                    <input type="radio" name="gender" id="gender_other" value="other" /><label for="gender_female">Other</label>
+                <label class="label-for-field" for="gender">Gender<span class="astreik-mark">*</span></label>
+                <div class="gender-select">
+                    <input type="radio" name="gender" id="genderMale" value="male" /><label for="genderMale" class="lbl-gender">Male</label>
+                    <input type="radio" name="gender" id="genderFemale" value="female" /><label for="genderFemale" class="lbl-gender">Female</label>
+                    <input type="radio" name="gender" id="genderOther" value="other" /><label for="genderFemale" class="lbl-gender">Other</label>
                 </div>
+                <p id="errorGender" class="error-inline"></p>
 
             </fieldset>
 
-            <p><span class="astreik-mark">*</span>Indicates Required</p>
+            <p id="pRequired"><span class="astreik-mark">*</span>Indicates Required</p>
 
 
             <fieldset class="fieldset-style">
-                <legend>
-                    <h3>Contact Details</h3>
+                <legend id="lgdContactDetails">
+                    <h3 class="heading-h3">Contact Details</h3>
                 </legend>
-                <label for="phoneNumber">Phone number1<span class="astreik-mark">*</span></label>
-                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxxxxx987" />
+                <label class="label-for-field" for="txtPhoneNumber">Phone number1<span class="astreik-mark">*</span></label>
+                <input type="text" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="xxxxxx987" />
                 <p id="errorPhoneNumber" class="error-inline"></p>
 
-                <label for="alternatePhoneNumber"> Phone number2</label>
-                <input type="text" name="alternatePhoneNumber" id="alternatePhoneNumber" placeholder="xxxxxxx897" />
+                <label class="label-for-field" for="txtAlternatePhoneNumber"> Phone number2</label>
+                <input type="text" name="txtAlternatePhoneNumber" id="txtAlternatePhoneNumber" placeholder="xxxxxxx897" />
+                <p id="errorAlternatePhoneNumber" class="error-inline"></p>
 
-                <label for="address">Address<span class="astreik-mark">*</span></label>
-                <textarea name="address" id="address" placeholder="Address here..." type="text"></textarea>
+                <label class="label-for-field" for="txtAddress">Address<span class="astreik-mark">*</span></label>
+                <textarea name="txtAddress" id="txtAddress" placeholder="Address here..." type="text"></textarea>
                 <p id="errorAddress" class="error-inline"></p>
 
-                <label for="alternateAddress">Alt Address</label>
-                <textarea name="alternateAddress" id="alternateAddress" placeholder="Address here..." type="text"></textarea>
-
-                <label for="city">City<span class="astreik-mark">*</span></label>
-                <input type="text" name="city" id="city" placeholder="City" />
+                <label class="label-for-field" for="txtCity">City<span class="astreik-mark">*</span></label>
+                <input type="text" name="txtCity" id="txtCity" placeholder="City" />
                 <p id="errorCity" class="error-inline"></p>
 
-                <label for="stateList">Select State<span class="astreik-mark">*</span></label>
+                <label class="label-for-field" for="stateList">Select State<span class="astreik-mark">*</span></label>
                 <select name="stateList" id="stateList">
                     <option value="">-----Select State-----</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -116,23 +118,24 @@
                     <option value="West Bengal">West Bengal</option>
                     <option value="Other">Other(Outside India)l</option>
                 </select>
-                <label for="countryList">Select Country<span class="astreik-mark">*</span></label>
+                <p id="errorState" class="error-inline"></p>
+                <label class="label-for-field" for="countryList">Select Country<span class="astreik-mark">*</span></label>
                 <select name="countryList" id="countryList">
                     <option value="">-----Select Country-----</option>
                     <option value="India">India</option>
-                    <option value="Other">Other(Outside India)l</option>
+                    <option value="Other">Other(Outside India)</option>
                 </select>
+                <p id="errorCountry" class="error-inline"></p>
             </fieldset>
 
-            <input type="checkbox" class="checkbox-style" id="check" /><label for="check">Subscribe Newsletter</label>
+            <input type="checkbox" class="checkbox-style" id="check" /><label for="check" class="lbl-checkbox">Subscribe Newsletter</label>
         </div>
 
 
         <div class="captcha">
-            <h3>Verify the captcha below to proceed</h3>
+            <h3 class="heading-h3">Verify the captcha below to proceed</h3>
             <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
                 <input type="text" id="userResult" placeholder="Enter Result" /></p>
-            <p class="captcha-error" id="errorCaptcha"></p>
             <div class="button-for-captcha">
                 <button class="verify-button" id="refreshButton" onclick="captchaGeneration(); return false;">REFRESH</button>
                 <button class="verify-button" id="verifyButton" onclick="captchaVerification(); submitValidate(); return false; ">VERIFY</button>
