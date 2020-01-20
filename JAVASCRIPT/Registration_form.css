@@ -70,10 +70,7 @@ body {
     font-size: 14px;
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-select {
+.txt-input-field {
     width: 50%;
     padding: 5px;
     border: 1px solid black;

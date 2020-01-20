@@ -26,23 +26,23 @@
                     <h3 class="heading-h3">Personal Details</h3>
                 </legend>
                 <label class="label-for-field" for="txtFname">First Name<span class="astreik-mark">*</span></label>
-                <input type="text" name="txtFname" id="txtFname" placeholder="First Name" />
+                <input type="text" name="txtFname" id="txtFname" class="txt-input-field" placeholder="First Name" />
                 <p id="errorFname" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtLname">Last Name<span class="astreik-mark">*</span></label>
-                <input type="text" name="txtLname" id="txtLname" placeholder="Last Name" />
+                <input type="text" name="txtLname" id="txtLname" class="txt-input-field" placeholder="Last Name" />
                 <p id="errorLname" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtEmail">Email<span class="astreik-mark">*</span></label>
-                <input type="text" name="txtEmail" id="txtEmail" placeholder="Valid Email-Id" />
+                <input type="text" name="txtEmail" id="txtEmail" class="txt-input-field" placeholder="Valid Email-Id" />
                 <p id="errorEmail" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtPassword">Password<span class="astreik-mark">*</span></label>
-                <input type="password" name="txtPassword" id="txtPassword" placeholder="Atleast 6 characters" />
+                <input type="password" name="txtPassword" id="txtPassword" class="txt-input-field" placeholder="Atleast 6 characters" />
                 <p id="errorPassword" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtConfirmPassword">Confirm Password<span class="astreik-mark">*</span></label>
-                <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Re-type Password" />
+                <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" class="txt-input-field" placeholder="Re-type Password" />
                 <p id="errorConfirmPassword" class="error-inline"></p>
 
                 <label class="label-for-field" for="gender">Gender<span class="astreik-mark">*</span></label>
@@ -63,23 +63,23 @@
                     <h3 class="heading-h3">Contact Details</h3>
                 </legend>
                 <label class="label-for-field" for="txtPhoneNumber">Phone number1<span class="astreik-mark">*</span></label>
-                <input type="text" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="xxxxxx987" />
+                <input type="text" name="txtPhoneNumber" id="txtPhoneNumber" class="txt-input-field" placeholder="Primary Phone Number" />
                 <p id="errorPhoneNumber" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtAlternatePhoneNumber"> Phone number2</label>
-                <input type="text" name="txtAlternatePhoneNumber" id="txtAlternatePhoneNumber" placeholder="xxxxxxx897" />
+                <input type="text" name="txtAlternatePhoneNumber" id="txtAlternatePhoneNumber" class="txt-input-field" placeholder="Secondary Phone Number" />
                 <p id="errorAlternatePhoneNumber" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtAddress">Address<span class="astreik-mark">*</span></label>
-                <textarea name="txtAddress" id="txtAddress" placeholder="Address here..." type="text"></textarea>
+                <textarea name="txtAddress" id="txtAddress" class="txt-input-field" placeholder="Address here..." type="text"></textarea>
                 <p id="errorAddress" class="error-inline"></p>
 
                 <label class="label-for-field" for="txtCity">City<span class="astreik-mark">*</span></label>
-                <input type="text" name="txtCity" id="txtCity" placeholder="City" />
+                <input type="text" name="txtCity" id="txtCity" class="txt-input-field" placeholder="City" />
                 <p id="errorCity" class="error-inline"></p>
 
                 <label class="label-for-field" for="stateList">Select State<span class="astreik-mark">*</span></label>
-                <select name="stateList" id="stateList">
+                <select name="stateList" id="stateList" class="txt-input-field">
                     <option value="">-----Select State-----</option>
                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -120,7 +120,7 @@
                 </select>
                 <p id="errorState" class="error-inline"></p>
                 <label class="label-for-field" for="countryList">Select Country<span class="astreik-mark">*</span></label>
-                <select name="countryList" id="countryList">
+                <select name="countryList" id="countryList" class="txt-input-field">
                     <option value="">-----Select Country-----</option>
                     <option value="India">India</option>
                     <option value="Other">Other(Outside India)</option>
@@ -135,7 +135,7 @@
         <div class="captcha">
             <h3 class="heading-h3">Verify the captcha below to proceed</h3>
             <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
-                <input type="text" id="userResult" placeholder="Enter Result" /></p>
+                <input type="text" id="userResult" placeholder="Enter Result" class="txt-input-field" /></p>
             <div class="button-for-captcha">
                 <button class="verify-button" id="refreshButton" onclick="captchaGeneration(); return false;">REFRESH</button>
                 <button class="verify-button" id="verifyButton" onclick="captchaVerification(); submitValidate(); return false; ">VERIFY</button>
