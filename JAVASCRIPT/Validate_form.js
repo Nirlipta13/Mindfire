@@ -259,6 +259,7 @@ function captchaVerification() {
         btn.innerHTML = "SUBMIT";
         document.getElementById("submitButton").appendChild(btn);
         btn.addEventListener('click', submitValidate);
+        document.getElementById("refreshButton").disabled = true;
     }
     if (userResult !== "" && expectedResult !== userResult) {
         document.getElementById("result").innerHTML = "Oops!! Try again";
