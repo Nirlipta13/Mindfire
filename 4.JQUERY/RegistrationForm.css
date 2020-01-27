@@ -1,0 +1,152 @@
+body {
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#registrationBox {
+    margin-top: 5px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    background-color: beige;
+    padding: 50px;
+    box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
+}
+
+#txtAddress {
+    height: 50px;
+    width: 50%;
+}
+
+.astreik_mark {
+    color: red;
+}
+
+#lblEmail,
+#lblAddress {
+    margin-left: 0px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: cadetblue;
+    height: 66px;
+}
+
+.li-logo {
+    float: left;
+    clear: both;
+}
+
+.ul-nav {
+    list-style-type: none;
+    padding: 0;
+    margin-top: -40px;
+}
+
+#pInformation {
+    margin-top: 20px;
+    text-align: -webkit-center;
+    font-size: x-large;
+    font-weight: 600;
+    font-size: 30px;
+    color: navy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#pRequired {
+    color: brown;
+    margin-top: 5px;
+}
+
+.select-gender {
+    display: flex;
+}
+
+#radioGenderMale,
+#radioGenderFemale,
+#radioGenderOther {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#subscribeCheck {
+    width: 20px;
+    height: 20px;
+}
+
+#lblSubscribeCheck {
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+#verifyButton {
+    width: 100%;
+    background-color: darkcyan;
+}
+
+#imgLogo {
+    margin-top: 34px;
+    margin-left: -14px;
+}
+
+.para-for-captcha {
+    display: none;
+    font-size: larger;
+    margin-left: 140px;
+}
+
+#userResult {
+    display: inline;
+    width: 50%;
+}
+
+#checkCaptcha,
+#refreshCaptcha {
+    background: darkcyan;
+    border-color: darkcyan;
+    /* margin-top: -5px; */
+}
+
+.captchaButton {
+    display: none;
+    margin-left: 220px;
+}
+
+.checkButton {
+    display: none;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.userInput {
+    pointer-events: none;
+}
+
+#captchaResult {
+    color: darkcyan;
+    font-size: 20px;
+    margin-top: 4px;
+    margin-left: 50px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+label#txtFname-error {
+    color: red;
+}
+
+#submitButton {
+    display: none;
+    width: 100%;
+    background-color: darkcyan;
+}
+
+.inline-error {
+    color: red;
+}
