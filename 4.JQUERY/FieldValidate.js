@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $("#verifyButton").click(function() {
         captchaGenerate();
-        $(".para-for-captcha").show()
+        $(".para-for-captcha").show();
+        $("#userResult").removeAttr('disabled');
 
     });
     $("#refreshCaptcha").click(function() {
@@ -16,6 +17,7 @@ $(document).ready(function() {
 
     $("#submitButton").click(function() {
         submitValidate();
+        $("#userResult").removeAttr('disabled');
 
 
     });
@@ -76,7 +78,7 @@ function captchaVerify() {
     if (userResult !== "" && expectedResult === userResult) {
         $("#captchaResult").text("Hooray!! Its Correct");
         $(".captchaButton").hide();
-        $("#userResult").css("readonly", true);
+        $("#userResult").attr('disabled', 'disabled');
         $("#submitButton").show();
     }
     if (userResult !== 0 && expectedResult !== userResult) {
@@ -85,7 +87,7 @@ function captchaVerify() {
         $("#userResult").val("");
 
     }
-    $("#userResult").css("readonly", false);
+
 
 }
 
