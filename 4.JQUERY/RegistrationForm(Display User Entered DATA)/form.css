@@ -1,6 +1,10 @@
     body {
         padding: 0;
         margin: 0;
+        background-image: url(image1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     
     .navbar {
@@ -16,6 +20,12 @@
         margin-left: 2px;
     }
     
+    #upload-icon {
+        margin-left: -4px;
+        height: 65px;
+        margin-top: -26px;
+    }
+    
     .ul-nav {
         list-style-type: none;
         padding: 0;
@@ -29,6 +39,17 @@
         box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
         padding: 3% 1% 2% 1%;
         background-color: aliceblue;
+        border-radius: 4%;
+    }
+    
+    .image-upload {
+        float: right;
+        clear: both;
+        width: 100px;
+        height: 100px;
+        margin-top: -15px;
+        margin-right: 70px;
+        background-color: #dad2b5;
     }
     
     #imgLogo {
@@ -52,7 +73,8 @@
         /* display: none; */
     }
     
-    .legendName {
+    .legendName,
+    .address-heading {
         font-size: larger;
         font-weight: 500;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -112,7 +134,8 @@
         border: 1.5px solid #9966ff;
     }
     
-    .addressRow-field {
+    .addressRow-field,
+    .addAddressRow-field {
         width: 85%;
         padding: 8px;
         margin-left: 10px;
@@ -131,7 +154,12 @@
         border-radius: 5px;
     }
     
-    .countryState-field {
+    .countryState-field,
+    .addCountryState-field,
+    .addCountry-field,
+    .addState-field,
+    .addCity-field,
+    .addPin-field {
         width: 75%;
         padding: 8px;
         margin-right: 370px;
@@ -139,7 +167,8 @@
         border: 1.5px solid #9966ff;
     }
     
-    .cityPin-field {
+    .cityPin-field,
+    .addCityPin-field {
         width: 71%;
         padding: 8px;
         margin-right: 350px;

@@ -126,11 +126,52 @@ function checkAddress() {
     } else {
         $("#errorCountry").text("");
     }
-    if (pincode === "" || pincode.length !== 6 || !pincode.match(numbersRegx)) {
-        $("#errorPin").text("Select your Country");
+    if (pincode === "") {
+        $("#errorPin").text("Enter ZipCode Properly");
         $("#userResult").val("");
 
+    } else if (pincode.length !== 6 || !pincode.match(numbersRegx)) {
+        $("#errorPin").text("Enter ZipCode Properly");
+        $("#userResult").val("");
     } else {
         $("#errorPin").text("");
     }
+
+    $(".addAddressRow-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).nextAll('p').first().text("Enter your address");
+        } else {
+            $(this).nextAll('p').first().text("");
+        }
+    });
+    $(".addCountry-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).nextAll('p').first().text("Select your Country");
+        } else {
+            $(this).nextAll('p').first().text("");
+        }
+    });
+    $(".addState-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).nextAll('p').first().text("Select your State");
+        } else {
+            $(this).nextAll('p').first().text("");
+        }
+    });
+    $(".addCity-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).next('p').first().text("Enter your City");
+        } else {
+            $(this).next('p').first().text("");
+        }
+    });
+    $(".addPin-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).nextAll('p').first('').text("Enter your ZipCode");
+        } else if ($(this).val().length !== 6 || !$(this).val().match(numbersRegx)) {
+            $(this).nextAll('p').first('').text("Enter your ZipCode Properly");
+        } else {
+            $(this).nextAll('p').first('').text("");
+        }
+    });
 }
