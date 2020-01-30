@@ -19,6 +19,7 @@ $(document).ready(function() {
     $("#submitBtn").click(function() {
         captchaVerify();
         submitValidate();
+        checkAdditionalPhonenumber();
     });
 
 });
@@ -105,7 +106,7 @@ function listState() {
 }
 
 function addPhonenumber() {
-    $(".contact-row").append('<div id="parentDiv"><input type="text" name="txtPhoneNumber" class="contactRow-field" id="txtPhoneNumber' + addressCounter + '" placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone">X</button><p class="inline-error" id="errorPhoneNumber' + addressCounter + '" ></p></div>');
+    $(".contact-row").append('<div id="parentDiv"><input type="text" name="txtPhoneNumber" class="contactRow-field"  placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone">X</button><p class="inline-error"></p></div>');
 
     $(document).on("click", ".removePhone", function() {
         $(this).parent("#parentDiv").remove();
@@ -113,6 +114,21 @@ function addPhonenumber() {
     });
 }
 
+function checkAdditionalPhonenumber() {
+    var numbersRegx = /^[0-9]+$/;
+    $(".contactRow-field").each(function() {
+        if ($(this).val() === "") {
+            $(this).nextAll('p').first().text("Enter Your Phone Number");
+        } else {
+            $(this).nextAll('p').first().text("");
+        }
+        if (($(this).val().length !== 10 && $(this).val() !== "") || (!$(this).val().match(numbersRegx)) || $(this).val() === "") {
+            $(this).nextAll('p').first().text("Enter a valid Number");
+        } else {
+            $(this).nextAll('p').first().text("");
+        }
+    });
+}
 
 function addAddress() {
     $(".addressDetails").append('<div id="parentDiv"><div><div class="address-row"><textarea class="addressRow-field" placeholder="Address"></textarea><p class="inline-error"></p></div><div class="countryState-row"><div><select id="txtCountry" name="txtCountry" class="countryState-field"><option value="">Select Country</option><option value="India">India</option><option value="USA">USA</option><option value="Australia">Australia</option></select><p class="inline-error"></p></div><div><select class="countryState-field" id="txtState"><option>Select State</option></select><p class="inline-error"></p></div></div><div class="cityPin-row"><div><input type="text" id="txtCity" name="txtCity" class="cityPin-field" placeholder="City" /><p class="inline-error"></p></div><div><input type="text" id="txtPin" name="txtPin" class="cityPin-field" placeholder="ZipCode" /><p class="inline-error"></p></div></div></div><div class="addressAddButton"><button type="button" class="addressRemove-button" style="background-color:red; color:white;background-color: red;color: white;padding: 8px;border: 0;margin: 8px;border-radius: 5px;">Remove Address</button></div></div>');
@@ -173,28 +189,15 @@ function submitValidate() {
         validate = false;
     }
 
-    // if (addressCounter > 0) {
-    //     var addCounter = "#txtPhoneNumber' + addressCounter + '";
-    //     var additionalPhone = $(addCounter).val();
-    //     if ((additionalPhone.length !== 10 && additionalPhone !== "") || (!additionalPhone.match(numbers_regx)) || additionalPhone === "") {
-    //         $("#errorPhoneNumber' + addressCounter + '").text("Provide a valid number");
-    //         $("#txtPhoneNumber' + addressCounter + '").focus();
-    //         clearSubmit();
 
-    //         validate = false;
+    // if ((phoneNumber.length !== 10 && phoneNumber !== "") || (!phoneNumber.match(numbers_regx)) || phoneNumber === "") {
+    //     $("#errorPhoneNumber").text("Provide a valid number");
+    //     $("#txtPhonenumber").focus();
+    //     clearSubmit();
 
-    //     }
+    //     validate = false;
 
     // }
-
-    if ((phoneNumber.length !== 10 && phoneNumber !== "") || (!phoneNumber.match(numbers_regx)) || phoneNumber === "") {
-        $("#errorPhoneNumber").text("Provide a valid number");
-        $("#txtPhonenumber").focus();
-        clearSubmit();
-
-        validate = false;
-
-    }
 
     if (primaryEmail === "" || !primaryEmail.match(email_regx)) {
         $("#errorEmail").text("Provide a valid Email");

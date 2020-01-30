@@ -40,6 +40,7 @@ function captchaVerify() {
     }
     var userResult = Number($("#userResult").val());
     if (userResult === 0) {
+        $("#captchaResult").text("Fill the captcha");
         captchaGenerate();
     }
 

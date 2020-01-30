@@ -36,7 +36,7 @@ function checkName() {
     var lname = $.trim($('#txtLname').val());
     var alphabets_regx = /^[A-Za-z]+$/;
 
-    if (fname !== "" || fname.length < 3 || !alphabets_regx.test(fname)) {
+    if (fname === "" || fname.length < 3 || !alphabets_regx.test(fname)) {
         $("#errorFname").text("Enter your first name(Atleast 3 characters)");
         $("#errorFname").show();
         clearSubmit();
@@ -56,7 +56,7 @@ function checkName() {
     if (mname === "") {
         $("#errorMname").text("");
     }
-    if (mname !== "" && alphabets_regx.test(mname)) {
+    if (mname === "" && alphabets_regx.test(mname)) {
         $("#errorMname").hide();
     }
     if (lname === "" || lname.length < 3 || !alphabets_regx.test(lname)) {
@@ -86,6 +86,7 @@ function checkPrimaryEmail() {
     }
 
 }
+
 
 function checkPhoneNumber() {
     var phoneNumber = $("#txtPhoneNumber").val();

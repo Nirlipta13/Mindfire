@@ -104,7 +104,8 @@
         border: 1.5px solid #9966ff;
     }
     
-    .contactRow-field {
+    .contactRow-field,
+    .addContactRow-field {
         width: 36%;
         padding: 8px;
         margin-left: 10px;
