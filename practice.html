@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".add-button").click(function() {
+                addPhonenumber();
+            });
+        });
+
+        function addPhonenumber() {
+
+            $(".contact-row").append('<div id="parentDiv" style="margin:1px"> <input type="text" name="txtPhoneNumber" class="contactRow-field" placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone" style="background-color:red; color:white;background-color: red;color: white;padding: 7px;;border: 0;;border-radius: 5px; margin-left:8px">X</button> <p class="inline-error"></p> </div>');
+
+            $(document).on("click", ".removePhone", function() {
+                $(this).parent("#parentDiv").remove();
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="contact-row">
+        <div>
+            <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contactRow-field" placeholder="Phone Number" />
+            <button type="button" class="add-button">+</button>
+            <p class="inline-error" id="errorPhoneNumber"></p>
+        </div>
+        <div class="addAddress"></div>
+    </div>
+
+</body>
+
+</html>

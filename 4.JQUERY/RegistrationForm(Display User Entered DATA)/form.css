@@ -1,0 +1,236 @@
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .navbar {
+        width: 100%;
+        background-color: rgb(153, 102, 255);
+        height: 80px;
+    }
+    
+    .li-logo {
+        float: left;
+        clear: both;
+        margin-top: 20px;
+        margin-left: 2px;
+    }
+    
+    .ul-nav {
+        list-style-type: none;
+        padding: 0;
+        margin-top: -40px;
+    }
+    
+    .container {
+        width: min-content;
+        height: auto;
+        margin: 2% 1% 1% 1%;
+        box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
+        padding: 3% 1% 2% 1%;
+        background-color: aliceblue;
+    }
+    
+    #imgLogo {
+        height: 60px;
+    }
+    
+    .pHeading {
+        padding-left: 2px;
+    }
+    
+    .fieldsetDivision {
+        margin-top: 25px;
+        margin-bottom: 5px;
+        border: 0;
+    }
+    
+    .inline-error {
+        color: red;
+        margin-left: 10px;
+        margin-top: 8px;
+        /* display: none; */
+    }
+    
+    .legendName {
+        font-size: larger;
+        font-weight: 500;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: blue;
+    }
+    
+    .name-row,
+    .identification-row,
+    .cityPin-row,
+    .countryState-row {
+        display: flex;
+    }
+    
+    .nameRow-field {
+        width: 80%;
+        padding: 8px;
+        margin-left: 10px;
+        margin-right: 115px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .imgDiv {
+        background-image: linear-gradient(to right, #9966ff, lightblue);
+        height: 80px;
+        border-radius: 20px 20px 30px 2px;
+        margin-top: -30px;
+    }
+    
+    .imgDiv p {
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: start;
+        font-size: x-large;
+        padding: 20px;
+    }
+    
+    .identificationRow-field {
+        width: 71%;
+        padding: 8px;
+        margin-right: 350px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .emailRow-field {
+        width: 36%;
+        padding: 8px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .contactRow-field {
+        width: 36%;
+        padding: 8px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .addressRow-field {
+        width: 85%;
+        padding: 8px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .addAddress {
+        display: inline;
+    }
+    
+    .add-button {
+        padding: 7px;
+        margin: 5px;
+        background-color: lightblue;
+        border: 0;
+        border-radius: 5px;
+    }
+    
+    .countryState-field {
+        width: 75%;
+        padding: 8px;
+        margin-right: 370px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .cityPin-field {
+        width: 71%;
+        padding: 8px;
+        margin-right: 350px;
+        margin-left: 10px;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .addressAdd-button {
+        padding: 8px;
+        margin: 10px;
+        background-color: lightblue;
+        border: 0;
+        border-radius: 5px;
+    }
+    
+    .contact-row {
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .addressDetails {
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    .personalDetails {
+        padding: 10px;
+        margin: 5px;
+    }
+    
+    #submitBtn {
+        width: 30%;
+        margin-left: 30px;
+        padding: 10px;
+        color: black;
+        background-color: rgb(153, 102, 255);
+        border: 0;
+        border-radius: 5px;
+    }
+    
+    #userResult {
+        padding: 5px;
+        width: 25%;
+        border: 1.5px solid #9966ff;
+    }
+    
+    .para-for-captcha {
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: larger;
+    }
+    
+    #captchaResult {
+        color: red;
+        font-size: larger;
+        margin-left: 90px;
+    }
+    
+    .captchaDisplay {
+        width: 40%;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        margin-left: 2%;
+        margin-top: 10px;
+        background-image: url(captchaback.jpg);
+    }
+    
+    .captcha-info {
+        font-size: large;
+        color: blueviolet;
+        margin-left: 30px;
+        margin-top: 0;
+    }
+    
+    #refreshIcon {
+        height: 20px;
+        width: 20px;
+        margin: -4px;
+        padding-left: 5px;
+    }
+    
+    #parentDiv {
+        margin: 1px;
+    }
+    
+    .removePhone {
+        background-color: red;
+        color: white;
+        padding: 7px;
+        border: 0;
+        border-radius: 5px;
+        margin-left: 8px
+    }

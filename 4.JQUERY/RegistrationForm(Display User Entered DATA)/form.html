@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="form.css">
+    <!-- <script src="captcha.js"></script>
+    <script src="ValidateForm.js"></script> -->
+</head>
+
+<body>
+    <div class="navbar">
+        <ul class="ul-nav">
+            <li class="li-logo"><img src="logo.jpg" alt="logo" id="imgLogo"></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="imgDiv">
+            <p>REGISTER YOURSELF</p>
+        </div>
+        <form id="registrationForm">
+            <fieldset class="fieldsetDivision">
+                <legend class="legendName">Personal Details</legend>
+                <div class="personalDetails">
+                    <div class="name-row">
+                        <div>
+                            <input type="text" id="txtFname" name="txtFname" class="nameRow-field" placeholder="First Name" />
+                            <p class="inline-error" id="errorFname"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="txtMname" name="txtMname" class="nameRow-field" placeholder="Middle Name" />
+                            <p class="inline-error" id="errorMname"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="txtLname" name="txtLname" class="nameRow-field" placeholder="Last Name" />
+                            <p class="inline-error" id="errorLname"></p>
+                        </div>
+                    </div>
+
+                    <div class="email-row">
+                        <div>
+                            <input type="text" id="txtEmail" name="txtEmail" class="emailRow-field" placeholder="Email Address" />
+                            <p class="inline-error" id="errorEmail"></p>
+                        </div>
+                    </div>
+
+                    <div class="identification-row">
+                        <div>
+                            <input type="text" id="txtPanCard" name="txtPanCard" class="identificationRow-field" placeholder="Pancard Number" />
+                            <p class="inline-error" id="errorPanCard"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="txtAadharCard" name="txtAadharCard" class="identificationRow-field" placeholder="Aadhar Card Number" />
+                            <p class="inline-error" id="errorAadharCard"></p>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldsetDivision">
+                <legend class="legendName">Contact Details</legend>
+                <div class="contact-row">
+                    <div>
+                        <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contactRow-field" placeholder="Phone Number" />
+                        <button type="button" class="add-button">+</button>
+                        <p class="inline-error" id="errorPhoneNumber"></p>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldsetDivision">
+                <legend class="legendName">Address Details</legend>
+                <div class="addressDetails">
+                    <div class="address-row">
+                        <textarea id="txtAddress" name="txtAddress" class="addressRow-field" placeholder="Address"></textarea>
+                        <p class="inline-error" id="errorAddress"></p>
+                    </div>
+                    <div class="countryState-row">
+                        <div>
+                            <select id="txtCountry" name="txtCountry" class="countryState-field">
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="Australia">Australia</option>
+                      </select>
+                            <p class="inline-error" id="errorCountry"></p>
+                        </div>
+                        <div>
+                            <select class="countryState-field" id="txtState">
+                             <option>Select State</option>
+                        </select>
+                            <p class="inline-error" id="errorState"></p>
+                        </div>
+                    </div>
+                    <div class="cityPin-row">
+                        <div>
+                            <input type="text" id="txtCity" name="txtCity" class="cityPin-field" placeholder="City" />
+                            <p class="inline-error" id="errorCity"></p>
+                        </div>
+                        <div>
+                            <input type="text" id="txtPin" name="txtPin" class="cityPin-field" placeholder="ZipCode" />
+                            <p class="inline-error" id="errorPin"></p>
+                        </div>
+                    </div>
+                    <div class="addressAddButton">
+                        <button type="button" class="addressAdd-button">Add Another Address</button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="fieldsetDivision">
+                <legend class="legendName">Verify Captcha</legend>
+
+                <div class="captchaDisplay">
+                    <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
+                        <input type="number" id="userResult" class="userInput" /> <img src="Refresh_icon.png" id="refreshIcon" /></p>
+                    <p id="captchaResult"></p>
+                </div>
+                <p class="captcha-info"><span>In case of division, enter the nearest whole number.</span></p>
+            </fieldset>
+            <div>
+                <button type="button" id="submitBtn">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="Register.js"></script>
+    <script src="Captcha.js"></script>
+    <script src="Common.js"></script>
+</body>
+
+</html>

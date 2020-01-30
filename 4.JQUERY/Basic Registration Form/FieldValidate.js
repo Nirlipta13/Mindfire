@@ -256,61 +256,6 @@ function submitValidate() {
     }
 
 
-    //     //Clearing error messages
-    //     if (fname !== "" && fname.length >= 3 && fname.match(alphabets_regx)) {
-    //         $("#errorFname").text("");
-
-
-    //     }
-    //     if ((mname !== "" && mname.match(alphabets_regx)) || mname === "") {
-    //         $("#errorMname").text("");
-
-    //     }
-    //     if (lname !== "" && lname.match(alphabets_regx)) {
-    //         $("#errorLname").text("");
-
-    //     }
-    //     if (gender !== undefined) {
-    //         $("#errorGender").text("");
-
-    //     }
-    //     if (dateDOB !== "") {
-    //         $("#errorDOB").text("");
-
-    //     }
-    //     if (primaryEmail !== "" && primaryEmail.match(email_regx)) {
-    //         $("#errorEmail").text("");
-
-
-    //     }
-    //     if (secondaryEmail !== "" && secondaryEmail.match(email_regx)) {
-    //         $("#errorSecondaryEmail").text("");
-
-    //     }
-    //     if (password.length >= 6 && password.indexOf(' ') < 0) {
-    //         $("#errorPassword").text("");
-
-    //     }
-    //     if (password !== "" && password === confirmPassword) {
-    //         $("errorConfirmPassword").text("");
-
-    //     }
-    //     if (phoneNumber !== "" && phoneNumber.length == 10 && phoneNumber.match(numbers_regx)) {
-    //         $("#errorPhoneNumber").text("");
-
-    //     }
-    //     if (altPhoneNumber.length == 10 && altPhoneNumber.match(numbers_regx)) {
-    //         $("#errorAltPhoneNumber").text("");
-
-    //     }
-    //     if (address !== "") {
-    //         $("#errorAddress").text("");
-
-    //     }
-    //     if (city !== "" && city.match(alphabets_regx)) {
-    //         $("#errorCity").text("");
-
-    //     }
     if (state !== "") {
         $("#errorState").text("");
 
@@ -322,11 +267,10 @@ function submitValidate() {
     if (validate == true) {
         $(".inline-error").text("");
         alert("Successfully Registered");
+        console.log(validate);
         location.replace("RegistrationForm.html");
     }
-    // if (validate === false) {
-    //     $("#userResult").attr("readonly", false);
-    // }
+
 
 }
 
