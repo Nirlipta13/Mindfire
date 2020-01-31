@@ -7,10 +7,30 @@ function addPhonenumber() {
 }
 
 function addAddress() {
-    $(".addressDetails").append('<div id="parentDiv"><div><div class="address-row"><textarea class="addAddressRow-field" placeholder="Address"></textarea><p class="inline-error"></p></div><div class="countryState-row"><div class="country-field"><select id="txtCountry" name="txtCountry" class="addCountry-field"><option value="">Select Country</option><option value="India">India</option><option value="USA">USA</option><option value="Australia">Australia</option></select><p class="inline-error country-error"></p></div><div class="state-field"><select class="addState-field" id="txtState"><option>Select State</option></select><p class="inline-error state-error"></p></div></div><div class="cityPin-row"><div class="city-field"><input type="text" id="txtCity" name="txtCity" class="addCity-field" placeholder="City" /><p class="inline-error city-error"></p></div><div class="pin-field"><input type="text" id="txtPin" name="txtPin" class="addPin-field" placeholder="ZipCode" /><p class="inline-error pin-error"></p></div></div></div><div class="addressAddButton"><button type="button" class="addressRemove-button" style="background-color:red; color:white;background-color: red;color: white;padding: 8px;border: 0;margin: 8px;border-radius: 5px;">Remove Address</button></div></div>');
+    var counter = 1;
+    var htmlDiv = $(".parent-address").html();
+    $(".addressDetails").append(htmlDiv);
 
     $(document).on("click", ".addressRemove-button", function() {
-        $(this).parents("#parentDiv").remove();
+        $(this).parents('#parent').remove();
 
     });
+}
+
+function listState(countrySelected) {
+    if (countrySelected === "India") {
+        var addState = ["Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa", "Pondicherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttaranchal", "Uttar Pradesh", "West Bengal"];
+        return addState;
+    } else if (countrySelected === "Pakistan") {
+        var addState = ["Balochistan", "North-West Frontier Province", "Punjab", "Sindh", "Islamabad Capital Territory", "Federally Administered Tribal Areas"];
+        return addState;
+    } else if (countrySelected === "China") {
+        var addState = ["Anhui", "Fujian", "Gansu", "Guangdong", "Guizhou", "Hainan", "Hebei", "Heilongjiang", "Henan", "Hubei", "Hunan", "Jiangsu", "Jiangxi", "Jilin", "Liaoning", "Qinghai", "Shaanxi", "Shandong", "Shanxi", "Sichuan", "Yunnan", "Zhejiang", "Guangxi", "Nei Mongol", "Ningxia", "Xinjiang", "Xizang (Tibet)", "Beijing", "Chongqing", "Shanghai", "Tianjin"];
+        return addState;
+    } else {
+        var addState = [];
+        return addState;
+    }
+
+
 }

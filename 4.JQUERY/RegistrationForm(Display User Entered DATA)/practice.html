@@ -6,16 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Droppable - Default functionality</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="form.css">
     <style>
-        #draggable {
-            width: 100px;
-            height: 100px;
-            padding: 0.5em;
-            float: left;
-            margin: 10px 10px 10px 0;
-        }
-        
         #droppable {
             width: 150px;
             height: 150px;
@@ -28,7 +20,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function() {
-            $("#draggable").draggable();
+
             $("#droppable").droppable({
                 drop: function(event, ui) {
                     $(this)
@@ -43,12 +35,12 @@
 
 <body>
 
-    <div id="draggable" class="ui-widget-content">
-        <p>Drag me to my target</p>
-    </div>
 
-    <div id="droppable" class="ui-widget-header">
+    <!-- <div id="droppable" class="ui-widget-header">
         <p>Drop here</p>
+    </div> -->
+    <div class="image-upload ui-widget-header">
+        <p><img src="upload.png" id="upload-icon"></p>
     </div>
 
 

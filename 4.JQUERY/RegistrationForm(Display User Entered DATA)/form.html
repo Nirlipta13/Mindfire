@@ -21,124 +21,239 @@
             <li class="li-logo"><img src="logo.jpg" alt="logo" id="imgLogo"></li>
         </ul>
     </div>
-    <form id="registrationForm">
-        <div class="container">
-            <div class="imgDiv">
-                <p>REGISTER YOURSELF</p>
-                <div class="image-upload droppable">
-                    <p><img src="upload.png" id="upload-icon"></p>
-                </div>
-            </div>
 
-            <fieldset class="fieldsetDivision">
-                <legend class="legendName">Personal Details</legend>
-                <div class="personalDetails">
-                    <div class="name-row">
-                        <div>
-                            <input type="text" id="txtFname" name="txtFname" class="nameRow-field" placeholder="First Name" />
-                            <p class="inline-error" id="errorFname"></p>
-                        </div>
-                        <div>
-                            <input type="text" id="txtMname" name="txtMname" class="nameRow-field" placeholder="Middle Name" />
-                            <p class="inline-error" id="errorMname"></p>
-                        </div>
-                        <div>
-                            <input type="text" id="txtLname" name="txtLname" class="nameRow-field" placeholder="Last Name" />
-                            <p class="inline-error" id="errorLname"></p>
-                        </div>
-                    </div>
-
-                    <div class="email-row">
-                        <div>
-                            <input type="text" id="txtEmail" name="txtEmail" class="emailRow-field" placeholder="Email Address" />
-                            <p class="inline-error" id="errorEmail"></p>
-                        </div>
-                    </div>
-
-                    <div class="identification-row">
-                        <div>
-                            <input type="text" id="txtPanCard" name="txtPanCard" class="identificationRow-field" placeholder="Pancard Number" />
-                            <p class="inline-error" id="errorPanCard"></p>
-                        </div>
-                        <div>
-                            <input type="text" id="txtAadharCard" name="txtAadharCard" class="identificationRow-field" placeholder="Aadhar Card Number" />
-                            <p class="inline-error" id="errorAadharCard"></p>
-                        </div>
+    <div class="container">
+        <div class="to-hide">
+            <form id="registrationForm">
+                <div class="imgDiv">
+                    <p>REGISTER YOURSELF</p>
+                    <div class="image-upload droppable">
+                        <img src="upload.png" id="upload-icon">
+                        <input type="file" id="image-upload-file" />
                     </div>
                 </div>
-            </fieldset>
 
-            <fieldset class="fieldsetDivision">
-                <legend class="legendName">Contact Details</legend>
-                <div class="contact-row">
-                    <div>
-                        <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contactRow-field" placeholder="Phone Number" />
-                        <button type="button" class="add-button">+</button>
-                        <p class="inline-error" id="errorPhoneNumber"></p>
+                <fieldset class="fieldsetDivision">
+                    <legend class="legendName">Personal Details</legend>
+                    <div class="personalDetails">
+                        <div class="name-row">
+                            <div>
+                                <label for="txtFname" id="lblFname" class="lbl-heading">First Name</label>
+                                <input type="text" id="txtFname" name="txtFname" class="nameRow-field" placeholder="First Name" />
+                                <p class="inline-error" id="errorFname"></p>
+                            </div>
+                            <div>
+                                <label for="txtMname" id="lblMname" class="lbl-heading">Middle Name</label>
+                                <input type="text" id="txtMname" name="txtMname" class="nameRow-field" placeholder="Middle Name" />
+                                <p class="inline-error" id="errorMname"></p>
+                            </div>
+                            <div>
+                                <label for="txtLname" id="lblLname" class="lbl-heading">Last Name</label>
+                                <input type="text" id="txtLname" name="txtLname" class="nameRow-field" placeholder="Last Name" />
+                                <p class="inline-error" id="errorLname"></p>
+                            </div>
+                        </div>
+
+                        <div class="email-row">
+                            <label for="txtEmail" id="lblEmail" class="lbl-heading">Email ID</label>
+                            <div>
+                                <input type="text" id="txtEmail" name="txtEmail" class="emailRow-field" placeholder="Email Address" />
+                                <p class="inline-error" id="errorEmail"></p>
+                            </div>
+                        </div>
+
+                        <div class="identification-row">
+                            <div>
+                                <label for="txtPanCard" id="lblPanCard" class="lbl-heading">Pan Card</label>
+                                <input type="text" id="txtPanCard" name="txtPanCard" class="identificationRow-field" placeholder="Pancard Number" />
+                                <p class="inline-error" id="errorPanCard"></p>
+                            </div>
+                            <div>
+                                <label for="txtAadharCard" id="lblAadharCard" class="lbl-heading">Aadhar Card</label>
+                                <input type="text" id="txtAadharCard" name="txtAadharCard" class="identificationRow-field" placeholder="Aadhar Card Number" />
+                                <p class="inline-error" id="errorAadharCard"></p>
+                            </div>
+                        </div>
                     </div>
+                </fieldset>
 
-                </div>
-            </fieldset>
+                <fieldset class="fieldsetDivision">
+                    <legend class="legendName">Contact Details</legend>
 
-            <fieldset class="fieldsetDivision">
-                <legend class="legendName">Address Details</legend>
-                <div class="addressDetails">
-                    <div class="address-row">
-                        <textarea id="txtAddress" name="txtAddress" class="addressRow-field" placeholder="Address"></textarea>
-                        <p class="inline-error" id="errorAddress"></p>
-                    </div>
-                    <div class="countryState-row">
+                    <div class="contact-row">
+                        <label for="txtPhoneNumber" id="lblPhoneNumber" class="lbl-heading">Phone Number</label>
                         <div>
-                            <select id="txtCountry" name="txtCountry" class="countryState-field">
-                        <option value="">Select Country</option>
+                            <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contactRow-field" placeholder="Phone Number" />
+                            <button type="button" class="add-button">+</button>
+                            <p class="inline-error" id="errorPhoneNumber"></p>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+                <fieldset class="fieldsetDivision">
+                    <legend class="legendName">Address Details</legend>
+                    <div class="addressDetails">
+                        <label for="txtAddress" id="lblAddress" class="lbl-heading">Address</label>
+                        <div class="address-row">
+                            <textarea id="txtAddress" name="txtAddress" class="addressRow-field" placeholder="Address"></textarea>
+                            <p class="inline-error" id="errorAddress"></p>
+                        </div>
+                        <div class="countryState-row">
+                            <div>
+                                <label for="txtCountry" id="lblCountry" class="lbl-heading">Country</label>
+                                <select id="txtCountry" name="txtCountry" class="countryState-field js-country">
+                        <option value="" selected>Select Country</option>
                         <option value="India">India</option>
-                        <option value="USA">USA</option>
-                        <option value="Australia">Australia</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="China">China</option>
                       </select>
-                            <p class="inline-error" id="errorCountry"></p>
-                        </div>
-                        <div>
-                            <select class="countryState-field" id="txtState">
-                             <option>Select State</option>
+                                <p class="inline-error" id="errorCountry"></p>
+                            </div>
+
+                            <div>
+                                <label for="txtState" id="lblState" class="lbl-heading">State</label>
+                                <select class="countryState-field js-state" id="txtState">
+                                <option value="" selected>Select State</option>
                         </select>
-                            <p class="inline-error" id="errorState"></p>
+                                <p class="inline-error" id="errorState"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cityPin-row">
-                        <div>
-                            <input type="text" id="txtCity" name="txtCity" class="cityPin-field" placeholder="City" />
-                            <p class="inline-error" id="errorCity"></p>
+                        <div class="cityPin-row">
+                            <div>
+                                <label for="txtCity" id="lblCity" class="lbl-heading">City</label>
+                                <input type="text" id="txtCity" name="txtCity" class="cityPin-field" placeholder="City" />
+                                <p class="inline-error" id="errorCity"></p>
+                            </div>
+                            <div>
+                                <label for="txtPin" id="lblPin" class="lbl-heading">ZipCode</label>
+                                <input type="text" id="txtPin" name="txtPin" class="cityPin-field" placeholder="ZipCode" />
+                                <p class="inline-error" id="errorPin"></p>
+                            </div>
                         </div>
-                        <div>
-                            <input type="text" id="txtPin" name="txtPin" class="cityPin-field" placeholder="ZipCode" />
-                            <p class="inline-error" id="errorPin"></p>
-                        </div>
+
                     </div>
                     <div class="addressAddButton">
                         <button type="button" class="addressAdd-button">Add Another Address</button>
                     </div>
-                </div>
-            </fieldset>
-            <fieldset class="fieldsetDivision">
-                <legend class="legendName">Verify Captcha</legend>
+                    <div class="parent-address">
+                        <div id="parent">
+                            <p class="legendName">Add New Address</p>
+                            <label for="txtAddress" class="lbl-heading">Address</label>
+                            <div class="address-row"><textarea name="txtAddress" class="addressRow-field" placeholder="Address">
+                        </textarea>
+                                <p class="inline-error"></p>
+                            </div>
+                            <div class="countryState-row">
+                                <div>
+                                    <label for="txtCountry" class="lbl-heading">Country</label>
+                                    <select name="txtCountry" class="countryState-field js-country">
+                        <option value="" selected>Select Country</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="China">China</option>
+                      </select>
+                                    <p class="inline-error"></p>
+                                </div>
 
-                <div class="captchaDisplay">
-                    <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
-                        <input type="number" id="userResult" class="userInput" /> <img src="Refresh_icon.png" id="refreshIcon" /></p>
-                    <p id="captchaResult"></p>
-                </div>
-                <p class="captcha-info"><span>In case of division, enter the nearest whole number.</span></p>
-            </fieldset>
-            <div>
-                <button type="button" id="submitBtn">Register</button>
+                                <div>
+                                    <label for="txtState" class="lbl-heading">State</label>
+                                    <select class="countryState-field js-state">
+                                <option value="" selected>Select State</option>
+                        </select>
+                                    <p class="inline-error"></p>
+                                </div>
+                            </div>
+                            <div class="cityPin-row">
+                                <div>
+                                    <label for="txtCity" class="lbl-heading">City</label>
+                                    <input type="text" name="txtCity" class="cityPin-field" placeholder="City" />
+                                    <p class="inline-error"></p>
+                                </div>
+                                <div>
+                                    <label for="txtPin" class="lbl-heading">ZipCode</label>
+                                    <input type="text" name="txtPin" class="cityPin-field" placeholder="ZipCode" />
+                                    <p class="inline-error"></p>
+                                </div>
+                            </div>
+                            <div class="addressAddButton"><button type="button" class="addressRemove-button" style="background-color:red; color:white;background-color: red;color: white;padding: 8px;border: 0;margin: 8px;border-radius: 5px;">Remove Address</button>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+        </fieldset>
+        <fieldset class="fieldsetDivision">
+            <legend class="legendName">Verify Captcha</legend>
+
+            <div class="captchaDisplay">
+                <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
+                    <input type="number" id="userResult" class="userInput" /> <img src="Refresh_icon.png" id="refreshIcon" /></p>
+                <p id="captchaResult"></p>
             </div>
-    </form>
+            <p class="captcha-info"><span>In case of division, enter the nearest whole number.</span></p>
+        </fieldset>
+        <div>
+            <button type="button" id="submitBtn">Register</button>
+            <button type="button" id="resetBtn">Reset</button>
+        </div>
+        </form>
     </div>
+    </div>
+    <div id="resume">
+        <p><span> Name:</span>
+            </span>
+            <span id="displayFname" class="display-info"></span>
+            <span id="displayLname" class="display-info"></span>
+            <span id="displayMname" class="display-info "></span></p>
+
+        <p><span> Email Id:</span>
+            <span id="displayEmail" class=" display-info "></span></p>
+
+        <p> <span> Pan card Number:</span>
+            <span id="displayPancard" class="display-info"></span></p>
+
+        <p><span>AadharCard Number:</span>
+            <span id="displayAadharCard" class=" display-info "></span>
+        </p>
+        <p><span>Phone Number:</span>
+            <span id="displayPhoneNumber" class="display-info"></span></p>
+
+        <div id="divAdditionalPhone">
+        </div>
+        <!-- <div id="divAdditionalPhone"><span>Alternate Phone Number:</span>
+             <span id="additionalPhoneNumber" class="display-info"></span>
+        </div> -->
+
+
+        <fieldset>
+            <legend>Address Details</legend>
+            <p>
+                <span id="displayAddress" class=" display-info "></span>
+            </p>
+            <p><span>City:</span>
+                <span id="displayCity" class="display-info"></span></p>
+            <p><span>State:</span>
+                <span id="displayState" class=" display-info "></span></p>
+            <p><span>Country:</span>
+                <span id="displayCountry" class="display-info"></span></p>
+            <p><span>ZipCode:</span>
+                <span id="displayPin" class=" display-info "></span></p>
+            <p><span>Other Address:</span></p>
+            <p></p>
+
+
+        </fieldset>
+
+
+    </div>
+
 
     <script src="Register.js"></script>
     <script src="Captcha.js"></script>
     <script src="Common.js"></script>
     <script src="AddField.js"></script>
+    <script src="Resume.js"></script>
 </body>
 
 </html>

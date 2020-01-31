@@ -46,8 +46,8 @@ function captchaVerify() {
 
     if (userResult !== "" && expectedResult === userResult) {
         $("#captchaResult").text("Hooray!! Its Correct");
-        $("#refreshIcon").hide();
-        $("#userResult").attr('disabled', 'disabled');
+        // $("#refreshIcon").hide();
+        // $("#userResult").attr('disabled', 'disabled');
     }
     if (userResult !== 0 && expectedResult !== userResult) {
         $("#captchaResult").text("Oops!! Try Again");
@@ -55,6 +55,13 @@ function captchaVerify() {
         $("#userResult").val("");
 
     }
+    if (globalData.IsFormvalid === false) {
+        captchaGenerate();
+        $("#userResult").val("");
+        $("#captchaResult").text("");
+
+    }
+
 
 
 }
