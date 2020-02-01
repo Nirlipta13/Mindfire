@@ -12,16 +12,62 @@ function getFormValues() {
     var city = $("#txtCity").val();
     var pin = $("#txtPin").val();
 
-    // $("#additionalPhoneNumber").empty();
+
     $(".addContactRow-field").each(function() {
         var html = $("<span>", {
             class: "display-info",
             text: $(this).val(),
         })
-
-        $("#divAdditionalPhone").append(html);
-
+        $("#divAllPhoneNumber").append(', ');
+        $("#divAllPhoneNumber").append(html);
     });
+
+    $(".addAddressRow-field").each(function() {
+        var html = $("<p>", {
+            class: "display-info",
+            text: $(this).val(),
+        })
+
+        $(".additional-address").append(html);
+    });
+
+    $(".addCity-field").each(function() {
+        var html = $("<p>", {
+            class: "display-info",
+            text: $(this).val(),
+        })
+
+        $(".additional-address").append(html);
+    });
+
+    $(".addState-field").each(function() {
+        var html = $("<p>", {
+            class: "display-info",
+            text: $(this).val(),
+        })
+
+        $(".additional-address").append(html);
+    });
+
+    $(".addCountry-field").each(function() {
+        var html = $("<p>", {
+            class: "display-info",
+            text: $(this).val(),
+        })
+
+        $(".additional-address").append(html);
+    });
+
+
+    $(".addPin-field").each(function() {
+        var html = $("<p>", {
+            class: "display-info",
+            text: $(this).val(),
+        })
+
+        $(".additional-address").append(html);
+    });
+
 
     $(".container").hide();
     $("#resume").show();

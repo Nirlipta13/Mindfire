@@ -46,6 +46,7 @@ function captchaVerify() {
 
     if (userResult !== "" && expectedResult === userResult) {
         $("#captchaResult").text("Hooray!! Its Correct");
+        globalData.IsFormvalid = true;
         // $("#refreshIcon").hide();
         // $("#userResult").attr('disabled', 'disabled');
     }
@@ -53,6 +54,7 @@ function captchaVerify() {
         $("#captchaResult").text("Oops!! Try Again");
         captchaGenerate();
         $("#userResult").val("");
+        globalData.IsFormvalid = false;
 
     }
     if (globalData.IsFormvalid === false) {

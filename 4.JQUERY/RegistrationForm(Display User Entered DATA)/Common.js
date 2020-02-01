@@ -40,17 +40,20 @@ $(document).ready(function() {
         var selectedCountry = $(this).val();
         if (selectedCountry != '') {
             var states = listState(selectedCountry);
+            console.log(states);
             var $stateDropDown = $(this).parents(".countryState-row").find(".js-state");
+            $stateDropDown.empty();
             $.each(states, function(i, value) {
                 $stateDropDown.append($("<option     />").val(value).text(value));
             });
-
         }
+
+
     });
 });
 
 
-function readImage(input) {
+function readURL(input) {
     if (input.files && input.files[0]) {
 
         var reader = new FileReader();
@@ -65,15 +68,13 @@ function readImage(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
-        alert(true);
 
     } else {
         removeUpload();
-        alert(false);
     }
 }
 
-function removeImage() {
+function removeUpload() {
     $('.file-upload-input').replaceWith($('.file-upload-input').clone());
     $('.file-upload-content').hide();
     $('.image-upload-wrap').show();

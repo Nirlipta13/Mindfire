@@ -3,11 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
+    <script>
+        $(".addContactRow-field").each(function() {
+            var addPhone = $(this).val();
+            // $(".allPhoneNumber").append('< span class = "display-info" > , < /span>');
+            $("#allPhoneNumber .display-info").append(',' + addPhone);
+        })
+    </script>
 
 </head>
 
 <body>
-    <script src=""></script>
+    <p id="divAdditionalPhone"><span>Additional Phone Number:</span>
+        <span id="displayAddPhoneNumber" class="display-info"></span>
+    </p>
 </body>
 
 </html>

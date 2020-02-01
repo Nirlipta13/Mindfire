@@ -307,7 +307,8 @@
     .astreik-mark {
         color: red;
     }
-    /* .file-upload {
+    
+    .file-upload {
         background-color: #ffffff;
         width: 600px;
         margin: 0 auto;
@@ -420,4 +421,4 @@
     .remove-image:active {
         border: 0;
         transition: all .2s ease;
-    } */
+    }
