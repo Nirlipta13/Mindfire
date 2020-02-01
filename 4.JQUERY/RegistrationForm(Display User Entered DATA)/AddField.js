@@ -1,5 +1,5 @@
 function addPhonenumber() {
-    $(".contact-row").append('<div id="parentDiv"><input type="text" name="txtPhoneNumber" class="addContactRow-field"  placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone">X</button><p class="inline-error"></p></div>');
+    $(".contact-row").append('<div id="parentDiv" ><label class="lbl-heading">Alternate Phone Number<span class="astreik-mark">*</span></label><br/><input type="text" name="txtPhoneNumber" class="addContactRow-field"  placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone">X</button><p class="inline-error"></p></div>');
 
     $(document).on("click", ".removePhone", function() {
         $(this).parent("#parentDiv").remove();
