@@ -1,5 +1,6 @@
 var globalData = {};
 globalData.IsFormvalid = true;
+globalData.Iterator = 0;
 // var globalData.IsFormvalid = true;
 
 function checkName() {
@@ -15,9 +16,11 @@ function checkName() {
         $("#txtLname").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("Lname", globalData.IsFormvalid);
     } else {
         $("#errorLname").text("");
 
+        console.log("Lname", globalData.IsFormvalid);
     }
 
     //Validation of first name
@@ -26,9 +29,12 @@ function checkName() {
         $("#txtFname").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("Fname", globalData.IsFormvalid);
     } else {
         $("#errorFname").text("");
 
+
+        console.log("Fname", globalData.IsFormvalid);
     }
 
     //Validation of middle name
@@ -37,13 +43,18 @@ function checkName() {
         $("#txtMname").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("Mname", globalData.IsFormvalid);
+    } else if (mname === "") {
+        $("#errorMname").text("");
+        console.log("Fname", globalData.IsFormvalid);
+
     } else {
         $("#errorMname").text("");
-    }
-    if (mname === "") {
-        $("#errorMname").text("");
+        globalData.IsFormvalid = true;
 
+        console.log(globalData.IsFormvalid);
     }
+
 
 
 }
@@ -57,8 +68,11 @@ function checkPrimaryEmail() {
         $("#txtEmail").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log(globalData.IsFormvalid);
     } else {
         $("#errorEmail").text("");
+
+        console.log("Email", globalData.IsFormvalid);
 
     }
 
@@ -75,8 +89,12 @@ function checkIdentificationNumber() {
         $("#txtAadharCard").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("aadhar", globalData.IsFormvalid);
     } else {
         $("#errorAadharCard").text("");
+        globalData.IsFormvalid = true;
+
+        console.log("aadhar", globalData.IsFormvalid);
 
 
     }
@@ -85,9 +103,12 @@ function checkIdentificationNumber() {
         $("#txtPanCard").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("pan", globalData.IsFormvalid);
     } else {
         $("#errorPanCard").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("pan", globalData.IsFormvalid);
     }
 
 
@@ -102,18 +123,24 @@ function checkPhoneNumber() {
         $("#txtPhoneNumber").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("phone", globalData.IsFormvalid);
     } else {
         $("#errorPhoneNumber").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("phone", globalData.IsFormvalid);
     }
 
     $(".addContactRow-field").each(function() {
         if (!$(this).val().match(numbersRegx)) {
             $(this).nextAll('p').first().text("Enter a valid Number");
             globalData.IsFormvalid = false;
+            console.log("addPhone", globalData.IsFormvalid);
         } else {
             $(this).nextAll('p').first().text("");
             globalData.IsFormvalid = true;
+
+            console.log("addPhone", globalData.IsFormvalid);
         }
     });
 }
@@ -132,33 +159,42 @@ function checkAddress() {
         $("#txtPin").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
-
+        console.log("pin", globalData.IsFormvalid);
     } else if (pincode.length !== 6 || !pincode.match(numbersRegx)) {
         $("#errorPin").text("Enter ZipCode Properly");
         $("#txtPin").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("pin", globalData.IsFormvalid);
     } else {
         $("#errorPin").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("pin", globalData.IsFormvalid);
     }
     if (city === "") {
         $("#errorCity").text("Enter your city");
         $("#txtCity").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("city", globalData.IsFormvalid);
     } else {
         $("#errorCity").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("city", globalData.IsFormvalid);
     }
     if (state === "") {
         $("#errorState").text("Select your State");
         $("#txtState").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("state", globalData.IsFormvalid);
     } else {
         $("#errorState").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("state", globalData.IsFormvalid);
     }
 
     if (country === "") {
@@ -166,8 +202,12 @@ function checkAddress() {
         $("#txtCountry").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("country", globalData.IsFormvalid);
     } else {
         $("#errorCountry").text("");
+        globalData.IsFormvalid = true;
+
+        console.log("country", globalData.IsFormvalid);
 
     }
     if (address === "") {
@@ -175,59 +215,77 @@ function checkAddress() {
         $("#txtAddress").focus();
         $("#userResult").val("");
         globalData.IsFormvalid = false;
+        console.log("address", globalData.IsFormvalid);
     } else {
         $("#errorAddress").text("");
+        globalData.IsFormvalid = true;
 
+        console.log("address", globalData.IsFormvalid);
     }
 
 
     //Validation of dynamically created address field
-    $(".addAddressRow-field").each(function() {
-        if ($(this).val() === "") {
+    $(".js-address").each(function() {
+        if ($.trim($(this).val()) === "") {
             $(this).nextAll('p').first().text("Enter your address");
             globalData.IsFormvalid = false;
+            console.log("addAddress", globalData.IsFormvalid);
         } else {
             $(this).nextAll('p').first().text("");
             globalData.IsFormvalid = true;
+
+            console.log("addAddress", globalData.IsFormvalid);
         }
     });
-    $(".addCountry-field").each(function() {
+    $(".js-country").each(function() {
         if ($(this).val() === "") {
             $(this).nextAll('p').first().text("Select your Country");
             globalData.IsFormvalid = false;
+            console.log("addcountry", globalData.IsFormvalid);
         } else {
             $(this).nextAll('p').first().text("");
+            globalData.IsFormvalid = true;
 
+            console.log("addcountry", globalData.IsFormvalid);
         }
     });
-    $(".addState-field").each(function() {
+    $(".js-state").each(function() {
         if ($(this).val() === "") {
             $(this).nextAll('p').first().text("Select your State");
             globalData.IsFormvalid = false;
+            console.log("addState", globalData.IsFormvalid);
         } else {
             $(this).nextAll('p').first().text("");
+            globalData.IsFormvalid = true;
 
+            console.log("addState", globalData.IsFormvalid);
         }
     });
-    $(".addCity-field").each(function() {
-        if ($(this).val() === "") {
+    $(".js-city").each(function() {
+        if ($.trim($(this).val()) === "") {
             $(this).next('p').first().text("Enter your City");
             globalData.IsFormvalid = false;
+            console.log("addcity", globalData.IsFormvalid);
         } else {
             $(this).next('p').first().text("");
+            globalData.IsFormvalid = true;
 
+            console.log("addcity", globalData.IsFormvalid);
         }
     });
-    $(".addPin-field").each(function() {
-        if ($(this).val() === "") {
+    $(".js-pin").each(function() {
+        if ($.trim($(this).val()) === "") {
             $(this).nextAll('p').first('').text("Enter your ZipCode");
             globalData.IsFormvalid = false;
+            console.log("addPin", globalData.IsFormvalid);
         } else if ($(this).val().length !== 6 || !$(this).val().match(numbersRegx)) {
             $(this).nextAll('p').first('').text("Enter your ZipCode Properly");
             globalData.IsFormvalid = false;
+            console.log("addPin", globalData.IsFormvalid);
         } else {
             $(this).nextAll('p').first('').text("");
-
+            globalData.IsFormvalid = true;
+            console.log("addPin", globalData.IsFormvalid);
         }
     });
 }

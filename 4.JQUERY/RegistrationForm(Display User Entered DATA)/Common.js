@@ -40,7 +40,6 @@ $(document).ready(function() {
         var selectedCountry = $(this).val();
         if (selectedCountry != '') {
             var states = listState(selectedCountry);
-            console.log(states);
             var $stateDropDown = $(this).parents(".countryState-row").find(".js-state");
             $stateDropDown.empty();
             $.each(states, function(i, value) {

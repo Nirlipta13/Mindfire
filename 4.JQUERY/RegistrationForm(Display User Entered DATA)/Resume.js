@@ -22,55 +22,68 @@ function getFormValues() {
         $("#divAllPhoneNumber").append(html);
     });
 
-    $(".addAddressRow-field").each(function() {
-        var html = $("<p>", {
+
+
+
+    var addressArray = $('.js-address').map(function() {
+        return $(this).val();
+    });
+    addressArray = jQuery.grep(addressArray, function(n) { return (n); });
+    var countryArray = $('.add-js-country').map(function() {
+        return $(this).val();
+    });
+    countryArray = jQuery.grep(countryArray, function(n) { return (n); });
+    var stateArray = $('.add-js-state').map(function() {
+        return $(this).val();
+    });
+    stateArray = jQuery.grep(stateArray, function(n) { return (n); });
+    var cityArray = $('.js-city').map(function() {
+        return $(this).val();
+    });
+    cityArray = jQuery.grep(cityArray, function(n) { return (n); });
+    var pinArray = $('.js-pin').map(function() {
+        return $(this).val();
+    });
+    pinArray = jQuery.grep(pinArray, function(n) { return (n); });
+
+    for (var iterator = 0; iterator < addressArray.length - 1; iterator++) {
+
+        var addressHtml = $("<p>", {
             class: "display-info",
-            text: $(this).val(),
+            text: $.trim(addressArray[iterator]),
+        })
+        var cityHtml = $("<p>", {
+            class: "display-info",
+            text: $.trim(cityArray[iterator]),
+        })
+        var stateHtml = $("<p>", {
+            class: "display-info",
+            text: $.trim(stateArray[iterator]),
+        })
+        var countryHtml = $("<p>", {
+            class: "display-info",
+            text: $.trim(countryArray[iterator]),
+        })
+        var pinHtml = $("<p>", {
+            class: "display-info",
+            text: $.trim(pinArray[iterator]),
         })
 
-        $(".additional-address").append(html);
-    });
-
-    $(".addCity-field").each(function() {
-        var html = $("<p>", {
-            class: "display-info",
-            text: $(this).val(),
-        })
-
-        $(".additional-address").append(html);
-    });
-
-    $(".addState-field").each(function() {
-        var html = $("<p>", {
-            class: "display-info",
-            text: $(this).val(),
-        })
-
-        $(".additional-address").append(html);
-    });
-
-    $(".addCountry-field").each(function() {
-        var html = $("<p>", {
-            class: "display-info",
-            text: $(this).val(),
-        })
-
-        $(".additional-address").append(html);
-    });
 
 
-    $(".addPin-field").each(function() {
-        var html = $("<p>", {
-            class: "display-info",
-            text: $(this).val(),
-        })
-
-        $(".additional-address").append(html);
-    });
+        $('#addAddressDisplay').append(addressHtml, cityHtml, stateHtml, countryHtml, pinHtml, '<p>----------------------------------------------------</p>');
 
 
-    $(".container").hide();
+    }
+
+
+
+
+    $(".to-hide").hide();
     $("#resume").show();
+    $(".image-upload-wrap").hide();
+    $(".imgDiv").hide();
+    $(".remove-image").hide();
     $("#displayFname").text(fName);
     $("#displayMname").text(mName);
     $("#displayLname").text(lName);
@@ -83,4 +96,6 @@ function getFormValues() {
     $("#displayState").text(state);
     $("#displayCountry").text(country);
     $("#displayPin").text(pin);
+
+
 }
