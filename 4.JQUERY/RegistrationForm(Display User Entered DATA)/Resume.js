@@ -12,7 +12,7 @@ function getFormValues() {
     var city = $("#txtCity").val();
     var pin = $("#txtPin").val();
 
-
+    //Display Additional Contact field
     $(".addContactRow-field").each(function() {
         var html = $("<span>", {
             class: "display-info",
@@ -23,8 +23,7 @@ function getFormValues() {
     });
 
 
-
-
+    //Get values of Dynamic address fields
     var addressArray = $('.js-address').map(function() {
         return $(this).val();
     });
@@ -70,15 +69,13 @@ function getFormValues() {
         })
 
 
-
+        //Display values of dynamic address fields
         $('#addAddressDisplay').append(addressHtml, cityHtml, stateHtml, countryHtml, pinHtml, '<p>----------------------------------------------------</p>');
 
 
     }
 
-
-
-
+    //Display values of fields present on page
     $(".to-hide").hide();
     $("#resume").show();
     $(".image-upload-wrap").hide();
@@ -96,6 +93,5 @@ function getFormValues() {
     $("#displayState").text(state);
     $("#displayCountry").text(country);
     $("#displayPin").text(pin);
-
 
 }

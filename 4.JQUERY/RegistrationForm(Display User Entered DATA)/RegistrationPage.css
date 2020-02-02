@@ -41,10 +41,10 @@
         width: min-content;
         height: auto;
         margin: 2% 1% 1% 1%;
-        box-shadow: 5px 8px 15px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 5px 8px 15px 3px rgb(70, 53, 54);
         padding: 3% 1% 2% 1%;
         background-color: aliceblue;
-        border-radius: 4%;
+        border-radius: 15px;
     }
     
     .image-upload {
@@ -74,7 +74,7 @@
         padding-left: 2px;
     }
     
-    .fieldsetDivision {
+    .fieldset-division {
         margin-top: 25px;
         margin-bottom: 5px;
         border: 0;
@@ -87,7 +87,7 @@
         /* display: none; */
     }
     
-    .legendName,
+    .legend-name,
     .address-heading {
         font-size: larger;
         font-weight: 500;
@@ -222,7 +222,7 @@
         margin: 5px;
     }
     
-    .personalDetails {
+    .personal-details {
         padding: 10px;
         margin: 5px;
     }
@@ -267,7 +267,7 @@
         margin-left: 90px;
     }
     
-    .captchaDisplay {
+    .captcha-display {
         width: 40%;
         height: auto;
         padding-top: 20px;
