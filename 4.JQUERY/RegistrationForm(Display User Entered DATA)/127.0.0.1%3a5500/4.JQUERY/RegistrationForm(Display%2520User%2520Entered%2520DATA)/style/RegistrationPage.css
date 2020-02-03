@@ -154,6 +154,8 @@
         padding: 8px;
         margin-left: 10px;
         border: 1.5px solid #9966ff;
+        resize: n;
+        resize:;
     }
     
     .addAddress {
