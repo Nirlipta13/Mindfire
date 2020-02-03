@@ -27,7 +27,9 @@ $(document).ready(function() {
         $("input").val("");
         $(".inline-error").text("");
         $("#captchaResult").text("");
+        removeUpload();
         captchaGenerate();
+        // globalData.IsFormvalid = true;
     });
 
     $(".addressAdd-button").click(function() {
@@ -192,6 +194,7 @@ function removeUpload() {
     $('.file-upload-input').replaceWith($('.file-upload-input').clone());
     $('.file-upload-content').hide();
     $('.image-upload-wrap').show();
+    $(".file-upload-image").attr('src', '#');
 }
 $('.image-upload-wrap').bind('dragover', function() {
     $('.image-upload-wrap').addClass('image-dropping');
@@ -206,7 +209,7 @@ globalData.Iterator = 0;
 
 
 
-//Validation of Different Fields
+//Validation of Different Input Fields
 function checkName() {
     var fname = $.trim($('#txtFname').val());
     var mname = $.trim($('#txtMname').val());
@@ -341,14 +344,12 @@ function checkPhoneNumber() {
     });
 }
 
-
+//Validate Image
 function checkImage() {
     var image = $(".file-upload-image").attr("src");
     if (image === "#") {
         globalData.IsFormvalid = false;
         $("#image-error").text("Browse Image");
-    } else {
-        $("#image-error").text("");
     }
 }
 

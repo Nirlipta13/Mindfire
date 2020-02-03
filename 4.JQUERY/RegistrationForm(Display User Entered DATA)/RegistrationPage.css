@@ -176,7 +176,7 @@
     .addPin-field {
         width: 75%;
         padding: 8px;
-        margin-right: 370px;
+        margin-right: 350px;
         margin-left: 10px;
         border: 1.5px solid #9966ff;
     }
@@ -196,7 +196,7 @@
         background-color: aliceblue;
         border-radius: 15px;
         margin-left: 30%;
-        margin-top: -25%;
+        margin-top: -16%;
         padding: 5%;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: darkgreen;
@@ -362,7 +362,7 @@
     .image-upload-wrap {
         margin-top: 20px;
         margin-left: 77%;
-        border: 4px dashed #9999ff;
+        border: 2px solid #9999ff;
         position: relative;
         width: 150px;
         height: 150px;
@@ -374,11 +374,6 @@
         border: 4px dashed #ffffff;
     }
     
-    .image-title-wrap {
-        padding: 0 15px 15px 15px;
-        color: #222;
-    }
-    
     .drag-text {
         text-align: center;
     }
@@ -387,7 +382,7 @@
         font-weight: 100;
         text-transform: uppercase;
         color: #2d12c0;
-        padding: 6px 0;
+        padding: 32px 0;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
     
@@ -396,30 +391,4 @@
         max-width: 200px;
         margin: auto;
         padding: 20px;
-    }
-    
-    .remove-image {
-        width: 200px;
-        margin: 0;
-        color: #fff;
-        background: rgb(153, 102, 255);
-        border: none;
-        padding: 10px;
-        border-radius: 4px;
-        transition: all .2s ease;
-        outline: none;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    
-    .remove-image:hover {
-        background: rgb(153, 102, 255);
-        color: #ffffff;
-        transition: all .2s ease;
-        cursor: pointer;
-    }
-    
-    .remove-image:active {
-        border: 0;
-        transition: all .2s ease;
     }

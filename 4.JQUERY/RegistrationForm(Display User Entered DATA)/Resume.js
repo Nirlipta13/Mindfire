@@ -70,7 +70,7 @@ function getFormValues() {
 
 
         //Display values of dynamic address fields
-        $('#addAddressDisplay').append(addressHtml, cityHtml, stateHtml, countryHtml, pinHtml, '<p>----------------------------------------------------</p>');
+        $('#addAddressDisplay').append(addressHtml, cityHtml, stateHtml, countryHtml, pinHtml, '<p>-------------------------------------------------------------</p>');
 
 
     }
