@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCSharp", "TestCSharp\TestCSharp.csproj", "{46946145-1B04-4783-A833-31C5DCDC7556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VolumeMeasure", "VolumeMeasure\VolumeMeasure.csproj", "{7672FBBB-F002-4678-96DA-905B1506B50A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeInheritance", "ShapeInheritance\ShapeInheritance.csproj", "{C2D2E14B-624D-4493-8CA7-7D1DBF63A233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleInheritance", "RectangleInheritance\RectangleInheritance.csproj", "{1009D01F-AD24-43F8-933C-30860248D529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeVirtualFunction", "ShapeVirtualFunction\ShapeVirtualFunction.csproj", "{95686C6A-8211-4E6A-99DC-C7D5F41ABD56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDelegate", "TestDelegate\TestDelegate.csproj", "{17958A15-B77B-4ACD-9153-B3632B3391AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46946145-1B04-4783-A833-31C5DCDC7556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46946145-1B04-4783-A833-31C5DCDC7556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46946145-1B04-4783-A833-31C5DCDC7556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46946145-1B04-4783-A833-31C5DCDC7556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7672FBBB-F002-4678-96DA-905B1506B50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7672FBBB-F002-4678-96DA-905B1506B50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7672FBBB-F002-4678-96DA-905B1506B50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7672FBBB-F002-4678-96DA-905B1506B50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D2E14B-624D-4493-8CA7-7D1DBF63A233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D2E14B-624D-4493-8CA7-7D1DBF63A233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D2E14B-624D-4493-8CA7-7D1DBF63A233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D2E14B-624D-4493-8CA7-7D1DBF63A233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1009D01F-AD24-43F8-933C-30860248D529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1009D01F-AD24-43F8-933C-30860248D529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1009D01F-AD24-43F8-933C-30860248D529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1009D01F-AD24-43F8-933C-30860248D529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95686C6A-8211-4E6A-99DC-C7D5F41ABD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95686C6A-8211-4E6A-99DC-C7D5F41ABD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95686C6A-8211-4E6A-99DC-C7D5F41ABD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95686C6A-8211-4E6A-99DC-C7D5F41ABD56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17958A15-B77B-4ACD-9153-B3632B3391AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17958A15-B77B-4ACD-9153-B3632B3391AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17958A15-B77B-4ACD-9153-B3632B3391AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17958A15-B77B-4ACD-9153-B3632B3391AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

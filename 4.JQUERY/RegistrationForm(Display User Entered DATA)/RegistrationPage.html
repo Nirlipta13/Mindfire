@@ -5,9 +5,6 @@
     <title>Registration Form</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="style/RegistrationPage.css">
 
 </head>
@@ -22,15 +19,15 @@
     <div class="container">
         <form id="registrationForm">
             <div class="imgDiv">
-                <p>REGISTER YOURSELF</p>
+                <h3>REGISTER YOURSELF</h3>
             </div>
 
             <div class="image-upload-wrap">
-                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <input class="file-upload-input" id="imageUpload" type="file" onchange="readURL(this)" accept="image/*" />
                 <div class="drag-text">
                     <h3>Add Your Image</h3>
                 </div>
-                <p class="inline-error" id="image-error"></p>
+                <p class="inline-error" id="pErrorImage">Browse Image</p>
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" src="#" alt="your image" />
@@ -43,40 +40,40 @@
                     <div class="personal-details">
                         <div class="name-row">
                             <div>
-                                <label for="txtFname" id="lblFname" class="lbl-heading">First Name<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtFname" name="txtFname" class="nameRow-field" placeholder="First Name" />
-                                <p class="inline-error" id="errorFname"></p>
+                                <label for="txtFirstName" id="lblFirstName" class="lbl-heading">First Name<span class="astreik-mark">*</span></label>
+                                <input type="text" id="txtFirstName" name="txtFirstName" class="name-row-field" placeholder="First Name" />
+                                <p class="inline-error" id="pErrorFname">Enter your first name(Atleast 3 characters)</p>
                             </div>
                             <div>
-                                <label for="txtMname" id="lblMname" class="lbl-heading">Middle Name<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtMname" name="txtMname" class="nameRow-field" placeholder="Middle Name" />
-                                <p class="inline-error" id="errorMname"></p>
+                                <label for="txtMiddleName" id="lblMiddleName" class="lbl-heading">Middle Name</label>
+                                <input type="text" id="txtMiddleName" name="txtMiddleName" class="name-row-field" placeholder="Middle Name" />
+                                <p class="inline-error" id="errorMname">Enter your middle name properly(If any)</p>
                             </div>
                             <div>
-                                <label for="txtLname" id="lblLname" class="lbl-heading">Last Name<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtLname" name="txtLname" class="nameRow-field" placeholder="Last Name" />
-                                <p class="inline-error" id="errorLname"></p>
+                                <label for="txtLastName" id="lblLastName" class="lbl-heading">Last Name<span class="astreik-mark">*</span></label>
+                                <input type="text" id="txtLastName" name="txtLastName" class="name-row-field" placeholder="Last Name" />
+                                <p class="inline-error" id="pErrorLname">Enter your last name(Atleast 3 characters)</p>
                             </div>
                         </div>
 
                         <div class="email-row">
                             <label for="txtEmail" id="lblEmail" class="lbl-heading">Email ID<span class="astreik-mark">*</span></label>
                             <div>
-                                <input type="text" id="txtEmail" name="txtEmail" class="emailRow-field" placeholder="Email Address" />
-                                <p class="inline-error" id="errorEmail"></p>
+                                <input type="text" id="txtEmail" name="txtEmail" class="email-row-field" placeholder="Email Address" />
+                                <p class="inline-error" id="pErrorEmail">Enter a valid email Id</p>
                             </div>
                         </div>
 
                         <div class="identification-row">
                             <div>
                                 <label for="txtPanCard" id="lblPanCard" class="lbl-heading">Pan Card<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtPanCard" name="txtPanCard" class="identificationRow-field" placeholder="Pancard Number" />
-                                <p class="inline-error" id="errorPanCard"></p>
+                                <input type="text" id="txtPanCard" name="txtPanCard" class="identification-row-field" placeholder="Pancard Number" />
+                                <p class="inline-error" id="pErrorPanCard">Pancard number must follow 'AAAAA0000A'</p>
                             </div>
                             <div>
                                 <label for="txtAadharCard" id="lblAadharCard" class="lbl-heading">Aadhar Card<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtAadharCard" name="txtAadharCard" class="identificationRow-field" placeholder="Aadhar Card Number" />
-                                <p class="inline-error" id="errorAadharCard"></p>
+                                <input type="text" id="txtAadharCard" name="txtAadharCard" class="identification-row-field" placeholder="Aadhar Card Number" />
+                                <p class="inline-error" id="pErrorAadharCard">Aadharcard number must follow 'xxxx xxxx xxxx'</p>
                             </div>
                         </div>
                     </div>
@@ -88,9 +85,9 @@
                     <div class="contact-row">
                         <label for="txtPhoneNumber" id="lblPhoneNumber" class="lbl-heading">Phone Number<span class="astreik-mark">*</span></label>
                         <div>
-                            <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contactRow-field" placeholder="Phone Number" />
+                            <input type="text" id="txtPhoneNumber" name="txtPhoneNumber" class="contact-row-field" maxlength="10" placeholder="Phone Number" />
                             <button type="button" class="add-button">+</button>
-                            <p class="inline-error" id="errorPhoneNumber"></p>
+                            <p class="inline-error" id="pErrorPhoneNumber">Enter a valid Phone Number</p>
                         </div>
 
                     </div>
@@ -98,91 +95,91 @@
 
                 <fieldset class="fieldset-division">
                     <legend class="legend-name">Address Details</legend>
-                    <div class="addressDetails">
+                    <div class="address-details">
                         <label for="txtAddress" id="lblAddress" class="lbl-heading">Address<span class="astreik-mark">*</span></label>
                         <div class="address-row">
-                            <textarea id="txtAddress" name="txtAddress" class="addressRow-field" placeholder="Address"></textarea>
-                            <p class="inline-error" id="errorAddress"></p>
+                            <textarea id="txtAddress" name="txtAddress" class="address-row-field" placeholder="Address"></textarea>
+                            <p class="inline-error" id="pErrorAddress">Enter your valid Address</p>
                         </div>
-                        <div class="countryState-row">
+                        <div class="country-state-row">
                             <div>
                                 <label for="txtCountry" id="lblCountry" class="lbl-heading">Country<span class="astreik-mark">*</span></label>
-                                <select id="txtCountry" name="txtCountry" class="countryState-field js-country">
+                                <select id="txtCountry" name="txtCountry" class="country-state-field js-country">
                                     <option value="" selected>Select Country</option>
                                     <option value="India">India</option>
                                     <option value="Pakistan">Pakistan</option>
                                     <option value="China">China</option>
                                 </select>
-                                <p class="inline-error" id="errorCountry"></p>
+                                <p class="inline-error" id="pErrorCountry">Select your Country</p>
                             </div>
 
                             <div>
                                 <label for="txtState" id="lblState" class="lbl-heading">State<span class="astreik-mark">*</span></label>
-                                <select class="countryState-field js-state" id="txtState">
+                                <select class="country-state-field js-state" id="txtState">
                                     <option value="" selected>Select State</option>
                                 </select>
-                                <p class="inline-error" id="errorState"></p>
+                                <p class="inline-error" id="pErrorState">Select your State</p>
                             </div>
                         </div>
-                        <div class="cityPin-row">
+                        <div class="city-pin-row">
                             <div>
                                 <label for="txtCity" id="lblCity" class="lbl-heading">City<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtCity" name="txtCity" class="cityPin-field" placeholder="City" />
-                                <p class="inline-error" id="errorCity"></p>
+                                <input type="text" id="txtCity" name="txtCity" class="city-pin-field" placeholder="City" />
+                                <p class="inline-error" id="pErrorCity">Enter your city</p>
                             </div>
                             <div>
                                 <label for="txtPin" id="lblPin" class="lbl-heading">ZipCode<span class="astreik-mark">*</span></label>
-                                <input type="text" id="txtPin" name="txtPin" class="cityPin-field" placeholder="ZipCode" />
-                                <p class="inline-error" id="errorPin"></p>
+                                <input type="text" id="txtPin" name="txtPin" class="city-pin-field" placeholder="ZipCode" maxlength="6" />
+                                <p class="inline-error" id="pErrorPin">Enter ZipCode Properly</p>
                             </div>
                         </div>
 
                     </div>
-                    <div class="addressAddButton">
-                        <button type="button" class="addressAdd-button">Add Another Address</button>
+                    <div>
+                        <button type="button" class="address-add-button">Add Another Address</button>
                     </div>
                     <div class="parent-address">
-                        <div id="parent">
+                        <div id="parentAddress">
                             <p class="legend-name">Add New Address</p>
                             <label for="txtAddress" class="lbl-heading">Address<span class="astreik-mark">*</span></label>
                             <div class="address-row">
-                                <textarea name="txtAddress" class="addressRow-field js-address" placeholder="Address">
+                                <textarea name="txtAddress" class="address-row-field js-address" placeholder="Address">
                                 </textarea>
-                                <p class="inline-error"></p>
+                                <p class="inline-error">Enter your address</p>
                             </div>
-                            <div class="countryState-row">
+                            <div class="country-state-row">
                                 <div>
                                     <label for="txtCountry" class="lbl-heading">Country<span class="astreik-mark">*</span></label>
-                                    <select name="txtCountry" class="countryState-field js-country add-js-country">
+                                    <select name="txtCountry" class="country-state-field js-country add-js-country">
                                         <option value="" selected>Select Country</option>
                                         <option value="India">India</option>
                                         <option value="Pakistan">Pakistan</option>
                                         <option value="China">China</option>
                                     </select>
-                                    <p class="inline-error"></p>
+                                    <p class="inline-error">Select your Country</p>
                                 </div>
 
                                 <div>
                                     <label for="txtState" class="lbl-heading">State<span class="astreik-mark">*</span></label>
-                                    <select class="countryState-field js-state add-js-state">
+                                    <select class="country-state-field js-state add-js-state">
                                         <option value="" selected>Select State</option>
                                     </select>
-                                    <p class="inline-error"></p>
+                                    <p class="inline-error">Select your State</p>
                                 </div>
                             </div>
-                            <div class="cityPin-row">
+                            <div class="city-pin-row">
                                 <div>
                                     <label for="txtCity" class="lbl-heading">City<span class="astreik-mark">*</span></label>
-                                    <input type="text" name="txtCity" class="cityPin-field js-city" placeholder="City" />
-                                    <p class="inline-error"></p>
+                                    <input type="text" name="txtCity" class="city-pin-field js-city" placeholder="City" />
+                                    <p class="inline-error">Enter your City</p>
                                 </div>
                                 <div>
                                     <label for="txtPin" class="lbl-heading">ZipCode<span class="astreik-mark">*</span></label>
-                                    <input type="text" name="txtPin" class="cityPin-field js-pin" placeholder="ZipCode" />
-                                    <p class="inline-error"></p>
+                                    <input type="text" name="txtPin" class="city-pin-field js-pin" placeholder="ZipCode" maxlength="6" />
+                                    <p class="inline-error">Enter your ZipCode</p>
                                 </div>
                             </div>
-                            <div class="addressAddButton"><button type="button" class="addressRemove-button" style="background-color:red; color:white;background-color: red;color: white;padding: 8px;border: 0;margin: 8px;border-radius: 5px;">Remove Address</button>
+                            <div><button type="button" class="address-remove-button">Remove Address</button>
                             </div>
                         </div>
                     </div>
@@ -194,7 +191,7 @@
 
                     <div class="captcha-display">
                         <p class="para-for-captcha"><span id="firstOperand"></span><span id="operator"></span><span id="secondOperand"></span>=
-                            <input type="number" id="userResult" class="userInput" /> <img src="images/Refresh_icon.png" id="refreshIcon" /></p>
+                            <input type="number" id="userResult" class="user-input" /> <img src="images/Refresh_icon.png" id="refreshIcon" alt="captcha background" /></p>
                         <p id="captchaResult"></p>
                     </div>
                     <p class="captcha-info"><span>In case of division, enter the nearest whole number.</span></p>
@@ -203,25 +200,27 @@
                     <button type="button" id="submitBtn">Register</button>
                     <button type="button" id="resetBtn">Reset</button>
                 </div>
+            </div>
         </form>
-        </div>
     </div>
+
 
     <div id="resume">
         <fieldset>
             <legend>Personal Information</legend>
             <p><span> Name:</span>
-                </span>
                 <span id="displayFname" class="display-info"></span>
                 <span id="displayMname" class="display-info "></span>
                 <span id="displayLname" class="display-info"></span>
             </p>
 
             <p><span> Email Id:</span>
-                <span id="displayEmail" class=" display-info "></span></p>
+                <span id="displayEmail" class=" display-info "></span>
+            </p>
 
             <p> <span> Pan card Number:</span>
-                <span id="displayPancard" class="display-info"></span></p>
+                <span id="displayPancard" class="display-info"></span>
+            </p>
 
             <p><span>AadharCard Number:</span>
                 <span id="displayAadharCard" class=" display-info "></span>
@@ -233,17 +232,23 @@
         <fieldset>
             <legend>Address Details</legend>
             <div>
+                <div>
+                    <div id="displayAddress" class=" display-info ">
+                    </div>
+                </div>
+
                 <p>
-                    <span id="displayAddress" class=" display-info "></span>
+                    <span id="displayCity" class="display-info"></span>
                 </p>
                 <p>
-                    <span id="displayCity" class="display-info"></span></p>
+                    <span id="displayState" class=" display-info "></span>
+                </p>
                 <p>
-                    <span id="displayState" class=" display-info "></span></p>
+                    <span id="displayCountry" class="display-info"></span>
+                </p>
                 <p>
-                    <span id="displayCountry" class="display-info"></span></p>
-                <p>
-                    <span id="displayPin" class=" display-info "></span></p>
+                    <span id="displayPin" class=" display-info "></span>
+                </p>
                 <p>-------------------------------------------------------------</p>
             </div>
 
@@ -253,7 +258,8 @@
 
     </div>
 
-    <script src="script/Common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script/Registration.js"></script>
     <script src="script/Resume.js"></script>
 
 </body>

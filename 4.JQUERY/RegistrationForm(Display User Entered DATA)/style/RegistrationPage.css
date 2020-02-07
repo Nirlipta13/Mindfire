@@ -97,12 +97,12 @@
     
     .name-row,
     .identification-row,
-    .cityPin-row,
-    .countryState-row {
+    .city-pin-row,
+    .country-state-row {
         display: flex;
     }
     
-    .nameRow-field {
+    .name-row-field {
         width: 80%;
         padding: 8px;
         margin-left: 10px;
@@ -117,7 +117,7 @@
         margin-top: -30px;
     }
     
-    .imgDiv p {
+    .imgDiv h3 {
         color: white;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         text-align: start;
@@ -125,7 +125,7 @@
         padding: 20px;
     }
     
-    .identificationRow-field {
+    .identification-row-field {
         width: 71%;
         padding: 8px;
         margin-right: 350px;
@@ -133,23 +133,23 @@
         border: 1.5px solid #9966ff;
     }
     
-    .emailRow-field {
+    .email-row-field {
         width: 36%;
         padding: 8px;
         margin-left: 10px;
         border: 1.5px solid #9966ff;
     }
     
-    .contactRow-field,
-    .addContactRow-field {
+    .contact-row-field,
+    .addcontact-row-field {
         width: 36%;
         padding: 8px;
         margin-left: 10px;
         border: 1.5px solid #9966ff;
     }
     
-    .addressRow-field,
-    .addAddressRow-field {
+    .address-row-field,
+    .addaddress-row-field {
         width: 85%;
         padding: 8px;
         margin-left: 10px;
@@ -167,10 +167,11 @@
         background-color: lightblue;
         border: 0;
         border-radius: 5px;
+        cursor: pointer;
     }
     
-    .countryState-field,
-    .addCountryState-field,
+    .country-state-field,
+    .addcountry-state-field,
     .addCountry-field,
     .addState-field,
     .addCity-field,
@@ -182,8 +183,8 @@
         border: 1.5px solid #9966ff;
     }
     
-    .cityPin-field,
-    .addCityPin-field {
+    .city-pin-field,
+    .addcity-pin-field {
         width: 71%;
         padding: 8px;
         margin-right: 350px;
@@ -205,12 +206,13 @@
         font-weight: 500;
     }
     
-    .addressAdd-button {
+    .address-add-button {
         padding: 8px;
         margin: 10px;
         background-color: lightblue;
         border: 0;
         border-radius: 5px;
+        cursor: pointer;
     }
     
     .contact-row {
@@ -218,7 +220,7 @@
         margin: 5px;
     }
     
-    .addressDetails {
+    .address-details {
         padding: 10px;
         margin: 5px;
     }
@@ -248,6 +250,7 @@
         background-color: rgb(153, 102, 255);
         border: 0;
         border-radius: 5px;
+        cursor: pointer;
     }
     
     #userResult {
@@ -308,6 +311,18 @@
     
     .astreik-mark {
         color: red;
+    }
+    
+    .address-remove-button {
+        background-color: red;
+        color: white;
+        background-color: red;
+        color: white;
+        padding: 8px;
+        border: 0;
+        margin: 8px;
+        border-radius: 5px;
+        cursor: pointer;
     }
     
     .file-upload {
@@ -372,7 +387,6 @@
     .image-dropping,
     .image-upload-wrap:hover {
         background-color: #9999ff;
-        border: 4px dashed #ffffff;
     }
     
     .drag-text {

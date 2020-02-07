@@ -1,7 +1,7 @@
 function getFormValues() {
-    var fName = $("#txtFname").val();
-    var mName = $("#txtMname").val();
-    var lName = $("#txtLname").val();
+    var fName = $("#txtFirstName").val();
+    var mName = $("#txtMiddleName").val();
+    var lName = $("#txtLastName").val();
     var eMail = $("#txtEmail").val();
     var phoneNumber = $("#txtPhoneNumber").val()
     var panCard = $("#txtPanCard").val();
@@ -13,7 +13,7 @@ function getFormValues() {
     var pin = $("#txtPin").val();
 
     //Display Additional Contact field
-    $(".addContactRow-field").each(function() {
+    $(".addcontact-row-field").each(function() {
         var html = $("<span>", {
             class: "display-info",
             text: $(this).val(),
@@ -47,26 +47,26 @@ function getFormValues() {
 
     for (var iterator = 0; iterator < addressArray.length - 1; iterator++) {
 
-        var addressHtml = $("<p>", {
+        var addressHtml = $("<div>", {
             class: "display-info",
             text: $.trim(addressArray[iterator]),
-        })
+        });
         var cityHtml = $("<p>", {
             class: "display-info",
             text: $.trim(cityArray[iterator]),
-        })
+        });
         var stateHtml = $("<p>", {
             class: "display-info",
             text: $.trim(stateArray[iterator]),
-        })
+        });
         var countryHtml = $("<p>", {
             class: "display-info",
             text: $.trim(countryArray[iterator]),
-        })
+        });
         var pinHtml = $("<p>", {
             class: "display-info",
             text: $.trim(pinArray[iterator]),
-        })
+        });
 
 
         //Display values of dynamic address fields
