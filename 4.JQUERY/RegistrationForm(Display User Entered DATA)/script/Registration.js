@@ -16,6 +16,8 @@ $(document).ready(function() {
         var boolImage = checkImage();
         if (boolAddress === 1 && boolPhno === 1 && boolIdentify === 1 && boolEmail === 1 && boolName === 1 && boolImage === 1 && boolAddAddress === 1 && boolAddPhno === 1) {
             getFormValues();
+        } else {
+            captchaGenerate();
         }
     });
 
@@ -104,7 +106,7 @@ function addPhonenumber() {
         '<label class="lbl-heading">Alternate Phone Number' +
         '<span class="astreik-mark">*</span></label><br/>' +
         '<input type="text" name="txtPhoneNumber" class="addcontact-row-field" ' +
-        ' placeholder="Alternate PhoneNumber" /><button type="button" class="removePhone">X' +
+        ' placeholder="Alternate PhoneNumber" maxlength= "10" /><button type="button" class="removePhone">X' +
         '</button><p class="inline-error"></p></div>');
 
     $(document).on("click", ".removePhone", function() {
@@ -160,6 +162,7 @@ function captchaGenerate() {
     var opr = operatorArray[Math.floor(Math.random() * 4)];
     $("#operator").text(opr);
     $("#userResult").val("");
+    $("#captchaResult").text("");
 }
 
 
