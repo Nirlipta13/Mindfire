@@ -28,23 +28,23 @@ function getFormValues() {
     var addressArray = $('.js-address').map(function() {
         return $(this).val();
     });
-    addressArray = jQuery.grep(addressArray, function(n) { return (n); });
+    addressArray = $.grep(addressArray, function(n) { return (n); });
     var countryArray = $('.add-js-country').map(function() {
         return $(this).val();
     });
-    countryArray = jQuery.grep(countryArray, function(n) { return (n); });
+    countryArray = $.grep(countryArray, function(n) { return (n); });
     var stateArray = $('.add-js-state').map(function() {
         return $(this).val();
     });
-    stateArray = jQuery.grep(stateArray, function(n) { return (n); });
+    stateArray = $.grep(stateArray, function(n) { return (n); });
     var cityArray = $('.js-city').map(function() {
         return $(this).val();
     });
-    cityArray = jQuery.grep(cityArray, function(n) { return (n); });
+    cityArray = $.grep(cityArray, function(n) { return (n); });
     var pinArray = $('.js-pin').map(function() {
         return $(this).val();
     });
-    pinArray = jQuery.grep(pinArray, function(n) { return (n); });
+    pinArray = $.grep(pinArray, function(n) { return (n); });
 
     for (var iterator = 0; iterator < addressArray.length - 1; iterator++) {
 
