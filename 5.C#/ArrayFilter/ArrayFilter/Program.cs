@@ -6,75 +6,10 @@ using System.Threading.Tasks;
 
 namespace ArrayFilter
 {
-   
-    class FilterProgram
-    {
-        
-        public void EvenFilter(int[] arr)
-        {
-            int iterator,counter=0;
-            int[] res_array = new int[10];
-            for (iterator = 0; iterator < 10; iterator++)
-            {
-                if (arr[iterator] % 2 == 0)
-                {
-                    res_array[counter] = arr[iterator];
-                    counter++;
-                }
-            }
-            
-            for(iterator=0;iterator<res_array.Length;iterator++)
-            {
-                Console.WriteLine(res_array[iterator]);
-            }
-        }
-
-        public void CompareFilter(int[] arr)
-        {
-            int iterator,counter=0;
-            int[] res_array = new int[10];
-            for (iterator = 0; iterator < 10; iterator++)
-            {
-                if (arr[iterator] > 10)
-                {
-                    res_array[counter] = arr[iterator];
-                    counter++;
-                }
-            }
-            for(iterator=0;iterator<res_array.Length;iterator++)
-            {
-                Console.WriteLine(res_array[iterator]);
-            }
-        }
-
-        public void  DivisibleFilter(int[] arr)
-        {
-            int iterator,counter=0;
-            int[] res_array = new int[10];
-            for (iterator = 0; iterator < 10; iterator++)
-            {
-                if (arr[iterator] % 5 == 0)
-                {
-                    res_array[counter] = arr[iterator];
-                    counter++;
-                }
-            }
-            for(iterator=0;iterator<res_array.Length;iterator++)
-            {
-                Console.WriteLine(res_array[iterator]);
-            }
-        }
-
-       
-     }//end of 1st class
-        
-    
     class Program
     {
         public delegate void  FilterDelegate(int[] arr);
         
-       
-
         static void Main(string[] args)
         {
             
@@ -103,10 +38,10 @@ namespace ArrayFilter
                 }
             }
 
-            FilterProgram fp = new FilterProgram();
-            FilterDelegate fd1 = new FilterDelegate(fp.EvenFilter);
-            FilterDelegate fd2 = new FilterDelegate(fp.CompareFilter);
-            FilterDelegate fd3 = new FilterDelegate(fp.DivisibleFilter);
+            FilterArray filterarray = new FilterArray();
+            FilterDelegate fd1 = new FilterDelegate(filterarray.EvenFilter);
+            FilterDelegate fd2 = new FilterDelegate(filterarray.CompareFilter);
+            FilterDelegate fd3 = new FilterDelegate(filterarray.DivisibleFilter);
 
             
 
@@ -138,7 +73,7 @@ namespace ArrayFilter
                 }
             }
         }
-    }//end of class 2
+    }//end of class 
 
-}
+}//end of namespace
 
