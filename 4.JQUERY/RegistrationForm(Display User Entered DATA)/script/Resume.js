@@ -12,6 +12,7 @@ function getFormValues() {
     var city = $("#txtCity").val();
     var pin = $("#txtPin").val();
 
+
     //Display Additional Contact field
     $(".addcontact-row-field").each(function() {
         var html = $("<span>", {

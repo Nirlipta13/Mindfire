@@ -19,7 +19,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#imageUpload").on('change', function() {
+    $("body").on('change', '#imageUpload', function() {
         readURL(this);
     });
 
