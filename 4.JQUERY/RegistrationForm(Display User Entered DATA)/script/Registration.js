@@ -19,8 +19,8 @@ $(document).ready(function() {
         }
     });
 
-    $("#imageUpload").change(function() {
-        readURL($(this));
+    $("#imageUpload").on('change', function() {
+        readURL(this);
     });
 
     $("body").on("keypress", ".addcontact-row-field, #txtPhoneNumber, #txtPin, .js-pin", function(e) {
@@ -204,6 +204,7 @@ function captchaVerify() {
 
 //Image Upload
 function readURL(input) {
+
     if (input.files && input.files[0]) {
 
         var reader = new FileReader();
