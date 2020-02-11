@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VolumeMeasure")]
+[assembly: AssemblyTitle("FilterArray")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("VolumeMeasure")]
+[assembly: AssemblyProduct("FilterArray")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("23e76496-d6ca-46a1-90cb-0f971b27b53b")]
+[assembly: Guid("b772b45f-c0ae-41ae-8191-754fa70dd660")]
 
 // Version information for an assembly consists of the following four values:
 //

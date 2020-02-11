@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayFilter", "ArrayFilter\ArrayFilter.csproj", "{6CA29D47-164A-486C-B23E-FB0BA17B97CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilterArray", "FilterArray\FilterArray.csproj", "{AB00B90F-1461-4367-B9A5-DBC6F28BB91E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6CA29D47-164A-486C-B23E-FB0BA17B97CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CA29D47-164A-486C-B23E-FB0BA17B97CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CA29D47-164A-486C-B23E-FB0BA17B97CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CA29D47-164A-486C-B23E-FB0BA17B97CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB00B90F-1461-4367-B9A5-DBC6F28BB91E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB00B90F-1461-4367-B9A5-DBC6F28BB91E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB00B90F-1461-4367-B9A5-DBC6F28BB91E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB00B90F-1461-4367-B9A5-DBC6F28BB91E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

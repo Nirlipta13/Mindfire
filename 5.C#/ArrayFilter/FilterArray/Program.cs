@@ -4,24 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArrayFilter
+namespace FilterArray
 {
+    public delegate bool IsArrayFilter(int element);
+
     class Program
     {
-        public delegate void  FilterDelegate(int[] arr);
-        
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
             Console.WriteLine("ARRAY FILTER APPLICATION");
             Console.WriteLine("----------------------------");
             int[] input_array = new int[10];
             String input;
-            int size = 10, iterator=0;
+            int size = 10, iterator = 0;
             int value;
             int maxNum = 999999;
             int minNum = -999999;
-            while(iterator!=size)
+            while (iterator != size)
             {
                 Console.WriteLine("Array Element: {0}", iterator + 1);
                 Console.WriteLine("----------------------------");
@@ -38,14 +37,12 @@ namespace ArrayFilter
                 }
             }
 
-            //object declaration of filterArray
-            FilterArray filterarray = new FilterArray();
-            //callback using delegate
-            FilterDelegate fd1 = new FilterDelegate(filterarray.EvenFilter);
-            FilterDelegate fd2 = new FilterDelegate(filterarray.CompareFilter);
-            FilterDelegate fd3 = new FilterDelegate(filterarray.DivisibleFilter);
 
-            
+            IsArrayFilter isEvenFilter = new IsArrayFilter(EvenFilter);
+            IsArrayFilter isCompareFilter = new IsArrayFilter(CompareFilter);
+            IsArrayFilter isDivisibleFilter = new IsArrayFilter(DivisibleFilter);
+
+            Filter filter = new Filter();
 
             while (true)
             {
@@ -53,17 +50,17 @@ namespace ArrayFilter
                 Console.WriteLine("----------------------------");
                 Console.WriteLine("Choose an option from the above list to continue");
                 int choice = Int32.Parse(Console.ReadLine());
-                
+
                 switch (choice)
                 {
                     case 1:
-                        fd1(input_array);
-                        break;
+                         filter.GetResult(input_array, isEvenFilter);
+                         break;
                     case 2:
-                       fd2(input_array);
+                         filter.GetResult(input_array, isCompareFilter);
                         break;
                     case 3:
-                        fd3(input_array);
+                        filter.GetResult(input_array, isDivisibleFilter);
                         break;
                     case 4:
                         Console.WriteLine("Bye!!");
@@ -75,7 +72,41 @@ namespace ArrayFilter
                 }
             }
         }
-    }//end of class 
 
-}//end of namespace
+        public static bool EvenFilter(int ele)
+        {
+            if (ele % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool CompareFilter(int ele)
+        {
+            if (ele > 10 )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool DivisibleFilter(int ele)
+        {
+            if (ele % 5 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+    }//end of class program
 
+}
