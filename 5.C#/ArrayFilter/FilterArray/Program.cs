@@ -4,70 +4,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilterArray
+namespace ArrayFilter
 {
-    public delegate bool IsArrayFilter(int element);
-
+    public delegate bool DelFilterArray(int x);
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("ARRAY FILTER APPLICATION");
-            Console.WriteLine("----------------------------");
-            int[] input_array = new int[10];
-            String input;
-            int size = 10, iterator = 0;
+            Console.WriteLine("WELCOME TO ARRAY FILTER APPLICATION");
+            Console.WriteLine("============================");
+            Console.WriteLine("ENTER YOUR ARRAY HERE");
+            Console.WriteLine("============================");
+            int[] inputArray = new int[10];
+            int iterator=0;
             int value;
+            String input;
             int maxNum = 999999;
             int minNum = -999999;
-            while (iterator != size)
+            while (iterator != 10)
             {
                 Console.WriteLine("Array Element: {0}", iterator + 1);
-                Console.WriteLine("----------------------------");
+                Console.WriteLine("============================");
                 input = Console.ReadLine();
                 if (int.TryParse(input, out value) && value >= minNum && value <= maxNum)
                 {
-                    input_array[iterator] = Convert.ToInt32(input);
+                    inputArray[iterator] = Convert.ToInt32(input);
                     iterator++;
                 }
                 else
                 {
                     Console.WriteLine("Re-Enter Array Element");
-                    Console.WriteLine("----------------------------");
+                    Console.WriteLine("============================");
                 }
             }
+            Console.WriteLine("============================");
 
+            FilterArray filterArray = new FilterArray();
+            DelFilterArray evenFilter = new DelFilterArray(EvenFilter);
+            DelFilterArray compareFilter = new DelFilterArray(CompareFilter);
+            DelFilterArray divisibleFilter = new DelFilterArray(DivisibleFilter);
 
-            IsArrayFilter isEvenFilter = new IsArrayFilter(EvenFilter);
-            IsArrayFilter isCompareFilter = new IsArrayFilter(CompareFilter);
-            IsArrayFilter isDivisibleFilter = new IsArrayFilter(DivisibleFilter);
-
-            Filter filter = new Filter();
 
             while (true)
             {
-                Console.WriteLine("1.Return All Even Numbers.\n2.Return Numbers Greater than 10.\n3.Return Numbers divisible by 5.\n4.Quit");
-                Console.WriteLine("----------------------------");
+                Console.WriteLine("============================");
+                Console.WriteLine("1.RETURN ALL EVEN NUMBERS.\n2.RETURN ALL NUMBERS GREATER THAN 10.\n3.RETURN NUMBERS DIVISIBLE BY 5.\n4.QUIT");
+                Console.WriteLine("============================");
                 Console.WriteLine("Choose an option from the above list to continue");
                 int choice = Int32.Parse(Console.ReadLine());
 
                 switch (choice)
                 {
                     case 1:
-                         filter.GetResult(input_array, isEvenFilter);
-                         break;
+                        filterArray.GetResult(inputArray, evenFilter);
+                        break;
                     case 2:
-                         filter.GetResult(input_array, isCompareFilter);
+                        filterArray.GetResult(inputArray, compareFilter);
                         break;
                     case 3:
-                        filter.GetResult(input_array, isDivisibleFilter);
+                        filterArray.GetResult(inputArray, divisibleFilter);
                         break;
                     case 4:
-                        Console.WriteLine("Bye!!");
+                        Console.WriteLine("BYE !!");
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("False");
+                        Console.WriteLine("FALSE");
                         break;
                 }
             }
@@ -84,9 +86,10 @@ namespace FilterArray
                 return false;
             }
         }
+
         public static bool CompareFilter(int ele)
         {
-            if (ele > 10 )
+            if (ele>10)
             {
                 return true;
             }
@@ -95,6 +98,7 @@ namespace FilterArray
                 return false;
             }
         }
+
         public static bool DivisibleFilter(int ele)
         {
             if (ele % 5 == 0)
@@ -106,7 +110,5 @@ namespace FilterArray
                 return false;
             }
         }
-        
-    }//end of class program
-
+    }
 }

@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilterArray
+namespace ArrayFilter
 {
-    class Filter
+    class FilterArray
     {
-        public void GetResult(int[] arr, IsArrayFilter isArrayFilter)
+        public void GetResult(int[] arr, DelFilterArray delFilteArray)
         {
-            int iterator;
-            Console.WriteLine("----------------------------");
+            int iterator = 0;
+            Console.WriteLine("============================");
             for (iterator = 0; iterator < arr.Length; iterator++)
             {
-                if (isArrayFilter(arr[iterator]))
+                if (delFilteArray(arr[iterator]))
                 {
                     Console.WriteLine(arr[iterator]);
                 }
