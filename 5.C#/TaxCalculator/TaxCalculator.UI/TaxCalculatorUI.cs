@@ -13,81 +13,53 @@ namespace TaxCalculator.UI
     {
         static void Main(string[] args)
         {
-            string inputStrSalary, inputStrInvestment;
-            double minNum = 0, maxNum = 999999999999, inputSalary = 0, inputInvestment = 0, value;
+            double inputSalary = 0, inputInvestment = 0;
             double investmentResult = 0;
+            string[] resultSlab = new string[3];
+            string finalResultTax;
+
+            TaxCalculatorLogics logicObject = new TaxCalculatorLogics();
 
             //Input from the user
-   
-                    Console.WriteLine("WELCOME TO TAX CALCULATOR APPLICATION");
-                    Console.WriteLine("=====================================");
-                    Console.WriteLine("=====================================");
 
-                    bool validateSal = false;
-                    while (validateSal==false)
-                    {
-                        try
-                        {
-                            Console.WriteLine("PROVIDE YOUR ANNUAL GROSS INCOME");
-                            Console.WriteLine("=====================================");
-                            inputStrSalary = Console.ReadLine();
-                            if (double.TryParse(inputStrSalary, out value) && value > minNum && value <= maxNum)
-                            {
-                                inputSalary = value;
-                                validateSal = true;
-                            }
-                           
-                        }
-                        catch (ArgumentNullException e)
-                        { 
-                            Console.WriteLine("NULL INPUT!! TryAgain ");                          
-                        }
-                        catch (FormatException e)
-                        {                           
-                            Console.WriteLine("NOT A NUMBER!! TryAgain");                          
-                        }
-                        
-                    }
+            Console.WriteLine("WELCOME TO TAX CALCULATOR APPLICATION");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("=====================================");
 
 
-                    bool validateInvest = false;
-                    while (validateInvest == false)
-                    {
-                        try
-                        {
-                            Console.WriteLine("PROVIDE YOUR BASIC DEDUCTION-80 C");
-                            Console.WriteLine("=====================================");
-                            inputStrInvestment = Console.ReadLine();
-                            if (double.TryParse(inputStrInvestment, out value) && value > minNum && value <= inputSalary)
-                            {
-                                inputInvestment = value;
-                                validateInvest = true;
-                            }
-                        }
-                        catch (ArgumentNullException e)
-                        {
-                            Console.WriteLine("NULL INPUT!! TryAgain ");
-                        }
-                        catch (FormatException e)
-                        {
-                            Console.WriteLine("NOT A NUMBER!! TryAgain");
-                        }
+            Console.WriteLine("PROVIDE YOUR ANNUAL GROSS INCOME");
 
-                    }
+            inputSalary = logicObject.checkInput(Console.ReadLine());
 
-                    Console.WriteLine("-------------------------------------");
-                    Console.WriteLine("OUTPUT");
-                    Console.WriteLine("-------------------------------------");
+            Console.WriteLine("=====================================");
+            Console.WriteLine("PROVIDE YOUR BASIC DEDUCTION-80 C");
+
+            inputInvestment = logicObject.checkInput(Console.ReadLine());
 
 
-                    //Call the interface methods for tax calculations
-                    TaxCalculatorLogics logicObject = new TaxCalculatorLogics();
-                    investmentResult = logicObject.GetGrossTaxIncome(inputSalary, inputInvestment);
-                    logicObject.CalculateTax(investmentResult);
-                    Console.ReadKey();
-    
-            
+            Console.Clear();
+            Console.WriteLine("----------------OUTPUT----------------");
+
+
+            //Call the interface methods for tax calculations
+
+            investmentResult = logicObject.GetGrossTaxIncome(inputSalary, inputInvestment);
+            Double taxResult = logicObject.CalculateTax(investmentResult, out resultSlab);
+            finalResultTax = taxResult.ToString("0,0", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"));
+            for (int iterator = 0; iterator < resultSlab.Length; iterator++)
+            {
+                if (resultSlab[iterator] != null)
+                {
+                    Console.WriteLine("TAX AT SLAB-{0}:{1}", iterator + 1, resultSlab[iterator]);
+                }
+            }
+            Console.WriteLine("=====================================");
+            Console.WriteLine("TOTA TAX AMOUNT:{0}", finalResultTax);
+            Console.WriteLine("\nENTER ANY KEY TO QUIT");
+            Console.ReadKey();
+
         }
 
     }
 }
+
