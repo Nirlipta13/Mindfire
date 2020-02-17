@@ -39,6 +39,7 @@ namespace TaxCalculator.BusinessLogic
             double maxExemption = 150000;
             double grossTaxIncome = (investment < 150000) ? salary - investment : salary - maxExemption;
             return grossTaxIncome;
+            
         }
 
 
@@ -56,7 +57,7 @@ namespace TaxCalculator.BusinessLogic
 
             while (remainingAmount != 0)
             {
-                if (remainingAmount > 0)
+                if (remainingAmount > 0 )
                 {
                     differenceBand = Math.Min(maxBand[iterator] - minBand[iterator], remainingAmount);
                     taxAtSlab[iterator] = differenceBand * taxRateArray[iterator];

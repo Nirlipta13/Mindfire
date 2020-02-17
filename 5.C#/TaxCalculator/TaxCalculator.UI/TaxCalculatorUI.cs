@@ -30,11 +30,22 @@ namespace TaxCalculator.UI
             Console.WriteLine("PROVIDE YOUR ANNUAL GROSS INCOME");
 
             inputSalary = logicObject.checkInput(Console.ReadLine());
+            while (inputSalary < 0)
+            {
+                Console.WriteLine("INVALID INPUT!! TRY AGAIN");
+                inputSalary = logicObject.checkInput(Console.ReadLine());
+
+            }
 
             Console.WriteLine("=====================================");
             Console.WriteLine("PROVIDE YOUR BASIC DEDUCTION-80 C");
 
             inputInvestment = logicObject.checkInput(Console.ReadLine());
+            while (inputInvestment<0)
+            {
+                Console.WriteLine("INVALID INPUT!! TRY AGAIN");
+                inputInvestment = logicObject.checkInput(Console.ReadLine());
+            }
 
 
             Console.Clear();
@@ -56,7 +67,7 @@ namespace TaxCalculator.UI
             Console.WriteLine("=====================================");
             Console.WriteLine("TOTA TAX AMOUNT:{0}", finalResultTax);
             Console.WriteLine("\nENTER ANY KEY TO QUIT");
-            Console.ReadKey();
+            Console.ReadLine();
 
         }
 
