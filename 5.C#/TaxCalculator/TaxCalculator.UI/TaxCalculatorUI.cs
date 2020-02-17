@@ -22,7 +22,7 @@ namespace TaxCalculator.UI
 
             //Input from the user
 
-            Console.WriteLine("WELCOME TO TAX CALCULATOR APPLICATION");
+            Console.WriteLine("*****WELCOME TO TAX CALCULATOR APPLICATION*****");
             Console.WriteLine("=====================================");
             Console.WriteLine("=====================================");
 
@@ -61,11 +61,11 @@ namespace TaxCalculator.UI
             {
                 if (resultSlab[iterator] != null)
                 {
-                    Console.WriteLine("TAX AT SLAB-{0}:{1}", iterator + 1, resultSlab[iterator]);
+                    Console.WriteLine("TAX AT SLAB-{0}:\t{1}", iterator + 1, resultSlab[iterator]);
                 }
             }
             Console.WriteLine("=====================================");
-            Console.WriteLine("TOTA TAX AMOUNT:{0}", finalResultTax);
+            Console.WriteLine("TOTAL TAX AMOUNT:{0}", finalResultTax);
             Console.WriteLine("\nENTER ANY KEY TO QUIT");
             Console.ReadLine();
 
