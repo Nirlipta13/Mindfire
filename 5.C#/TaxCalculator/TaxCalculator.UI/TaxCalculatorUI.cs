@@ -13,50 +13,65 @@ namespace TaxCalculator.UI
     {
         static void Main(string[] args)
         {
-            double inputSalary = 0, inputInvestment = 0;
+            double inputSalary = 0, inputInvestment = 0, minNum = 0, maxNum = double.MaxValue, value = 0;
             double investmentResult = 0;
             string[] resultSlab = new string[3];
-            string finalResultTax;
+            string finalResultTax, inputStrSalary, inputStrInvestment;
+
 
             TaxCalculatorLogics logicObject = new TaxCalculatorLogics();
 
             //Input from the user
-
             Console.WriteLine("*****WELCOME TO TAX CALCULATOR APPLICATION*****");
-            Console.WriteLine("=====================================");
-            Console.WriteLine("=====================================");
+            Console.WriteLine("=================================================");
 
-
-            Console.WriteLine("PROVIDE YOUR ANNUAL GROSS INCOME");
-
-            inputSalary = logicObject.checkInput(Console.ReadLine());
-            while (inputSalary < 0)
+            Console.WriteLine("\nPROVIDE YOUR ANNUAL GROSS INCOME");
+            bool isValid = true;
+            while (isValid)
             {
-                Console.WriteLine("INVALID INPUT!! TRY AGAIN");
-                inputSalary = logicObject.checkInput(Console.ReadLine());
-
+                inputStrSalary = Console.ReadLine();
+                if (double.TryParse(inputStrSalary, out value) && value >= minNum && value <= maxNum)
+                {
+                    inputSalary = value;
+                    isValid = false;
+                }
+                else
+                {
+                    Console.WriteLine("WRONG INPUT!! RE-ENTER ANNUAL GROSS SALARY");
+                    isValid = true;
+                }
             }
 
-            Console.WriteLine("=====================================");
-            Console.WriteLine("PROVIDE YOUR BASIC DEDUCTION-80 C");
+            isValid = true;
 
-            inputInvestment = logicObject.checkInput(Console.ReadLine());
-            while (inputInvestment<0)
+            Console.WriteLine("\nPROVIDE YOUR BASIC DEDUCTION UNDER 80 C");
+            while (isValid)
             {
-                Console.WriteLine("INVALID INPUT!! TRY AGAIN");
-                inputInvestment = logicObject.checkInput(Console.ReadLine());
+                inputStrInvestment = Console.ReadLine();
+                if (double.TryParse(inputStrInvestment, out value) && value >= minNum && value <= maxNum && value <= inputSalary)
+                {
+                    inputInvestment = value;
+                    isValid = false;
+                }
+                else
+                {
+                    Console.WriteLine("WRONG INPUT!! RE-ENTER DEDUCTION VALUE");
+                    isValid = true;
+                }
             }
-
 
             Console.Clear();
-            Console.WriteLine("----------------OUTPUT----------------");
+            Console.WriteLine("\nUSER ENTERED GROSS INCOME : {0}", inputSalary);
+            Console.WriteLine("USER ENTERED INVESTMENT : {0}", inputInvestment);
+            Console.WriteLine("=================================================");
+            Console.WriteLine("\n\n---------------------OUTPUT---------------------");
 
 
             //Call the interface methods for tax calculations
-
             investmentResult = logicObject.GetGrossTaxIncome(inputSalary, inputInvestment);
             Double taxResult = logicObject.CalculateTax(investmentResult, out resultSlab);
             finalResultTax = taxResult.ToString("0,0", System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"));
+            Console.WriteLine("=================================================");
             for (int iterator = 0; iterator < resultSlab.Length; iterator++)
             {
                 if (resultSlab[iterator] != null)
@@ -64,12 +79,12 @@ namespace TaxCalculator.UI
                     Console.WriteLine("TAX AT SLAB-{0}:\t{1}", iterator + 1, resultSlab[iterator]);
                 }
             }
-            Console.WriteLine("=====================================");
+            Console.WriteLine("=================================================");
             Console.WriteLine("TOTAL TAX AMOUNT:{0}", finalResultTax);
-            Console.WriteLine("\nENTER ANY KEY TO QUIT");
+            Console.WriteLine("\nENTER ANY KEY TO EXIT");
             Console.ReadLine();
-
         }
+
 
     }
 }

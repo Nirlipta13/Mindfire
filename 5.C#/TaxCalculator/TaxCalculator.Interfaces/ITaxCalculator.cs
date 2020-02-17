@@ -10,7 +10,5 @@ namespace TaxCalculator.Interfaces
     {
         double GetGrossTaxIncome(double salary, double investment);
         double CalculateTax(double grossTaxIncome, out string[] result);
-        double checkInput(string input);
-        bool IsANumber(string input);
     }
 }
