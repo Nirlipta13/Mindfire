@@ -1,0 +1,35 @@
+﻿@model StudentApplication.Models.Student
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Student"))
+{
+    <pre>
+
+    @Html.LabelFor(model => model.StudentFirstName)
+    @Html.TextBoxFor(model => model.StudentFirstName)
+
+    @Html.LabelFor(model => model.StudentLastName)
+    @Html.TextBoxFor(model => model.StudentLastName)
+
+    @Html.LabelFor(model => model.StudentEmail)
+    @Html.TextBoxFor(model => model.StudentEmail)  
+
+    @Html.LabelFor(model => model.StudentAge)
+    @Html.TextBoxFor(model => model.StudentAge) 
+
+    @Html.LabelFor(model => model.StudentGender)
+    Male  
+    @Html.RadioButtonFor(model => model.StudentGender, "Male")  
+    Female  
+    @Html.RadioButtonFor(model => model.StudentGender, "Female")  
+
+    <button type="submit" value="Save">Submit</button>
+</pre>
+
+}
+
+@Html.ActionLink("Back to List", "Index")

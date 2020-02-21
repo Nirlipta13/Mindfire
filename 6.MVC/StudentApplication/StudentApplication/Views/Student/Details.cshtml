@@ -1,0 +1,18 @@
+﻿@model StudentApplication.Models.Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<p>Name:<span>@Model.StudentFirstName</span></p>
+<p>Age:<span>@Model.StudentAge</span></p>
+<p>Email ID:<span>@Model.StudentEmail</span></p>
+<p>Gender:<span>@Model.StudentGender</span></p>
+
+<hr/>
+<div>
+    <pre>
+        @Html.ActionLink("Edit", "Edit", new { ID = Model.StudentID })
+        @Html.ActionLink("Back to List", "Index")
+    </pre>
+</div>

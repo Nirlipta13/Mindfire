@@ -25,6 +25,7 @@ namespace TaxCalculator.BusinessLogic
         /// <param name="salary">User entered salary</param>
         /// <param name="investment">User entered deduction under 80C</param>
         /// <returns>The taxable income</returns>
+ 
         public double GetGrossTaxIncome(double salary, double investment)
         {
             return (investment < 150000) ? salary - investment : salary - maxExemption;

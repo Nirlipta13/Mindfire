@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StudentApplication.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+    }
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<h2>Index</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Student Name</th>
+        <th>Age</th>
+        <th>Email Id</th>
+        <th>Gender</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(x=>item.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(x=>item.StudentAge)
+            </td>
+            <td>
+                @Html.DisplayFor(x=>item.StudentEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(x=>item.StudentGender)
+            </td>
+            <td>
+                @Html.ActionLink("Details|", "Details", new { ID = item.StudentID})
+                @Html.ActionLink("Edit|","Edit",new { ID = item.StudentID})
+                @Html.ActionLink("Delete","Delete",new { ID = item.StudentID})
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Add New Student", "Create")
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
