@@ -1,4 +1,4 @@
-﻿@model StudentApplication.Models.Student
+﻿@model StudentApplication.Models.ViewModel.StudentDepartmentViewModel
 @{
     ViewBag.Title = "Create";
 }
@@ -7,26 +7,36 @@
 
 @using (Html.BeginForm("Create", "Student"))
 {
+    @Html.ValidationSummary(true, "Fix the Errors to Continue");
     <pre>
-
     @Html.LabelFor(model => model.StudentFirstName)
     @Html.TextBoxFor(model => model.StudentFirstName)
-
+    @Html.ValidationMessageFor(model=>model.StudentFirstName)
+    
     @Html.LabelFor(model => model.StudentLastName)
     @Html.TextBoxFor(model => model.StudentLastName)
-
+    @Html.ValidationMessageFor(model=>model.StudentLastName)
+   
     @Html.LabelFor(model => model.StudentEmail)
-    @Html.TextBoxFor(model => model.StudentEmail)  
-
+    @Html.TextBoxFor(model => model.StudentEmail)
+    @Html.ValidationMessageFor(model=>model.StudentEmail)
+    
+  
     @Html.LabelFor(model => model.StudentAge)
-    @Html.TextBoxFor(model => model.StudentAge) 
-
+    @Html.TextBoxFor(model => model.StudentAge)
+    @Html.ValidationMessageFor(model=>model.StudentAge)
+   
+ 
     @Html.LabelFor(model => model.StudentGender)
     Male  
     @Html.RadioButtonFor(model => model.StudentGender, "Male")  
-    Female  
+    Female   
     @Html.RadioButtonFor(model => model.StudentGender, "Female")  
-
+    @Html.ValidationMessageFor(model=>model.StudentGender)    
+    @Html.LabelFor(model => model.DepartmentName)
+    @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Department, "DepartmentID", "DepartmentName"))
+    @Html.ValidationMessageFor(model=>model.DepartmentID)
+    
     <button type="submit" value="Save">Submit</button>
 </pre>
 

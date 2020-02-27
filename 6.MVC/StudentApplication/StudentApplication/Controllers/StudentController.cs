@@ -5,15 +5,16 @@ using System.Web;
 using System.Web.Mvc;
 using StudentApplication.Models;
 using System.Data.Entity;
+using StudentApplication.Models.ViewModel;
 
 namespace StudentApplication.Controllers
 {
     public class StudentController : Controller
     {
-        private StudentDbContext db;
+        private ApplicationDbContext db;
         public StudentController()
         {
-            db = new StudentDbContext();
+            db = new ApplicationDbContext();
         }
 
         public ActionResult HomePage()
@@ -24,7 +25,20 @@ namespace StudentApplication.Controllers
 
         public ActionResult Index()
         {
-            var users = db.Students.ToList();
+            var users = (from user in db.Students.Include("Department").ToList()
+                         select new StudentDepartmentViewModel
+                         {
+                                StudentID = user.StudentID,
+                                StudentAge = user.StudentAge,
+                                StudentEmail = user.StudentEmail,
+                                StudentFirstName = user.StudentFirstName,
+                                StudentLastName = user.StudentLastName,
+                                StudentGender=user.StudentGender,
+                                DepartmentName = (user.Department!=null)? user.Department.DepartmentName :"N/A",
+                                Location = (user.Department!=null)? user.Department.Location :"N/A"
+                        }).ToList();
+
+
             return View(users);
         }
 
@@ -32,34 +46,90 @@ namespace StudentApplication.Controllers
         public ActionResult Details(int ID)
         {
             var std = db.Students.Where(s => s.StudentID == ID).FirstOrDefault();
-            return View(std);
+
+            var dept = db.Departments.Where(d => d.DepartmentID == std.DepartmentID).FirstOrDefault();
+
+            var viewModel = new StudentDepartmentViewModel
+            {
+                StudentID = std.StudentID,
+                StudentFirstName = std.StudentFirstName,
+                StudentLastName = std.StudentLastName,
+                StudentAge = std.StudentAge,
+                StudentEmail = std.StudentEmail,
+                StudentGender = std.StudentGender,
+                DepartmentID = std.DepartmentID.GetValueOrDefault(),
+                DepartmentName = (dept.DepartmentName != "N/A") ? dept.DepartmentName : "N/A",
+                Location = (dept.Location != "N/A") ? dept.Location : "N/A"
+            };
+
+            
+            return View(viewModel);
         }
 
         public ActionResult Edit(int ID)
         {
             var std = db.Students.Where(s => s.StudentID == ID).FirstOrDefault();
-         
-            return View(std);
+            var dept = db.Departments.Where(d => d.DepartmentID == std.DepartmentID).FirstOrDefault();
+            var viewModel = new StudentDepartmentViewModel
+            {
+                StudentID = std.StudentID,
+                StudentFirstName = std.StudentFirstName,
+                StudentLastName = std.StudentLastName,
+                StudentAge = std.StudentAge,
+                StudentEmail = std.StudentEmail,
+                StudentGender = std.StudentGender,
+                Department=db.Departments.ToList(),
+                DepartmentID = std.DepartmentID.GetValueOrDefault(),
+                DepartmentName = dept.DepartmentName,
+                Location = dept.Location
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Edit(Student student)
+        public ActionResult Edit(StudentDepartmentViewModel student)
         {
 
-            //student - id == student.Id
-
             var studentFromDb = db.Students.FirstOrDefault(x => x.StudentID == student.StudentID);
+            var deptFromDB = db.Departments.Where(d => d.DepartmentID == student.DepartmentID).FirstOrDefault();
 
-            if (studentFromDb == null)
+            var viewModel = new StudentDepartmentViewModel
             {
-                return View();
-            }
+                StudentID = student.StudentID,
+                StudentFirstName = student.StudentFirstName,
+                StudentLastName = student.StudentLastName,
+                StudentEmail = student.StudentEmail,
+                StudentAge = student.StudentAge,
+                StudentGender = student.StudentGender,
+                DepartmentID = deptFromDB.DepartmentID,
+                DepartmentName = deptFromDB.DepartmentName,
+                Location = deptFromDB.Location
+            };
+
+            //if (!ModelState.IsValid)
+            //{
+            //    var user = new StudentDepartmentViewModel
+            //    {
+            //        StudentID = student.StudentID,
+            //        StudentFirstName = student.StudentFirstName,
+            //        StudentLastName = student.StudentLastName,
+            //        StudentAge = student.StudentAge,
+            //        StudentEmail = student.StudentEmail,
+            //        StudentGender = student.StudentGender,
+            //        DepartmentID = student.DepartmentID,
+            //        Department = db.Departments.ToList()
+            //    };
+            //    return View("Edit", user);
+            //}
+
             //Student exists in the datdabase. 
-            studentFromDb.StudentFirstName = student.StudentFirstName;
-            studentFromDb.StudentLastName = student.StudentLastName;
-            studentFromDb.StudentEmail = student.StudentEmail;
-            studentFromDb.StudentAge = student.StudentAge;
-            studentFromDb.StudentGender = student.StudentGender;
+            studentFromDb.StudentFirstName = viewModel.StudentFirstName;
+            studentFromDb.StudentLastName = viewModel.StudentLastName;
+            studentFromDb.StudentEmail = viewModel.StudentEmail;
+            studentFromDb.StudentAge = viewModel.StudentAge;
+            studentFromDb.StudentGender = viewModel.StudentGender;
+            studentFromDb.DepartmentID = viewModel.DepartmentID;
 
             db.Entry(studentFromDb).State = EntityState.Modified;
             db.SaveChanges();
@@ -79,12 +149,35 @@ namespace StudentApplication.Controllers
 
         public ActionResult Create()
         {
-            return View();
+
+            var department = db.Departments.ToList();
+            var viewModel = new StudentDepartmentViewModel
+            {
+                Department = department
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
         public ActionResult Create(Student std)
         {
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new StudentDepartmentViewModel
+                {
+                    StudentID = std.StudentID,
+                    StudentFirstName = std.StudentFirstName,
+                    StudentLastName = std.StudentLastName,
+                    StudentAge = std.StudentAge,
+                    StudentEmail = std.StudentEmail,
+                    StudentGender = std.StudentGender,
+                    DepartmentID = std.DepartmentID.GetValueOrDefault(),
+                    Department = db.Departments.ToList()
+                };
+                return View("Create",viewModel);
+            }
+
             db.Students.Add(std);
             db.SaveChanges();
             var changedDB = db.Students.ToList();

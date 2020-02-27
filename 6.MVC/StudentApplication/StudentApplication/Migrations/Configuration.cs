@@ -6,14 +6,14 @@
     using System.Linq;
     using StudentApplication.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<StudentApplication.Models.StudentDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<StudentApplication.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(StudentApplication.Models.StudentDbContext context)
+        protected override void Seed(StudentApplication.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -47,6 +47,30 @@
                     StudentGender = "Female"
                 });
                 context.SaveChanges();
+            }
+
+            if (!context.Departments.Any())
+            {
+                context.Departments.Add(new Models.Department
+                {
+                    DepartmentName = "Computer Science and Engineering",
+                    Location = "BBSR"
+                });
+                context.Departments.Add(new Models.Department
+                {
+                    DepartmentName = "Electrical and Electronics",
+                    Location = "BBSR"
+                });
+                context.Departments.Add(new Models.Department
+                {
+                    DepartmentName = "Civil Engineering",
+                    Location = "Sambalpur"
+                });
+                context.Departments.Add(new Models.Department
+                {
+                    DepartmentName = "Mechanical Engineering",
+                    Location = "Sambalpur"
+                });
             }
         }
     }
