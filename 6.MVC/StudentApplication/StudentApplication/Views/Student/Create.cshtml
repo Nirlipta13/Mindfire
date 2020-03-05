@@ -33,6 +33,7 @@
     Female   
     @Html.RadioButtonFor(model => model.StudentGender, "Female")  
     @Html.ValidationMessageFor(model=>model.StudentGender)    
+
     @Html.LabelFor(model => model.DepartmentName)
     @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Department, "DepartmentID", "DepartmentName"))
     @Html.ValidationMessageFor(model=>model.DepartmentID)

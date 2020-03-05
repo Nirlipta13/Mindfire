@@ -1,0 +1,30 @@
+﻿@model StudentApplication.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<h1>Student Details</h1>
+<hr />
+<h3>Personal Details</h3>
+<p>Name:<span>@Model.StudentFirstName</span></p>
+<p>Age:<span>@Model.StudentAge</span></p>
+<p>Email ID:<span>@Model.StudentEmail</span></p>
+<p>Gender:<span>@Model.StudentGender</span></p>
+<hr />
+
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <input type="submit" value="Delete"  />
+        |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}

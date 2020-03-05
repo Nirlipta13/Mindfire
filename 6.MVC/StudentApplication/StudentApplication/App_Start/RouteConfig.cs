@@ -13,11 +13,7 @@ namespace StudentApplication
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    "Student","Student/Details/{ID}",
-            //    new { controller = "Student", action = "Details", id = UrlParameter.Optional }
-            //    );
-
+           
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

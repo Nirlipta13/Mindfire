@@ -1,0 +1,28 @@
+﻿@model StudentApplication.Models.Department
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<hr />
+@using (Html.BeginForm("Edit", "Department"))
+{
+    @Html.ValidationSummary(true, "Fix the Errors to Continue");
+    <pre>
+        @Html.HiddenFor(model => model.DepartmentID)
+
+        @Html.LabelFor(model => model.DepartmentName)
+        @Html.TextBoxFor(model => model.DepartmentName)
+        @Html.ValidationMessageFor(model=>model.DepartmentName)
+
+        @Html.LabelFor(model => model.Location)
+        @Html.TextBoxFor(model => model.Location)
+        @Html.ValidationMessageFor(model=>model.Location)
+    
+        <button type="submit" value="Save">Submit</button>
+    </pre>
+
+}
+
+@Html.ActionLink("Back to List", "Index", "Department")
+

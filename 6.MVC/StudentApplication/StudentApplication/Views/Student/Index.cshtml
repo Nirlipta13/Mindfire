@@ -1,55 +1,217 @@
 ﻿@model IEnumerable<StudentApplication.Models.ViewModel.StudentDepartmentViewModel>
 
+
 @{
     ViewBag.Title = "Index";
-    }
+}
 
-<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <h2>Index</h2>
-<table class="table table-striped">
-    <tr>
-        <th>Student Name</th>
-        <th>Age</th>
-        <th>Email Id</th>
-        <th>Gender</th>
-        <th>Department Name</th>
-        <th>Location</th>
-        <th>Actions</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(x=>item.StudentFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(x=>item.StudentAge)
-            </td>
-            <td>
-                @Html.DisplayFor(x=>item.StudentEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(x=>item.StudentGender)
-            </td>
-            <td>
-                @Html.DisplayFor(x => item.DepartmentName)
-            </td>
-            <td>
-                @Html.DisplayFor(x => item.Location)
-            </td>
+<button class="btn btn-primary " id="createBtn" type="submit">Add Student</button>
+<hr/>
+@using (Html.BeginForm("Create", "Student"))
+{
+    
+<div class="col-md-12 " id="createForm">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please enter the details below.</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Student First Name</label>
+                <input type="text" name="StudentFirstName" id="StudentFirstName" class="form-control" placeholder="Enter Student First Name" required="" />
+            </div>
 
-            <td>
-                @Html.ActionLink("Details|", "Details", new { ID = item.StudentID})
-                @Html.ActionLink("Edit|","Edit",new { ID = item.StudentID})
-                @Html.ActionLink("Delete","Delete",new { ID = item.StudentID})
-            </td>
+            <div class="form-group">
+                <label>Student Last Name</label>
+                <input type="text" name="StudentLastName" id="StudentLastName" class="form-control" placeholder="Enter Student Last Name" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Student Age</label>
+                <input type="text" name="StudentAge" id="StudentAge" class="form-control" placeholder="Enter Student Age" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Student Email</label>
+                <input type="text" name="StudentEmail" id="StudentEmail" class="form-control" placeholder="Enter Student Email" required="" />
+            </div>
+
+            <div class="form-group">
+                <label>Student Gender</label>
+                <input type="radio" name="StudentGender" class="form-control" value="Male"/>Male
+                <input type="radio" name="StudentGender" class="form-control" value="Female" />Female
+            </div>
+
+            <div class="dropdown">                
+                <select class="dropdown-toggle" id="deptDropDown">
+                    <option value="1">CSE</option>
+                    <option value="2">EEE</option>
+                    <option value="3">CE</option>
+                    <option value="4">ME</option>
+                    <option value="5">ECE</option>                   
+                </select>
+            </div>
+
+        </div>
+
+            <div class="form-group">
+                <div>
+                    <input class="btn btn-primary" name="submitButton" id="btnSave" value="Save" type="button">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+  
+
+}
+
+
+<table id="students" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Age</th>
+            <th>Email Id</th>
+            <th>Gender</th>
+            <th>Department Name</th>
+            
+            <th>Actions</th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @*@foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(x => item.StudentFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.StudentAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.StudentEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.StudentGender)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.DepartmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Location)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Details|", "Details", new { ID = item.StudentID })
+                    <button type="submit" id="editBtn" class="js-edit" value="edit" data-student-id="@item.StudentID">Edit</button>
+                    <button type="submit" id="delBtn" class="js-delete" value="Delete" data-student-id="@item.StudentID">Delete</button>
+                </td>
+            </tr>
+        }*@
+    </tbody>
 </table>
 
+
+
 @Html.ActionLink("Add New Student", "Create")
+<br />
+@Html.ActionLink("Back To HomePage", "HomePage")
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $("#createForm").hide();
+            $("#createBtn").on("click",function(e){
+                e.preventDefault();
+                $("#createForm").show();
+            })
+
+            //Delete a record
+            $(".js-delete").on("click", function (e) {
+                e.preventDefault();
+                var button = $(this);
+                var id = button.data("student-id");
+
+                
+                $.ajax({
+                    url: "/Student/Delete",
+                    type: "POST",
+                    data: { id: id },
+                    success: function (result) {
+                        button.parents("tr").remove();
+                        //alert(result);
+                    },
+                    error: function (error) {
+                        alert("Error!");
+                    }
+                })
+            });
 
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
+            //save a record
+            LoadData();
+            $("body").on("click","#btnSave",function() {
+                //alert("");
+                var std = {};
+                std.StudentFirstName = $("#StudentFirstName").val();
+                std.StudentLastName = $("#StudentLastName").val();
+                std.StudentAge = $("#StudentAge").val();
+                std.StudentEmail = $("#StudentEmail").val();
+                std.StudentGender = $('input[name="StudentGender"]:checked').val();
+                std.DepartmentID = $('#deptDropDown option:selected').val()
+                $.ajax({
+                    type: "POST",
+                    url: '/Student/createStudent',
+                    data: '{std: ' + JSON.stringify(std) + '}',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function () {
+                        LoadData();
+                    },
+                    error: function () {
+                        alert("Error while inserting data");
+                    }
+                });
+                return false;
+            });
+            
+        });
+
+        function LoadData() {
+            $("#tblStudent tbody tr").remove();
+            $.ajax({
+                type: 'POST',
+                url: '/Student/getStudent',
+                dataType: 'json',
+                data: { id: '' },
+                success: function (data) {
+                    var items = '';
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+
+                        + "<td>" + item.StudentFirstName + "</td>"
+                        + "<td>" + item.StudentAge + "</td>"
+                        + "<td>" + item.StudentEmail + "</td>"
+                        + "<td>" + item.StudentGender + "</td>"
+                        + "<td>" + item.DepartmentID + "</td>"
+                        + "<td> <button type='submit' id='delBtn' class='js-delete' value='Delete' data-student-id=" + item.studentID + ">Delete</button></td>"
+                        + "</tr>";
+                        $('#tblStudent tbody').append(rows);
+                    });
+                },
+                error: function (ex) {
+                    var r = jQuery.parseJSON(response.responseText);
+                    alert("Message: " + r.Message);
+                    alert("StackTrace: " + r.StackTrace);
+                    alert("ExceptionType: " + r.ExceptionType);
+                }
+            });
+            return false;
+        }
+
+    </script>
+}
+
